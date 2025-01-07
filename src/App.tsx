@@ -9,6 +9,9 @@ import { CompanyPage } from "./pages/CompanyPage";
 import { ServicesPage } from "./pages/ServicesPage";
 import { ResourcesPage } from "./pages/ResourcesPage";
 import { ConsultingPage } from "./pages/ConsultingPage";
+import { PrivacyPage } from "./pages/PrivacyPage";
+import { TermsPage } from "./pages/TermsPage";
+
 function App() {
   return (
     <Router>
@@ -22,6 +25,8 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/consulting" element={<ConsultingPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
           <Route path="/*" element={<LandingPage />} />
         </Routes>
       </MainLayout>

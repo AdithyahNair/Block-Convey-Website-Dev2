@@ -30,8 +30,8 @@ const navLinks = {
     { name: "Tools and Frameworks", path: "/resources#tools", external: false },
   ],
   Legal: [
-    { name: "Privacy Policy", path: "/privacy", external: false },
-    { name: "Terms of Service", path: "/terms", external: false },
+    { name: "Privacy Policy", path: "/privacy#hero", external: false },
+    { name: "Terms of Service", path: "/terms#hero", external: false },
   ],
 };
 
@@ -41,14 +41,12 @@ export const FooterNavLinks: React.FC = () => {
   const handleClick = (path: string) => {
     const [route, hash] = path.split("#");
 
-    if (window.location.pathname === route) {
-      // If we're already on the correct page, just scroll
-      if (hash) {
-        scrollToFeature(hash);
-      }
-    } else {
-      // Navigate to the new page and then scroll
-      navigate(path);
+    // Navigate to the page first
+    navigate(route);
+
+    // If there's a hash, scroll to the section
+    if (hash) {
+      scrollToFeature(hash);
     }
   };
 
