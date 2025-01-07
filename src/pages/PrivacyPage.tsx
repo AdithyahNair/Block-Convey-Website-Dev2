@@ -25,7 +25,7 @@ export const PrivacyPage: React.FC = () => {
           <p>
             Welcome to Block Convey! Your privacy is important to us, and we are
             committed to protecting your personal data. This Privacy Policy
-            outlines how Block Convey, LLC ("Block Convey," "we," "us," or
+            outlines how Block Convey, Inc ("Block Convey," "we," "us," or
             "our") collects, uses, shares, and protects your information when
             you access or use our website, applications, and services
             (collectively, the "Services").

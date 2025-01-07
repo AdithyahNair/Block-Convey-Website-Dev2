@@ -21,7 +21,7 @@ export const TermsPage: React.FC = () => {
           <p className="text-lg text-gray-600">
             Welcome to Block Convey! These Terms of Service ("Terms") govern
             your access to and use of our website, applications, and services
-            (collectively, the "Services") provided by Block Convey, LLC ("Block
+            (collectively, the "Services") provided by Block Convey, Inc ("Block
             Convey," "we," "us," or "our"). By accessing or using our Services,
             you agree to comply with these Terms. If you do not agree, you may
             not use the Services.
