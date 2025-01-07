@@ -49,7 +49,10 @@ export const PricingCard: React.FC<PricingCardProps> = ({ plan, index }) => {
         <p className="text-gray-600">{plan.description}</p>
       </div>
 
-      <button
+      <a
+        href="https://calendly.com/arunprasad-11/60min"
+        target="_blank"
+        rel="noopener noreferrer"
         className={`w-full flex items-center justify-center gap-2 rounded-xl py-4 px-6 font-medium 
           transition-all duration-300 shadow-lg hover:shadow-xl
           ${
@@ -58,9 +61,9 @@ export const PricingCard: React.FC<PricingCardProps> = ({ plan, index }) => {
               : "bg-gray-900 text-white hover:bg-gray-800"
           }`}
       >
-        Get Started
+        Request Demo
         <ArrowRight className="h-4 w-4" />
-      </button>
+      </a>
 
       <ul className="space-y-4 mt-8">
         {plan.features.map((feature) => {

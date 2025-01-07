@@ -45,9 +45,12 @@ export const Hero: React.FC = () => {
                 Book Demo
                 <ArrowRight className="h-5 w-5" />
               </a>
-              <button className="inline-flex items-center gap-2 bg-brand-light/30 text-gray-900 border border-brand-light px-8 py-4 rounded-full font-medium hover:bg-brand-light/50 transition-colors">
+              <a
+                href="/features"
+                className="inline-flex items-center gap-2 bg-brand-light/30 text-gray-900 border border-brand-light px-8 py-4 rounded-full font-medium hover:bg-brand-light/50 transition-colors"
+              >
                 Learn More
-              </button>
+              </a>
             </div>
           </motion.div>
 
