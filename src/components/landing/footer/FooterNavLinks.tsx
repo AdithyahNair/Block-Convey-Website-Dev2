@@ -29,6 +29,10 @@ const navLinks = {
     },
     { name: "Tools and Frameworks", path: "/resources#tools", external: false },
   ],
+  Legal: [
+    { name: "Privacy Policy", path: "/privacy", external: false },
+    { name: "Terms of Service", path: "/terms", external: false },
+  ],
 };
 
 export const FooterNavLinks: React.FC = () => {
@@ -49,7 +53,7 @@ export const FooterNavLinks: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
       {Object.entries(navLinks).map(([category, links]) => (
         <div key={category}>
           <h3 className="font-semibold text-gray-900 mb-3">{category}</h3>
