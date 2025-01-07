@@ -14,7 +14,7 @@ const navItems = [
         title: "Credit Risk Assessment",
         description:
           "Advanced models for credit scoring with fairness built-in",
-        path: "/features#credit-risk-assessment",
+        path: "/features#hero",
       },
       {
         title: "Financial Advisory",
@@ -50,7 +50,7 @@ const navItems = [
       {
         title: "Financial Institutions",
         description: "Banks, investment firms, and asset managers",
-        path: "/who-we-serve#financial-institutions",
+        path: "/who-we-serve#hero",
       },
       {
         title: "Fintech Startups",
@@ -97,7 +97,7 @@ const navItems = [
       {
         title: "AI Governance Monitor",
         description: "Track developments in AI governance and compliance",
-        path: "/resources#governance",
+        path: "/resources#hero",
       },
       {
         title: "Insights on AI in Finance",
@@ -145,7 +145,7 @@ const navItems = [
       {
         title: "Consulting",
         description: "Strategic AI governance advice",
-        path: "/consulting",
+        path: "/consulting#hero",
       },
     ],
   },
