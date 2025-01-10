@@ -14,7 +14,7 @@ const navItems = [
         title: "Credit Risk Assessment Module",
         description:
           "Ensure fairness and compliance in credit scoring with real-time bias detection and explainable decision-making tools",
-        path: "/features#hero",
+        path: "/features#credit-risk-assessment",
       },
 
       {

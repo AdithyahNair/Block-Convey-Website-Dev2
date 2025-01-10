@@ -12,7 +12,7 @@ export const featureData: Feature[] = [
   {
     id: "credit-risk-assessment",
     icon: CreditCard,
-    title: "Credit Risk Assessment",
+    title: "Credit Risk Assessment Module",
     description:
       "Advanced models for credit scoring and loan approval decisions with fairness built-in.",
     details: [
@@ -27,26 +27,9 @@ export const featureData: Feature[] = [
     frameworks: ["FCRA", "ECOA", "GDPR"],
   },
   {
-    id: "financial-advisory",
-    icon: LineChart,
-    title: "Financial Advisory",
-    description:
-      "AI-powered investment and financial planning recommendation systems.",
-    details: [
-      "Risk tolerance assessment",
-      "Age-appropriate recommendations",
-      "Socioeconomic fairness",
-      "Clear risk communication",
-      "Investment suitability checks",
-    ],
-    image:
-      "https://mitsloan.mit.edu/sites/default/files/styles/article_header/public/2024-04/ai-financial-advisor_0.jpg?h=d11f454f&itok=bielWAjm",
-    frameworks: ["SEC Guidelines", "MiFID II"],
-  },
-  {
     id: "insurance-claims",
     icon: Shield,
-    title: "Insurance Claims",
+    title: "Insurance Claims Module",
     description:
       "Automated claims processing and risk assessment with fairness guarantees.",
     details: [
@@ -63,7 +46,7 @@ export const featureData: Feature[] = [
   {
     id: "fraud-detection",
     icon: Lock,
-    title: "Fraud Detection Governance",
+    title: "Fraud Detection Module",
     description:
       "Advanced systems for detecting and preventing fraudulent activities.",
     details: [
@@ -78,35 +61,20 @@ export const featureData: Feature[] = [
     frameworks: ["AML", "GDPR", "CFT"],
   },
   {
-    id: "risk-assessment",
-    icon: AlertTriangle,
-    title: "Risk Assessment",
-    description: "Comprehensive risk analysis and mitigation strategies.",
+    id: "financial-advisory",
+    icon: LineChart,
+    title: "Financial Advisory & Customer Service Module",
+    description:
+      "AI-powered investment and financial planning recommendation systems.",
     details: [
-      "AI model risk scoring",
-      "Automated risk detection",
-      "Mitigation recommendations",
-      "Continuous monitoring",
-      "Risk trend analysis",
+      "Risk tolerance assessment",
+      "Age-appropriate recommendations",
+      "Socioeconomic fairness",
+      "Clear risk communication",
+      "Investment suitability checks",
     ],
     image:
-      "https://precisa.in/wp-content/uploads/2023/10/Understanding-AI-for-Credit-Risk-Assessment.jpg",
-    frameworks: ["Basel", "NIST", "ISO 27001"],
-  },
-  {
-    id: "performance-monitoring",
-    icon: BarChart2,
-    title: "Performance Monitoring",
-    description: "Real-time monitoring and analytics for AI systems.",
-    details: [
-      "Live performance tracking",
-      "Custom metric monitoring",
-      "Automated alerts",
-      "Performance benchmarking",
-      "Historical analysis",
-    ],
-    image:
-      "https://www.motadata.com/wp-content/uploads/2023/12/Blog-Header-The-Power-of-AI-in-Network-Monitoring.png",
-    frameworks: ["SOC 2", "ISO 9001"],
+      "https://mitsloan.mit.edu/sites/default/files/styles/article_header/public/2024-04/ai-financial-advisor_0.jpg?h=d11f454f&itok=bielWAjm",
+    frameworks: ["SEC Guidelines", "MiFID II"],
   },
 ];

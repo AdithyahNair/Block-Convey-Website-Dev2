@@ -15,7 +15,6 @@ export const FeaturesPage: React.FC = () => {
         <FeatureHero />
 
         <FeatureShowcase />
-        <FeatureMetrics />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -41,6 +40,8 @@ export const FeaturesPage: React.FC = () => {
             ></iframe>
           </motion.div>
         </div>
+        <FeatureMetrics />
+
         <FeatureCTA />
       </main>
       <Footer />
