@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Users, Shield, Lightbulb, Linkedin } from "lucide-react";
+import { Users, Lightbulb, Linkedin } from "lucide-react";
 import arun_team from "../../../assets/arun_team.jpeg";
 import tim_team from "../../../assets/tim_team.jpeg";
 import cam_team from "../../../assets/cam_team.jpeg";

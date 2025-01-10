@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 
 export const Hero: React.FC = () => {
   return (
-    <div className="relative min-h-screen bg-brand-lightest overflow-hidden">
+    <div
+      id="main"
+      className="relative min-h-screen bg-brand-lightest overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ADD2C933_1px,transparent_1px),linear-gradient(to_bottom,#ADD2C933_1px,transparent_1px)] bg-[size:14px_24px]" />
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-lightest to-transparent" />

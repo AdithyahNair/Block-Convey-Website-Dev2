@@ -16,7 +16,7 @@ const conferences = [
   {
     title: "Cornell Blockchain",
     description:
-      "Sponsored and participated in a panel on blockchain's institutional adoption, exploring asset tokenization, Bitcoin ETFs, and regulatory trends.",
+      "Sponsored and contributed in a panel on blockchain's institutional adoption, exploring asset tokenization, Bitcoin ETFs, and regulatory trends.",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7184200294921035777",
     image: cornell_conf,
   },
@@ -30,7 +30,7 @@ const conferences = [
   {
     title: "NYU Venture Showcase",
     description:
-      "Presented a blockchain healthcare use case, received feedback from NYU professors, and engaged with over 700 attendees, including students and investors.",
+      "Presented a Blockchain AI use case, received feedback from investors, and engaged with over 700 attendees, including students and NYU professors.",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7172938272736833536",
     image: nyu_conf,
   },

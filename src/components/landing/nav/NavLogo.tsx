@@ -1,18 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.svg";
+import { scrollToFeature } from "../../../utils/scroll";
+import { useNavigate } from "react-router-dom";
 
 export const NavLogo: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleClick = (path: string) => {
+    const [route, hash] = path.split("#");
+    // Navigate to the page first
+    navigate(route);
+    // If there's a hash, scroll to the section
+    if (hash) {
+      scrollToFeature(hash);
+    }
+  };
+
   return (
-    <Link
-      to="/"
-      className="flex items-center gap-2 hover:opacity-90 transition-opacity"
+    <div
+      onClick={() => handleClick("/#main")}
+      className="flex items-center gap-2 hover:opacity-90 transition-opacity cursor-pointer"
     >
       <img
         src={logo}
         alt="Block Convey"
         className="h-16 w-32 object-cover object-center"
       />
-    </Link>
+    </div>
   );
 };
