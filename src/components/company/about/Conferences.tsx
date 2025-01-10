@@ -9,27 +9,28 @@ const conferences = [
   {
     title: "World Blockchain Summit",
     description:
-      "Discussed innovative solutions and gained insights from global blockchain leaders.",
+      "Showcased blockchain advancements and engaged with global leaders to drive innovation in decentralized technologies.",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7205506945233940480",
     image: wbs_conf,
   },
   {
     title: "Cornell Blockchain",
     description:
-      "Participated in advancing blockchain applications in finance.",
+      "Sponsored and participated in a panel on blockchain's institutional adoption, exploring asset tokenization, Bitcoin ETFs, and regulatory trends.",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7184200294921035777",
     image: cornell_conf,
   },
   {
     title: "YoungStartup Ventures",
-    description: "Secured place among top 150 companies globally.",
+    description:
+      "Recognized among the top 150 global innovators and presented at the 11th annual Venture Summit West, connecting with investors and strategic partners.",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7181663181428162560",
     image: vs_conf,
   },
   {
     title: "NYU Venture Showcase",
     description:
-      "Presented groundbreaking work in AI and blockchain technologies.",
+      "Presented a blockchain healthcare use case, received feedback from NYU professors, and engaged with over 700 attendees, including students and investors.",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7172938272736833536",
     image: nyu_conf,
   },

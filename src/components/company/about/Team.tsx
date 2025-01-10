@@ -158,7 +158,7 @@ export const Team: React.FC = () => {
 
         <div className="space-y-24">
           <TeamSection
-            title="Leadership"
+            title="Core Team"
             members={teamMembers.leadership}
             icon={Users}
             delay={0}
