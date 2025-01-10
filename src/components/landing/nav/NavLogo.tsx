@@ -1,8 +1,7 @@
 import React from "react";
-import logo from "../../../assets/logo.svg";
+import logo from "../../../assets/logo.png";
 import { scrollToFeature } from "../../../utils/scroll";
 import { useNavigate } from "react-router-dom";
-
 export const NavLogo: React.FC = () => {
   const navigate = useNavigate();
 
@@ -24,7 +23,11 @@ export const NavLogo: React.FC = () => {
       <img
         src={logo}
         alt="Block Convey"
-        className="h-16 w-32 object-cover object-center"
+        className="h-16 w-32 object-cover object-center transform scale-110"
+        style={{
+          transform: "scale(1.2)", // Adjust the scale value as needed
+          objectPosition: "center", // Ensures the image stays centered while zoomed
+        }}
       />
     </div>
   );
