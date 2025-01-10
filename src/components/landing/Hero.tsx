@@ -65,14 +65,21 @@ export const Hero: React.FC = () => {
             className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-brand-light"
           >
             <iframe
-              width="100%"
-              height="100%"
-              src="https://www.loom.com/embed/46511559602046098ba450f45a0a1385?sid=b12b168d-0396-4a28-a84d-9909d9d5dc8d&autoplay=1&muted=1"
-              title="Product Demo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="fullscreen;autoplay"
               allowFullScreen
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+              height="100%"
+              src="https://streamable.com/e/l3yzs8?autoplay=1&nocontrols=1"
+              width="100%"
+              style={{
+                border: "none",
+                width: "100%",
+                height: "100%",
+                position: "absolute",
+                left: "0px",
+                top: "0px",
+                overflow: "hidden",
+              }}
+            ></iframe>
           </motion.div>
         </div>
       </div>
