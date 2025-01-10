@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export const ContactSection: React.FC = () => {
   return (
-    <section id="contact" className="py-24 bg-gray-50">
+    <section id="contact" className="py-24 bg-brand">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -12,10 +12,10 @@ export const ContactSection: React.FC = () => {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl font-bold text-white mb-6">
             Embark on your AI Development with Block Convey Today
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-white mb-8">
             Schedule a consultation with our experts to learn more about how we
             can serve your AI needs.
           </p>

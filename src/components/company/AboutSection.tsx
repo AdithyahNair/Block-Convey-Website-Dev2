@@ -1,14 +1,20 @@
 import React from "react";
 import { AboutHero } from "./about/AboutHero";
-import { CompanyValues } from "./about/CompanyValues";
-import { AboutMission } from "./about/AboutMission";
+import { Vision } from "./about/Vision";
+import { Conferences } from "./about/Conferences";
+import { Team } from "./about/Team";
+import { Commitment } from "./about/Commitment";
+import { Approach } from "./about/Approach";
 
 export const AboutSection: React.FC = () => {
   return (
-    <div className="relative">
+    <div className="relative ">
       <AboutHero />
-      <CompanyValues />
-      <AboutMission />
+      <Vision />
+      <Conferences />
+      <Team />
+      <Commitment />
+      <Approach />
     </div>
   );
 };
