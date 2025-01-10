@@ -7,39 +7,33 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   {
-    label: "Features",
+    label: "Solutions",
     mainPath: "/features",
     subitems: [
       {
-        title: "Credit Risk Assessment",
+        title: "Credit Risk Assessment Module",
         description:
-          "Advanced models for credit scoring with fairness built-in",
+          "Ensure fairness and compliance in credit scoring with real-time bias detection and explainable decision-making tools",
         path: "/features#hero",
       },
+
       {
-        title: "Financial Advisory",
-        description: "AI-powered investment and financial planning systems",
-        path: "/features#financial-advisory",
-      },
-      {
-        title: "Insurance Claims",
-        description: "Automated claims processing with fairness guarantees",
+        title: "Insurance Claims Module",
+        description:
+          "Streamline claims processing with fair, transparent, and compliant AI-powered decisions",
         path: "/features#insurance-claims",
       },
       {
-        title: "Fraud Detection",
-        description: "Advanced systems for detecting fraudulent activities",
+        title: "Fraud Detection Module",
+        description:
+          "Monitor AI-driven fraud detection systems for accuracy, transparency, and ethical anomaly detection",
         path: "/features#fraud-detection",
       },
       {
-        title: "Risk Assessment",
-        description: "Comprehensive risk analysis and mitigation strategies",
-        path: "/features#risk-assessment",
-      },
-      {
-        title: "Performance Monitoring",
-        description: "Real-time monitoring and analytics for AI systems",
-        path: "/features#performance-monitoring",
+        title: "Financial Advisory & Customer Service Module",
+        description:
+          "Enhance customer interactions with AI models that deliver personalized, unbiased, and explainable recommendations",
+        path: "/features#financial-advisory",
       },
     ],
   },
