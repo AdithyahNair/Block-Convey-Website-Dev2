@@ -7,7 +7,6 @@ import cam_team from "../../../assets/cam_team.jpeg";
 import wei_adv from "../../../assets/wei_adv.jpeg";
 import gou_adv from "../../../assets/gou_adv.jpeg";
 import veera_adv from "../../../assets/veera_adv.jpeg";
-import ravi_adv from "../../../assets/ravi_adv.jpeg";
 import illias_adv from "../../../assets/illias_adv.jpeg";
 const teamMembers = {
   leadership: [
@@ -48,12 +47,6 @@ const teamMembers = {
       role: "Blockchain and AI",
       linkedin: "https://www.linkedin.com/in/veerabudhi/",
       image: veera_adv,
-    },
-    {
-      name: "Ravi Munde",
-      role: "Operations",
-      linkedin: "https://www.linkedin.com/in/ravimundhe/",
-      image: ravi_adv,
     },
     {
       name: "Ilais Anwar",
