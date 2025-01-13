@@ -30,15 +30,6 @@ export const ServicesContent: React.FC = () => {
             Access Block Convey Drive
             <ArrowRight className="h-5 w-5" />
           </motion.a>
-
-          <motion.button
-            className="inline-flex items-center gap-2 bg-white text-gray-900 border border-brand-light px-8 py-4 rounded-xl font-medium hover:bg-brand-light/10 transition-colors"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Watch Preview
-            <Play className="h-5 w-5" />
-          </motion.button>
         </div>
       </motion.div>
     </div>

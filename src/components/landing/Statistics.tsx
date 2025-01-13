@@ -7,7 +7,7 @@ const stats = [
   {
     icon: BarChart2,
     value: "75%",
-    label: "of financial firms already use AI",
+    label: "of Financial Firms Already Use AI",
     description:
       "with an additional 10% planning implementation within 3 years",
     source: "https://www.lumenova.ai/blog/governing-generative-ai-finance/",
@@ -15,7 +15,7 @@ const stats = [
   {
     icon: Users,
     value: "33%",
-    label: "of AI use cases involve third parties",
+    label: "of AI Use Cases Involve Third Parties",
     description:
       "highlighting the critical need for managing outsourcing risks",
     source: "https://www.lumenova.ai/blog/governing-generative-ai-finance/",
@@ -23,7 +23,7 @@ const stats = [
   {
     icon: AlertTriangle,
     value: "100%",
-    label: "risk mitigation coverage",
+    label: "Risk Mitigation Coverage",
     description:
       "identifying and addressing biases, operational failures, and reputational risks",
     source:

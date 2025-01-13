@@ -17,10 +17,11 @@ export const LandingPage: React.FC = () => {
         <Hero />
         <Partners />
         <CircleTextSection />
+        <WhyChooseUs />
+
         <Statistics />
         <Features />
 
-        <WhyChooseUs />
         <WavyCTA />
         <Footer />
       </main>

@@ -25,7 +25,7 @@ export const NavLogo: React.FC = () => {
         alt="Block Convey"
         className="h-16 w-32 object-cover object-center transform scale-110"
         style={{
-          transform: "scale(1.2)", // Adjust the scale value as needed
+          transform: "scale(1.4)", // Adjust the scale value as needed
           objectPosition: "center", // Ensures the image stays centered while zoomed
         }}
       />
