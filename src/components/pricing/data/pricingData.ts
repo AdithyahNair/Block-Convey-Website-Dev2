@@ -16,11 +16,13 @@ export const pricingData: Plan[] = [
     ],
     icon: Shield,
     theme: {
-      background: "bg-gradient-to-br from-brand-lightest via-brand-light/10 to-brand-light/20",
-      hover: "bg-gradient-to-br from-brand-light/20 via-brand-light/30 to-brand-light/40",
-      border: "border-brand-light",
-      icon: "text-brand",
-      text: "text-gray-800",
+      background:
+        "bg-gradient-to-br from-slate-50 via-slate-100/80 to-slate-200/50",
+      hover:
+        "bg-gradient-to-br from-slate-100 via-slate-200/80 to-slate-300/50",
+      border: "border-slate-200",
+      icon: "text-slate-600",
+      text: "text-slate-900",
     },
   },
   {
@@ -37,11 +39,13 @@ export const pricingData: Plan[] = [
     icon: Award,
     popular: true,
     theme: {
-      background: "bg-gradient-to-br from-brand-light/20 via-brand/10 to-brand/20",
-      hover: "bg-gradient-to-br from-brand-light/30 via-brand/20 to-brand/30",
-      border: "border-brand",
-      icon: "text-brand",
-      text: "text-gray-900",
+      background:
+        "bg-gradient-to-br from-amber-50 via-amber-100/80 to-amber-200/50",
+      hover:
+        "bg-gradient-to-br from-amber-100 via-amber-200/80 to-amber-300/50",
+      border: "border-amber-200",
+      icon: "text-amber-600",
+      text: "text-amber-900",
     },
   },
   {
@@ -57,11 +61,13 @@ export const pricingData: Plan[] = [
     ],
     icon: Crown,
     theme: {
-      background: "bg-gradient-to-br from-brand/10 via-brand-dark/10 to-brand-dark/20",
-      hover: "bg-gradient-to-br from-brand/20 via-brand-dark/20 to-brand-dark/30",
-      border: "border-brand-dark",
-      icon: "text-brand-dark",
-      text: "text-gray-900",
+      background:
+        "bg-gradient-to-br from-indigo-50 via-indigo-100/80 to-indigo-200/50",
+      hover:
+        "bg-gradient-to-br from-indigo-100 via-indigo-200/80 to-indigo-300/50",
+      border: "border-indigo-200",
+      icon: "text-indigo-600",
+      text: "text-indigo-900",
     },
   },
 ];

@@ -5,7 +5,10 @@ import { comparisonData } from "./data/comparisonData";
 
 export const PlanComparison: React.FC = () => {
   return (
-    <div id="compare" className="py-24 bg-gradient-to-b from-brand-light/10 to-brand-lightest">
+    <div
+      id="compare"
+      className="py-24 bg-gradient-to-b from-brand-light/10 to-brand-lightest"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
@@ -17,7 +20,7 @@ export const PlanComparison: React.FC = () => {
         </div>
 
         <div className="overflow-x-auto">
-          <div className="overflow-hidden border border-brand-light/30 rounded-2xl shadow-md min-w-[800px]">
+          <div className="overflow-hidden border border-brand-light/30 rounded-2xl shadow-md min-w-[768px] lg:min-w-full">
             <table className={`${styles.table} w-full table-fixed`}>
               <colgroup>
                 <col className="w-[40%]" />
@@ -27,22 +30,30 @@ export const PlanComparison: React.FC = () => {
               </colgroup>
               <thead>
                 <tr className={styles.header.row}>
-                  <th className={`${styles.header.cell.base} ${styles.header.cell.feature} border-r border-brand-light/20`}>
+                  <th
+                    className={`${styles.header.cell.base} ${styles.header.cell.feature} border-r border-brand-light/20`}
+                  >
                     Features
                   </th>
-                  <th className={`${styles.header.cell.base} ${styles.header.cell.plan} ${styles.header.cell.silver} border-r border-brand-light/20`}>
+                  <th
+                    className={`${styles.header.cell.base} ${styles.header.cell.plan} ${styles.header.cell.silver} border-r border-brand-light/20`}
+                  >
                     <div className="flex flex-col items-center">
-                      <span className="text-lg">Silver</span>
+                      <span className="text-lg font-semibold">Silver</span>
                     </div>
                   </th>
-                  <th className={`${styles.header.cell.base} ${styles.header.cell.plan} ${styles.header.cell.gold} border-r border-brand-light/20`}>
+                  <th
+                    className={`${styles.header.cell.base} ${styles.header.cell.plan} ${styles.header.cell.gold} border-r border-brand-light/20`}
+                  >
                     <div className="flex flex-col items-center">
-                      <span className="text-lg">Gold</span>
+                      <span className="text-lg font-semibold">Gold</span>
                     </div>
                   </th>
-                  <th className={`${styles.header.cell.base} ${styles.header.cell.plan} ${styles.header.cell.platinum}`}>
+                  <th
+                    className={`${styles.header.cell.base} ${styles.header.cell.plan} ${styles.header.cell.platinum}`}
+                  >
                     <div className="flex flex-col items-center">
-                      <span className="text-lg">Platinum</span>
+                      <span className="text-lg font-semibold">Platinum</span>
                     </div>
                   </th>
                 </tr>

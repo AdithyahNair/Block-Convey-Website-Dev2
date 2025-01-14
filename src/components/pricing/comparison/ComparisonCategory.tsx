@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ChevronDown } from "lucide-react";
 import { ComparisonItem } from "./ComparisonItem";
 import { styles } from "./styles";
@@ -11,20 +11,18 @@ interface ComparisonCategoryProps {
 export const ComparisonCategory: React.FC<ComparisonCategoryProps> = ({
   category,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  // Start expanded by default
+  const [isExpanded, setIsExpanded] = React.useState(true);
 
   return (
-    <tbody>
+    <tbody className="border-b border-brand-light/20 last:border-0">
       <tr
-        className={`${styles.category.row} bg-gray-100 hover:bg-gray-200 cursor-pointer`}
+        className={`${styles.category.row} bg-gray-50 hover:bg-gray-100 cursor-pointer`}
+        onClick={() => setIsExpanded(!isExpanded)}
       >
-        <td
-          colSpan={4}
-          className={`${styles.category.cell} py-4`}
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
+        <td colSpan={4} className={`${styles.category.cell} py-4`}>
           <div className="flex justify-between items-center">
-            <span className="font-semibold text-gray-700">
+            <span className="font-semibold text-gray-900">
               {category.category}
             </span>
             <ChevronDown
