@@ -3,7 +3,6 @@ import { Navbar } from "../components/landing/Navbar";
 import { Hero } from "../components/landing/Hero";
 import { CircleTextSection } from "../components/landing/CircleTextSection";
 import { Statistics } from "../components/landing/Statistics";
-import { Features } from "../components/landing/Features";
 import { Partners } from "../components/landing/Partners";
 import { WhyChooseUs } from "../components/landing/WhyChooseUs";
 import { Footer } from "../components/landing/Footer";
@@ -20,7 +19,6 @@ export const LandingPage: React.FC = () => {
         <WhyChooseUs />
 
         <Statistics />
-        <Features />
 
         <WavyCTA />
         <Footer />

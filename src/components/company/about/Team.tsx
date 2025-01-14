@@ -8,6 +8,8 @@ import wei_adv from "../../../assets/wei_adv.jpeg";
 import gou_adv from "../../../assets/gou_adv.jpeg";
 import veera_adv from "../../../assets/veera_adv.jpeg";
 import illias_adv from "../../../assets/illias_adv.jpeg";
+import son_le from "../../../assets/son_le.jpeg";
+import connor from "../../../assets/connor.jpeg";
 const teamMembers = {
   leadership: [
     {
@@ -28,8 +30,20 @@ const teamMembers = {
       linkedin: "https://www.linkedin.com/in/cameronkawato/",
       image: cam_team,
     },
+    {
+      name: "Connor McCoy",
+      role: "Investor Relations Manager",
+      linkedin: "https://www.linkedin.com/in/cp-mccoy/",
+      image: connor,
+    },
   ],
   advisors: [
+    {
+      name: "Son le",
+      role: "Fractional CFO, Advisor",
+      linkedin: "https://www.facebook.com/share/1BQm6sjkmS/?mibextid=wwXIfr",
+      image: son_le,
+    },
     {
       name: "Weiyee In",
       role: "Banking and AI Governance",

@@ -1,27 +1,64 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link2, Activity, Scale, Lock } from "lucide-react";
+import {
+  Link2,
+  Activity,
+  Scale,
+  Lock,
+  BarChart2,
+  Shield,
+  AlertTriangle,
+  LineChart,
+} from "lucide-react";
 
 const benefits = [
   {
     icon: Link2,
     title: "Blockchain-Powered Oversight",
-    description: "Immutable audit trails ensure compliance and transparency across all AI operations.",
+    description:
+      "Immutable audit trails ensure compliance and transparency across all AI operations.",
   },
   {
     icon: Activity,
     title: "Proactive AI Monitoring",
-    description: "Real-time detection of fairness issues, bias, and model drift to maintain optimal performance.",
+    description:
+      "Real-time detection of fairness issues, bias, and model drift to maintain optimal performance.",
   },
   {
     icon: Scale,
     title: "Scalable Solutions",
-    description: "Flexible infrastructure that grows with your organization, from startup to enterprise.",
+    description:
+      "Flexible infrastructure that grows with your organization, from startup to enterprise.",
   },
   {
     icon: Lock,
     title: "Enhanced Trust",
-    description: "Build confidence with stakeholders through transparent, explainable AI governance.",
+    description:
+      "Build confidence with stakeholders through transparent, explainable AI governance.",
+  },
+  {
+    icon: BarChart2,
+    title: "Real-time Dashboard",
+    description:
+      "Track model performance and compliance in real-time with comprehensive monitoring and analytics.",
+  },
+  {
+    icon: Shield,
+    title: "Compliance Reporting",
+    description:
+      "Automated audit trails and regulatory adherence with blockchain-verified documentation.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Risk Assessment",
+    description:
+      "Comprehensive risk mitigation insights powered by advanced analytics and predictive modeling.",
+  },
+  {
+    icon: LineChart,
+    title: "Model Performance Tracking",
+    description:
+      "Gain actionable insights into AI outcomes with detailed performance metrics and trend analysis.",
   },
 ];
 
