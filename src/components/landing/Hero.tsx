@@ -5,32 +5,32 @@ import { motion, AnimatePresence } from "framer-motion";
 const descriptions = [
   {
     title: "Cost Savings",
-    text: "Ensure compliance and maintain transparency in your AI operations. Our blockchain-powered platform helps enterprises save up to 60% on compliance-related costs.",
+    text: "Save up to 60% on compliance costs with blockchain-powered transparency.",
     color: "from-cyan-500/20 to-cyan-500/5",
   },
   {
     title: "Credit Risk",
-    text: "Credit Risk Assessment Module: Monitor and detect bias in credit models, ensuring fair lending practices while adhering to regulatory guidelines.",
+    text: "Ensure fair lending with bias-free credit risk assessments.",
     color: "from-cyan-500/20 to-cyan-500/5",
   },
   {
     title: "Fraud Prevention",
-    text: "Fraud Detection: Proactively identify and prevent suspicious activities with transparent, explainable AI, bolstered by secure blockchain governance.",
+    text: "Detect and prevent fraud with explainable AI and blockchain security.",
     color: "from-cyan-500/20 to-cyan-500/5",
   },
   {
     title: "Insurance Claims",
-    text: "Insurance Claims: Streamline and automate claims processing with unbiased decision-making, reducing fraud and expediting settlements.",
+    text: "Automate claims processing for unbiased and faster settlements.",
     color: "from-cyan-500/20 to-cyan-500/5",
   },
   {
     title: "Financial Advisory",
-    text: "Financial Advisory & Customer Service Module: Deliver personalized, data-driven guidance to customers, backed by robust compliance and ethical AI standards.",
+    text: "Provide personalized advice with ethical, data-driven AI.",
     color: "from-cyan-500/20 to-cyan-500/5",
   },
   {
     title: "Regulatory Compliance",
-    text: "Regulatory Compliance: Maintain adherence to industry regulations and data privacy laws, reinforcing trust and accountability across all solutions.",
+    text: "Ensure compliance with industry regulations and privacy laws.",
     color: "from-cyan-500/20 to-cyan-500/5",
   },
 ];
