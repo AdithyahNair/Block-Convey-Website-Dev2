@@ -1,8 +1,54 @@
-import React from "react";
-import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { ArrowRight, Pause, Play } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const descriptions = [
+  {
+    title: "Cost Savings",
+    text: "Ensure compliance and maintain transparency in your AI operations. Our blockchain-powered platform helps enterprises save up to 60% on compliance-related costs.",
+    color: "from-cyan-500/20 to-cyan-500/5",
+  },
+  {
+    title: "Credit Risk",
+    text: "Credit Risk Assessment Module: Monitor and detect bias in credit models, ensuring fair lending practices while adhering to regulatory guidelines.",
+    color: "from-cyan-500/20 to-cyan-500/5",
+  },
+  {
+    title: "Fraud Prevention",
+    text: "Fraud Detection: Proactively identify and prevent suspicious activities with transparent, explainable AI, bolstered by secure blockchain governance.",
+    color: "from-cyan-500/20 to-cyan-500/5",
+  },
+  {
+    title: "Insurance Claims",
+    text: "Insurance Claims: Streamline and automate claims processing with unbiased decision-making, reducing fraud and expediting settlements.",
+    color: "from-cyan-500/20 to-cyan-500/5",
+  },
+  {
+    title: "Financial Advisory",
+    text: "Financial Advisory & Customer Service Module: Deliver personalized, data-driven guidance to customers, backed by robust compliance and ethical AI standards.",
+    color: "from-cyan-500/20 to-cyan-500/5",
+  },
+  {
+    title: "Regulatory Compliance",
+    text: "Regulatory Compliance: Maintain adherence to industry regulations and data privacy laws, reinforcing trust and accountability across all solutions.",
+    color: "from-cyan-500/20 to-cyan-500/5",
+  },
+];
 
 export const Hero: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (!isPaused) {
+      const timer = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % descriptions.length);
+      }, 3000);
+
+      return () => clearInterval(timer);
+    }
+  }, [isPaused]);
+
   return (
     <div
       id="main"
@@ -32,11 +78,40 @@ export const Hero: React.FC = () => {
               </span>
             </h1>
 
-            <p className="text-gray-600 text-lg mb-12">
-              Ensure compliance and maintain transparency in your AI operations.
-              Our blockchain-powered platform helps enterprises save up to 60%
-              on compliance-related costs.
-            </p>
+            <div
+              className="relative min-h-[160px] mb-12"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0"
+                >
+                  <div
+                    className={`bg-gradient-to-br ${descriptions[currentIndex].color} backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg relative group hover:shadow-xl transition-all duration-300`}
+                  >
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {isPaused ? (
+                        <Play className="h-5 w-5 text-gray-600" />
+                      ) : (
+                        <Pause className="h-5 w-5 text-gray-600" />
+                      )}
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {descriptions[currentIndex].title}
+                    </h3>
+                    <p className="text-gray-700">
+                      {descriptions[currentIndex].text}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
             <div className="flex flex-wrap gap-4">
               <a
