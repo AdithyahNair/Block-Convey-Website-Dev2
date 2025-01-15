@@ -26,7 +26,7 @@ export const HeroTitle: React.FC = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
-              to="/features"
+              to="/solutions"
               className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-xl font-medium hover:bg-brand-dark transition-colors"
             >
               Explore Features

@@ -4,7 +4,7 @@ import { scrollToFeature } from "../../../utils/scroll";
 
 const navLinks = {
   Product: [
-    { name: "Features", path: "/features", external: false },
+    { name: "Features", path: "/solutions", external: false },
     { name: "Pricing", path: "/pricing#plans", external: false },
   ],
   Company: [

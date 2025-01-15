@@ -124,7 +124,7 @@ export const Hero: React.FC = () => {
                 <ArrowRight className="h-5 w-5" />
               </a>
               <a
-                href="/features"
+                href="/solutions"
                 className="inline-flex items-center gap-2 bg-brand-light/30 text-gray-900 border border-brand-light px-8 py-4 rounded-full font-medium hover:bg-brand-light/50 transition-colors"
               >
                 Learn More

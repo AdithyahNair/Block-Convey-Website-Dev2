@@ -8,32 +8,32 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   {
     label: "Solutions",
-    mainPath: "/features",
+    mainPath: "/solutions",
     subitems: [
       {
         title: "Credit Risk Assessment Module",
         description:
           "Ensure fairness and compliance in credit scoring with real-time bias detection and explainable decision-making tools",
-        path: "/features#credit-risk-assessment",
+        path: "/solutions#credit-risk-assessment",
       },
 
       {
         title: "Insurance Claims Module",
         description:
           "Streamline claims processing with fair, transparent, and compliant AI-powered decisions",
-        path: "/features#insurance-claims",
+        path: "/solutions#insurance-claims",
       },
       {
         title: "Fraud Detection Module",
         description:
           "Monitor AI-driven fraud detection systems for accuracy, transparency, and ethical anomaly detection",
-        path: "/features#fraud-detection",
+        path: "/solutions#fraud-detection",
       },
       {
         title: "Financial Advisory & Customer Service Module",
         description:
           "Enhance customer interactions with AI models that deliver personalized, unbiased, and explainable recommendations",
-        path: "/features#financial-advisory",
+        path: "/solutions#financial-advisory",
       },
     ],
   },
