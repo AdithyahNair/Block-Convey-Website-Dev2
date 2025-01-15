@@ -62,7 +62,7 @@ export const StorageService: React.FC = () => {
               Access Block Convey Drive
             </a>
             <a
-              href="https://calendly.com/arunprasad-11/product-demo-call"
+              href="https://calendly.com/arunprasad-11/60min"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-brand-light/20 text-gray-900 border border-brand-light px-8 py-4 rounded-xl font-medium hover:bg-brand-light/30 transition-colors"
