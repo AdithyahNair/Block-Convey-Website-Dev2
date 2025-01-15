@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import {
   Link2,
   Activity,
-  Scale,
-  Lock,
   BarChart2,
   Shield,
   AlertTriangle,
@@ -16,41 +14,17 @@ const benefits = [
     icon: Link2,
     title: "Blockchain-Powered Oversight",
     description:
-      "Immutable audit trails ensure compliance and transparency across all AI operations.",
+      "Build confidence with stakeholders through transparent, explainable AI governance.",
     gradient: "from-blue-500/20 via-blue-500/10 to-transparent",
     iconColor: "text-blue-600",
   },
   {
     icon: Activity,
-    title: "Proactive AI Monitoring",
+    title: "Fairness and Bias",
     description:
       "Real-time detection of fairness issues, bias, and model drift to maintain optimal performance.",
     gradient: "from-emerald-500/20 via-emerald-500/10 to-transparent",
     iconColor: "text-emerald-600",
-  },
-  {
-    icon: Scale,
-    title: "Scalable Solutions",
-    description:
-      "Flexible infrastructure that grows with your organization, from startup to enterprise.",
-    gradient: "from-violet-500/20 via-violet-500/10 to-transparent",
-    iconColor: "text-violet-600",
-  },
-  {
-    icon: Lock,
-    title: "Enhanced Trust",
-    description:
-      "Build confidence with stakeholders through transparent, explainable AI governance.",
-    gradient: "from-amber-500/20 via-amber-500/10 to-transparent",
-    iconColor: "text-amber-600",
-  },
-  {
-    icon: BarChart2,
-    title: "Real-time Dashboard",
-    description:
-      "Track model performance and compliance in real-time with comprehensive monitoring and analytics.",
-    gradient: "from-rose-500/20 via-rose-500/10 to-transparent",
-    iconColor: "text-rose-600",
   },
   {
     icon: Shield,
@@ -60,6 +34,15 @@ const benefits = [
     gradient: "from-cyan-500/20 via-cyan-500/10 to-transparent",
     iconColor: "text-cyan-600",
   },
+  {
+    icon: BarChart2,
+    title: "Real-time Dashboard",
+    description:
+      "Track model performance and compliance in real-time with comprehensive monitoring and analytics.",
+    gradient: "from-rose-500/20 via-rose-500/10 to-transparent",
+    iconColor: "text-rose-600",
+  },
+
   {
     icon: AlertTriangle,
     title: "Risk Assessment",
@@ -95,8 +78,10 @@ export const WhyChooseUs: React.FC = () => {
             Why Choose Block Convey?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive platform provides the tools and oversight needed
-            for responsible AI governance in financial services.
+            The swift adoption of AI in the financial industry highlights the
+            pressing need for strong governance. Our comprehensive platform
+            provides the tools and oversight needed for responsible AI
+            governance in financial services.
           </p>
         </motion.div>
 

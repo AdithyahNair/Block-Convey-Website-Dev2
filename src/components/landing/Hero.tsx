@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
     if (!isPaused) {
       const timer = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % descriptions.length);
-      }, 3000);
+      }, 2000);
 
       return () => clearInterval(timer);
     }

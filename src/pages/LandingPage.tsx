@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar } from "../components/landing/Navbar";
 import { Hero } from "../components/landing/Hero";
 import { CircleTextSection } from "../components/landing/CircleTextSection";
-import { Statistics } from "../components/landing/Statistics";
+// import { Statistics } from "../components/landing/Statistics";
 import { Partners } from "../components/landing/Partners";
 import { WhyChooseUs } from "../components/landing/WhyChooseUs";
 import { Footer } from "../components/landing/Footer";
@@ -17,8 +17,6 @@ export const LandingPage: React.FC = () => {
         <Partners />
         <CircleTextSection />
         <WhyChooseUs />
-
-        <Statistics />
 
         <WavyCTA />
         <Footer />
