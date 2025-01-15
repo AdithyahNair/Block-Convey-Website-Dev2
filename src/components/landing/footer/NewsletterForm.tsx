@@ -19,7 +19,7 @@ export const NewsletterForm: React.FC = () => {
         {
           to_name: "Admin",
           from_name: "Newsletter System",
-          to_email: "gokulnpc@gmail.com",
+          to_email: "arunprasad@blockconvey.com",
           from_email: email,
           message: "Hey you got a new subscriber to your newsletter!",
           subscriber_email: email,
