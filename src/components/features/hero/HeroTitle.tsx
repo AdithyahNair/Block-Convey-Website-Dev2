@@ -15,9 +15,7 @@ export const HeroTitle: React.FC = () => {
           <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Revolutionize <br />
             <span>Financial AI Governance with </span>
-            <span className="text-brand">
-              Blockchain-Powered Oversight
-            </span>
+            <span className="text-brand">Blockchain-Powered Oversight</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8">
             Empower financial models with immutable compliance, risk management,
@@ -25,7 +23,7 @@ export const HeroTitle: React.FC = () => {
             your financial processes with cutting-edge blockchain technology.
           </p>
           <Link
-            to="https://calendly.com/arunprasad-11/60min"
+            to="https://calendly.com/arunprasad-11/product-demo-call"
             target="_blank"
             className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-xl font-medium hover:bg-brand-dark transition-colors"
           >

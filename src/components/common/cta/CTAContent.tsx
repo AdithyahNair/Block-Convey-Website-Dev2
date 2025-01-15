@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const CTAContent: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ export const CTAContent: React.FC = () => {
 
         <div className="flex flex-wrap justify-center gap-4">
           <motion.a
-            href="https://calendly.com/arunprasad-11/60min"
+            href="https://calendly.com/arunprasad-11/product-demo-call"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-xl font-medium hover:bg-brand-dark transition-colors"

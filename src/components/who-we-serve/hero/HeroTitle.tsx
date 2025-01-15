@@ -33,7 +33,7 @@ export const HeroTitle: React.FC = () => {
               <ArrowRight className="h-5 w-5" />
             </Link>
             <a
-              href="https://calendly.com/arunprasad-11/60min"
+              href="https://calendly.com/arunprasad-11/product-demo-call"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-xl font-medium hover:bg-gray-800 transition-colors"

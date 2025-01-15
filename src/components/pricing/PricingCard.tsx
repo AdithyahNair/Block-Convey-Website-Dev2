@@ -50,7 +50,7 @@ export const PricingCard: React.FC<PricingCardProps> = ({ plan, index }) => {
       </div>
 
       <a
-        href="https://calendly.com/arunprasad-11/60min"
+        href="https://calendly.com/arunprasad-11/product-demo-call"
         target="_blank"
         rel="noopener noreferrer"
         className={`w-full flex items-center justify-center gap-2 rounded-xl py-4 px-6 font-medium 

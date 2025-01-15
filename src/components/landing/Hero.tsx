@@ -115,7 +115,7 @@ export const Hero: React.FC = () => {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://calendly.com/arunprasad-11/60min"
+                href="https://calendly.com/arunprasad-11/product-demo-call"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full font-medium hover:bg-brand-dark transition-colors"
