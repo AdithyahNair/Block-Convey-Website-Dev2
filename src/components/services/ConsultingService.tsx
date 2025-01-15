@@ -83,7 +83,6 @@ export const ConsultingService: React.FC = () => {
         </div>
       </div>
 
-      {/* Services Section */}
       <section className="py-24 bg-gradient-to-b from-brand-light/40 to-brand-lightest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
