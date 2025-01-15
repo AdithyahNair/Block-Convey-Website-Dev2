@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export const NewsletterForm: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -11,12 +12,31 @@ export const NewsletterForm: React.FC = () => {
     e.preventDefault();
     setStatus("loading");
 
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID_NS,
+        {
+          to_name: "Admin",
+          from_name: "Newsletter System",
+          to_email: "gokulnpc@gmail.com",
+          from_email: email,
+          message: "Hey you got a new subscriber to your newsletter!",
+          subscriber_email: email,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
       setStatus("success");
       setEmail("");
+      // Reset success message after 3 seconds
       setTimeout(() => setStatus("idle"), 3000);
-    }, 1000);
+    } catch (error) {
+      setStatus("error");
+      console.error("Failed to send email:", error);
+      // Reset error message after 3 seconds
+      setTimeout(() => setStatus("idle"), 3000);
+    }
   };
 
   return (
@@ -24,7 +44,6 @@ export const NewsletterForm: React.FC = () => {
       <h3 className="text-sm font-medium text-gray-900 mb-4">
         Subscribe to our newsletter
       </h3>
-
       <form onSubmit={handleSubmit} className="flex gap-2">
         <input
           type="email"
@@ -49,14 +68,14 @@ export const NewsletterForm: React.FC = () => {
           )}
         </button>
       </form>
-
       {status === "success" && (
         <p className="mt-2 text-xs text-green-600">Thanks for subscribing!</p>
       )}
-
       {status === "error" && (
         <p className="mt-2 text-xs text-red-600">Please try again.</p>
       )}
     </div>
   );
 };
+
+export default NewsletterForm;
