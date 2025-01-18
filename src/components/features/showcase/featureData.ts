@@ -1,11 +1,4 @@
-import {
-  CreditCard,
-  LineChart,
-  Shield,
-  Lock,
-  AlertTriangle,
-  BarChart2,
-} from "lucide-react";
+import { CreditCard, LineChart, Shield, Lock } from "lucide-react";
 import { Feature } from "./types";
 
 export const featureData: Feature[] = [
