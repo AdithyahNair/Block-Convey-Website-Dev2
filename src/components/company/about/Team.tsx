@@ -111,7 +111,7 @@ const TeamSection: React.FC<{
             {/* Card */}
             <div className="relative bg-white rounded-2xl overflow-hidden shadow-sm group-hover:shadow-xl transition-all duration-300 border border-brand-light/30">
               {/* Image Container */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative  overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10" />
                 <img
                   src={member.image}
