@@ -8,7 +8,7 @@ import wei_adv from "../../../assets/wei_adv.jpeg";
 import gou_adv from "../../../assets/gou_adv.jpeg";
 import veera_adv from "../../../assets/veera_adv.jpeg";
 import illias_adv from "../../../assets/illias_adv.jpeg";
-import son_le from "../../../assets/son_le.jpeg";
+import son_le from "../../../assets/son_le.png";
 import connor from "../../../assets/connor.jpeg";
 const teamMembers = {
   leadership: [
