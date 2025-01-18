@@ -39,7 +39,7 @@ const teamMembers = {
   ],
   advisors: [
     {
-      name: "Son le",
+      name: "Son LSe",
       role: "Fractional CFO, Advisor",
       linkedin: "https://www.facebook.com/share/1BQm6sjkmS/?mibextid=wwXIfr",
       image: son_le,
