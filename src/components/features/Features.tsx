@@ -17,19 +17,14 @@ export const Features: React.FC = () => {
             Enterprise AI Features
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover how our platform helps you maintain transparency and compliance
-            in your AI operations.
+            Discover how our platform helps you maintain transparency and
+            compliance in your AI operations.
           </p>
         </motion.div>
 
-        {/* Features */}
         <div className="space-y-32">
           {featureData.map((feature, index) => (
-            <Feature 
-              key={feature.id} 
-              feature={feature} 
-              index={index} 
-            />
+            <Feature key={feature.id} feature={feature} index={index} />
           ))}
         </div>
       </div>
