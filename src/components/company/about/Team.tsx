@@ -1,15 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Users, Lightbulb, Linkedin } from "lucide-react";
-import arun_team from "../../../assets/arun_team.jpeg";
-import tim_team from "../../../assets/tim_team.jpeg";
-import cam_team from "../../../assets/cam_team.jpeg";
-import wei_adv from "../../../assets/wei_adv.jpeg";
-import gou_adv from "../../../assets/gou_adv.jpeg";
-import veera_adv from "../../../assets/veera_adv.jpeg";
-import illias_adv from "../../../assets/illias_adv.jpeg";
+import arun_team from "../../../assets/arun_team.png";
+import tim_team from "../../../assets/tim_team.png";
+import cam_team from "../../../assets/cam_team.png";
+import wei_adv from "../../../assets/wei_adv.png";
+import gou_adv from "../../../assets/gou_adv.png";
+import veera_adv from "../../../assets/veera_adv.png";
+import illias_adv from "../../../assets/illias_adv.png";
 import son_le from "../../../assets/son_le.png";
-import connor from "../../../assets/connor.jpeg";
+import connor from "../../../assets/connor.png";
 const teamMembers = {
   leadership: [
     {

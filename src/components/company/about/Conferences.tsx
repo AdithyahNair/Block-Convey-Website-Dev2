@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
-import nyu_conf from "../../../assets/nyu_conf.jpeg";
-import wbs_conf from "../../../assets/wbs_conf.jpeg";
-import vs_conf from "../../../assets/vs_conf.jpeg";
-import cornell_conf from "../../../assets/cornell_conf.jpeg";
+import nyu_conf from "../../../assets/nyu_conf.png";
+import wbs_conf from "../../../assets/wbs_conf.png";
+import vs_conf from "../../../assets/vs_conf.png";
+import cornell_conf from "../../../assets/cornell_conf.png";
 const conferences = [
   {
     title: "World Blockchain Summit",
