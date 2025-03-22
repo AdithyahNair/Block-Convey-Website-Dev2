@@ -8,7 +8,7 @@ export const NavActions: React.FC = () => {
         href="https://app.blockconvey.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 bg-brand-light/20 text-gray-900 px-6 py-2.5 rounded-xl hover:bg-brand-light/40 transition-colors font-medium whitespace-nowrap"
+        className="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-6 py-2.5 rounded-xl hover:bg-gray-800 transition-all duration-200 font-medium whitespace-nowrap shadow-sm hover:shadow-md"
       >
         Get Started
         <ArrowRight className="h-4 w-4" />
@@ -17,7 +17,7 @@ export const NavActions: React.FC = () => {
         href="https://calendly.com/arunprasad-11/product-demo-call"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 bg-brand text-white px-6 py-2.5 rounded-xl hover:bg-brand-dark transition-colors font-medium whitespace-nowrap"
+        className="inline-flex items-center justify-center gap-2 bg-brand text-white px-6 py-2.5 rounded-xl hover:bg-brand-dark transition-all duration-200 font-medium whitespace-nowrap shadow-sm hover:shadow-md"
       >
         Book Demo
         <ArrowRight className="h-4 w-4" />
