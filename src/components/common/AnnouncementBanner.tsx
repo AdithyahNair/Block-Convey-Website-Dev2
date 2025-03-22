@@ -27,32 +27,32 @@ export const AnnouncementBanner: React.FC = () => {
       />
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto py-3 px-4">
-        <div className="flex items-center justify-center gap-3">
+      <div className="relative max-w-7xl mx-auto py-4 px-4">
+        <div className="flex items-center justify-center gap-4">
           {/* Left sparkle */}
           <div className="relative">
-            <Sparkles className="h-5 w-5 text-white animate-pulse" />
+            <Sparkles className="h-6 w-6 text-white animate-pulse" />
             <div className="absolute inset-0 bg-white/20 blur-xl rounded-full -z-10" />
           </div>
 
           {/* Main content */}
-          <div className="flex items-center gap-4">
-            <span className="text-white font-medium">
+          <div className="flex items-center gap-6">
+            <span className="text-white font-medium text-lg">
               Coming Soon: PRISM - Our Revolutionary AI Compliance Checking Tool
             </span>
             <a
               href="https://app.blockconvey.com"
               target="_blank"
-              className="hidden sm:inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-1 rounded-full text-sm font-medium transition-all duration-200 border border-white/20 hover:border-white/40"
+              className="hidden sm:inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-2 rounded-full text-base font-medium transition-all duration-200 border border-white/20 hover:border-white/40"
             >
               Learn More
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-5 w-5" />
             </a>
           </div>
 
           {/* Right sparkle */}
           <div className="relative">
-            <Sparkles className="h-5 w-5 text-white animate-pulse" />
+            <Sparkles className="h-6 w-6 text-white animate-pulse" />
             <div className="absolute inset-0 bg-white/20 blur-xl rounded-full -z-10" />
           </div>
         </div>
