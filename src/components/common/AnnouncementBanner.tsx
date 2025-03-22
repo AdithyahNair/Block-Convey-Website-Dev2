@@ -1,66 +1,37 @@
 import React from "react";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const AnnouncementBanner: React.FC = () => {
   return (
-    <div className="relative overflow-hidden">
-      {/* Background with gradient and blur */}
-      <div className="absolute inset-0 bg-gradient-to-r from-brand via-brand-dark to-brand opacity-90 backdrop-blur-sm" />
-
-      {/* Animated background elements */}
-      <motion.div
-        className="absolute inset-0 opacity-10"
-        animate={{
-          backgroundPosition: ["0% 0%", "100% 100%"],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at center, white 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-        }}
-      />
-
-      {/* Content */}
-      <div className="relative max-w-7xl mx-auto py-4 px-4">
-        <div className="flex items-center justify-center gap-4">
-          {/* Left sparkle */}
-          <div className="relative">
-            <Sparkles className="h-6 w-6 text-white animate-pulse" />
-            <div className="absolute inset-0 bg-white/20 blur-xl rounded-full -z-10" />
-          </div>
-
-          {/* Main content */}
+    <div className="relative overflow-hidden bg-brand">
+      <div className="relative max-w-7xl mx-auto px-4 py-8">
+        <div className="flex items-center justify-center gap-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="relative"
+          >
+            <Sparkles className="h-10 w-10 text-white animate-pulse" />
+          </motion.div>
           <div className="flex items-center gap-6">
-            <span className="text-white font-medium text-lg">
-              Coming Soon: PRISM - Our Revolutionary AI Compliance Checking Tool
+            <span className="text-2xl text-white font-medium">
+              PRISM : Predictive Risk and Intelligence Surveillance Monitor
             </span>
             <a
-              href="https://app.blockconvey.com"
-              target="_blank"
-              className="hidden sm:inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-2 rounded-full text-base font-medium transition-all duration-200 border border-white/20 hover:border-white/40"
+              href="/prism"
+              rel="noopener noreferrer"
+              className="text-xl text-white/90 hover:text-white transition-colors font-medium hover:underline"
             >
-              Learn More
-              <ArrowRight className="h-5 w-5" />
+              Learn More →
             </a>
-          </div>
-
-          {/* Right sparkle */}
-          <div className="relative">
-            <Sparkles className="h-6 w-6 text-white animate-pulse" />
-            <div className="absolute inset-0 bg-white/20 blur-xl rounded-full -z-10" />
           </div>
         </div>
       </div>
 
-      {/* Side gradients for depth effect */}
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-brand to-transparent" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-brand to-transparent" />
+      {/* Subtle gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/20 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-l from-brand-dark/20 to-transparent pointer-events-none" />
     </div>
   );
 };
