@@ -1,15 +1,20 @@
-import React from "react";
-import { DropdownItem } from "./DropdownItem";
+import React from 'react'
+import { DropdownItem } from './DropdownItem'
 
 interface DropdownItem {
-  title: string;
-  description: string;
-  path?: string;
+  title: string
+  description: string
+  path?: string
+  submenu?: Array<{
+    title: string
+    description: string
+    path?: string
+  }>
 }
 
 interface DropdownContentProps {
-  items: DropdownItem[];
-  onItemClick?: (path?: string) => void;
+  items: DropdownItem[]
+  onItemClick?: (path?: string) => void
 }
 
 export const DropdownContent: React.FC<DropdownContentProps> = ({
@@ -32,5 +37,5 @@ export const DropdownContent: React.FC<DropdownContentProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

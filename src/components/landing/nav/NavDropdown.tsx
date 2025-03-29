@@ -1,18 +1,23 @@
-import React from "react";
-import { AnimatePresence } from "framer-motion";
-import { DropdownTrigger } from "./dropdown/DropdownTrigger";
-import { DropdownContent } from "./dropdown/DropdownContent";
+import React from 'react'
+import { AnimatePresence } from 'framer-motion'
+import { DropdownTrigger } from './dropdown/DropdownTrigger'
+import { DropdownContent } from './dropdown/DropdownContent'
 
 interface NavDropdownProps {
-  label: string;
+  label: string
   items: Array<{
-    title: string;
-    description: string;
-    path?: string;
-  }>;
-  isOpen: boolean;
-  onToggle: () => void;
-  onItemClick?: (path?: string) => void;
+    title: string
+    description: string
+    path?: string
+    submenu?: Array<{
+      title: string
+      description: string
+      path?: string
+    }>
+  }>
+  isOpen: boolean
+  onToggle: () => void
+  onItemClick?: (path?: string) => void
 }
 
 export const NavDropdown: React.FC<NavDropdownProps> = ({
@@ -29,5 +34,5 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({
         {isOpen && <DropdownContent items={items} onItemClick={onItemClick} />}
       </AnimatePresence>
     </div>
-  );
-};
+  )
+}

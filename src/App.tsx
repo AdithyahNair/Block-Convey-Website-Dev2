@@ -1,17 +1,18 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { LandingPage } from "./pages/LandingPage";
-import { FeaturesPage } from "./pages/FeaturesPage";
-import { PricingPage } from "./pages/PricingPage";
-import { WhoWeServePage } from "./pages/WhoWeServePage";
-import { CompanyPage } from "./pages/CompanyPage";
-import { ServicesPage } from "./pages/ServicesPage";
-import { ResourcesPage } from "./pages/ResourcesPage";
-import { ConsultingPage } from "./pages/ConsultingPage";
-import { PrivacyPage } from "./pages/PrivacyPage";
-import { TermsPage } from "./pages/TermsPage";
-import { PrismPage } from "./pages/PrismPage";
-import { BlogListPage } from "./pages/BlogListPage";
-import { BlogDetailPage } from "./pages/BlogDetailPage";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { LandingPage } from './pages/LandingPage'
+import { FeaturesPage } from './pages/FeaturesPage'
+import { PricingPage } from './pages/PricingPage'
+import { WhoWeServePage } from './pages/WhoWeServePage'
+import { CompanyPage } from './pages/CompanyPage'
+import { ServicesPage } from './pages/ServicesPage'
+import { ResourcesPage } from './pages/ResourcesPage'
+import { ConsultingPage } from './pages/ConsultingPage'
+import { PrivacyPage } from './pages/PrivacyPage'
+import { TermsPage } from './pages/TermsPage'
+import { PrismPage } from './pages/PrismPage'
+import { BlogListPage } from './pages/BlogListPage'
+import { BlogDetailPage } from './pages/BlogDetailPage'
+import { ComingSoonPage } from './pages/ComingSoonPage'
 
 function App() {
   return (
@@ -31,9 +32,10 @@ function App() {
         {/* Add new blog routes */}
         <Route path="/blogs" element={<BlogListPage />} />
         <Route path="/blogs/:slug" element={<BlogDetailPage />} />
+        <Route path="/coming-soon" element={<ComingSoonPage />} />
       </Routes>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
