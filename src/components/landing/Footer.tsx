@@ -1,9 +1,9 @@
-import React from "react";
-import { FooterLogo } from "./footer/FooterLogo";
-import { FooterNavLinks } from "./footer/FooterNavLinks";
-import { FooterSocialLinks } from "./footer/FooterSocialLinks";
-import { FooterCopyright } from "./footer/FooterCopyright";
-import { NewsletterForm } from "./footer/NewsletterForm";
+import React from 'react'
+import { FooterLogo } from './footer/FooterLogo'
+import { FooterNavLinks } from './footer/FooterNavLinks'
+import { FooterSocialLinks } from './footer/FooterSocialLinks'
+import { FooterCopyright } from './footer/FooterCopyright'
+import { NewsletterForm } from './footer/NewsletterForm'
 
 export const Footer: React.FC = () => {
   return (
@@ -11,7 +11,9 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-4 space-y-8">
-            <FooterLogo />
+            <div className="mb-2">
+              <FooterLogo />
+            </div>
             <p className="text-gray-600 max-w-md">
               Revolutionizing enterprise AI with blockchain-powered governance
               solutions for transparent, compliant, and efficient operations.
@@ -28,5 +30,5 @@ export const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}

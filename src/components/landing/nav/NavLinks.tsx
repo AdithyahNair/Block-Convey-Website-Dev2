@@ -1,39 +1,44 @@
-import React, { useState, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import { NavDropdown } from "./NavDropdown";
-import { useClickOutside } from "../../../hooks/useClickOutside";
+import React, { useState, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { NavDropdown } from './NavDropdown'
+import { useClickOutside } from '../../../hooks/useClickOutside'
 
 interface NavLinksProps {
   items: Array<{
-    label: string;
+    label: string
     subitems: Array<{
-      title: string;
-      description: string;
-      path?: string;
-    }>;
-  }>;
+      title: string
+      description: string
+      path?: string
+      submenu?: Array<{
+        title: string
+        description: string
+        path?: string
+      }>
+    }>
+  }>
 }
 
 export const NavLinks: React.FC<NavLinksProps> = ({ items }) => {
-  const navigate = useNavigate();
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const navigate = useNavigate()
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 
   const handleClose = useCallback(() => {
-    setOpenDropdown(null);
-  }, []);
+    setOpenDropdown(null)
+  }, [])
 
   const handleItemClick = (path?: string) => {
     if (path) {
-      navigate(path);
-      handleClose();
+      navigate(path)
+      handleClose()
     }
-  };
+  }
 
-  const ref = useClickOutside(handleClose);
+  const ref = useClickOutside(handleClose)
 
   const handleToggle = (label: string) => {
-    setOpenDropdown(openDropdown === label ? null : label);
-  };
+    setOpenDropdown(openDropdown === label ? null : label)
+  }
 
   return (
     <div
@@ -51,5 +56,5 @@ export const NavLinks: React.FC<NavLinksProps> = ({ items }) => {
         />
       ))}
     </div>
-  );
-};
+  )
+}

@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../../../assets/logo.svg";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import logo from '../../../assets/logo.svg'
 
 export const FooterLogo: React.FC = () => {
   return (
@@ -11,8 +11,12 @@ export const FooterLogo: React.FC = () => {
       <img
         src={logo}
         alt="Block Convey"
-        className="h-16 w-32 object-cover object-center"
+        className="h-20 w-40 object-cover object-center transform"
+        style={{
+          transform: 'scale(1.2)',
+          objectPosition: 'center',
+        }}
       />
     </Link>
-  );
-};
+  )
+}
