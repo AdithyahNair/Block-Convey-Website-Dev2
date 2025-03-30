@@ -18,20 +18,26 @@ import { Link } from 'react-router-dom'
 
 export const PrismPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-brand-lightest">
+    <div className="min-h-screen bg-brand-lightest overflow-x-hidden w-full max-w-[100vw]">
       {/* Navigation */}
       <Navbar />
 
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ADD2C933_1px,transparent_1px),linear-gradient(to_bottom,#ADD2C933_1px,transparent_1px)] bg-[size:14px_24px]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-lightest to-transparent" />
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-brand-light/10 rounded-full blur-[128px] -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand/10 rounded-full blur-[128px] translate-x-1/2 translate-y-1/2" />
+      <div className="absolute inset-0 overflow-hidden">
+        <div
+          className="absolute -top-96 -left-96 w-[50rem] h-[50rem] rounded-full bg-gradient-to-br from-brand-light/20 to-brand/10 blur-3xl"
+          style={{ transform: 'translate3d(0, 0, 0)' }}
+        />
+        <div
+          className="absolute -bottom-96 -right-96 w-[50rem] h-[50rem] rounded-full bg-gradient-to-tr from-brand-light/20 to-brand/10 blur-3xl"
+          style={{ transform: 'translate3d(0, 0, 0)' }}
+        />
+      </div>
 
       {/* Hero Section */}
       <section className="relative pt-40 pb-24 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Column - Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -67,10 +73,11 @@ export const PrismPage: React.FC = () => {
                   transition={{ duration: 0.7 }}
                   className="relative z-10"
                 >
-                  <h1 className="text-5xl md:text-6xl font-bold mb-8">
-                    <span className="text-brand">PRISM:</span>{' '}
-                    <span className="text-gray-900">
-                      Deploy AI With Confidence
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                    <span className="text-gray-900">PRISM</span>
+                    <span className="mx-2 text-gray-400">:</span>
+                    <span className="text-brand">
+                      Unlock the Power of Transparent AI
                     </span>
                   </h1>
                 </motion.div>
@@ -102,11 +109,11 @@ export const PrismPage: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="w-full relative"
+              className="w-full relative max-w-full"
             >
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 relative overflow-hidden">
-                <Quote className="h-12 w-12 text-brand/20 mb-4" />
-                <p className="text-gray-800 italic text-lg mb-6 relative z-10">
+              <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <Quote className="h-10 w-10 md:h-12 md:w-12 text-brand/20 mb-3 md:mb-4" />
+                <p className="text-gray-800 italic text-base md:text-lg mb-4 md:mb-6 relative z-10 break-words">
                   "PRISM is the ultimate game-changer for ethical AI
                   development, offering a seamless blend of transparency,
                   performance, and regulatory compliance."
@@ -124,9 +131,9 @@ export const PrismPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-6 bg-white p-8 rounded-2xl shadow-sm border border-gray-200 relative overflow-hidden">
-                <Quote className="h-12 w-12 text-brand/20 mb-4" />
-                <p className="text-gray-800 italic text-lg mb-6 relative z-10">
+              <div className="mt-6 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <Quote className="h-10 w-10 md:h-12 md:w-12 text-brand/20 mb-3 md:mb-4" />
+                <p className="text-gray-800 italic text-base md:text-lg mb-4 md:mb-6 relative z-10 break-words">
                   "With PRISM, I can effectively communicate the 'why' behind
                   each prediction, fostering trust and confidence in AI
                   systems."
@@ -151,7 +158,7 @@ export const PrismPage: React.FC = () => {
       {/* Problem Statement Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             <div className="p-8 bg-gradient-to-br from-brand-light/10 to-brand-light/5 backdrop-blur-sm rounded-2xl border border-white/20 shadow-sm">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 The Challenge of AI Governance
@@ -179,12 +186,12 @@ export const PrismPage: React.FC = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-16 bg-brand-lightest">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
             Key Features
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-brand-light/10">
               <h4 className="text-xl font-bold text-gray-900 mb-4">
                 Explainability Tools
@@ -256,8 +263,8 @@ export const PrismPage: React.FC = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-brand-lightest">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-brand-lightest overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -269,7 +276,7 @@ export const PrismPage: React.FC = () => {
             </h3>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -338,52 +345,55 @@ export const PrismPage: React.FC = () => {
 
       {/* Coming Soon Section */}
       <section className="py-20 bg-brand-lightest relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-brand/10"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-white border border-brand-light/10 rounded-2xl p-12 shadow-sm"
-          >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand text-white p-3 rounded-full shadow-sm">
-              <Crown className="h-6 w-6" />
-            </div>
-
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
-              Coming Soon: <span className="text-brand">PRISM Pro</span>
-            </h3>
-
-            <p className="text-gray-800 max-w-3xl mx-auto mb-10">
-              Elevate your compliance and Fintech operations with advanced AI
-              governance. Purpose-built for fintech AI teams, PRISM Pro
-              accelerates the deployment of models in critical areas such as
-              Anti-Money Laundering (AML), Know Your Customer (KYC), and fraud
-              detection, all while ensuring strict compliance with evolving AI
-              regulations.
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-8 mb-8">
-              <div className="flex items-center gap-2">
-                <Zap className="h-5 w-5 text-brand" />
-                <span className="text-gray-800">
-                  Automated Compliance Reporting
-                </span>
+        <div className="relative">
+          <div className="absolute top-0 left-0 right-0 h-1 bg-brand/10"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="bg-white border border-brand-light/10 rounded-2xl p-8 md:p-12 shadow-sm"
+            >
+              <div
+                className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand text-white p-2 sm:p-3 rounded-full shadow-sm"
+                style={{ maxWidth: 'calc(100% - 2rem)' }}
+              >
+                <Crown className="h-6 w-6" />
               </div>
-              <div className="flex items-center gap-2">
-                <Lightbulb className="h-5 w-5 text-brand" />
-                <span className="text-gray-800">
-                  Regulatory Change Management
-                </span>
-              </div>
-            </div>
 
-            <p className="text-xl text-brand italic font-medium">
-              Transform compliance from a cost center to a competitive advantage
-              with PRISM Pro
-            </p>
-          </motion.div>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">
+                Coming Soon: <span className="text-brand">PRISM Pro</span>
+              </h3>
+
+              <p className="text-gray-800 max-w-3xl mx-auto mb-6 md:mb-10 text-sm md:text-base">
+                Elevate your compliance and Fintech operations with advanced AI
+                governance. Purpose-built for fintech AI teams, PRISM Pro
+                accelerates the deployment of models in critical areas such as
+                Anti-Money Laundering (AML), Know Your Customer (KYC), and fraud
+                detection, all while ensuring strict compliance with evolving AI
+                regulations.
+              </p>
+
+              <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-8 mb-6 md:mb-8">
+                <div className="flex items-center gap-2">
+                  <Zap className="h-5 w-5 flex-shrink-0 text-brand" />
+                  <span className="text-gray-800 text-sm md:text-base">
+                    Automated Compliance Reporting
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Lightbulb className="h-5 w-5 flex-shrink-0 text-brand" />
+                  <span className="text-gray-800 text-sm md:text-base">
+                    Regulatory Change Management
+                  </span>
+                </div>
+              </div>
+
+              <p className="text-lg md:text-xl text-brand italic font-medium">
+                Transform compliance with PRISM Pro
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 

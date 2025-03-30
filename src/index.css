@@ -7,6 +7,13 @@
     --navy-800: #1e2c4f;
     --navy-900: #0f172a;
   }
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    max-width: 100vw;
+  }
 }
 
 @keyframes blob {
