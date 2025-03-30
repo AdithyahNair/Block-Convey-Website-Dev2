@@ -24,3 +24,10 @@ handlers:
 
 env_variables:
   NODE_ENV: production
+  VITE_API_KEY: "AIzaSyAfe6vLmhpFxch7F1S7_IN2pnFjvKB54Ic",
+  VITE_AUTH_DOMAIN: "block-convey---blog.firebaseapp.com"
+  VITE_PROJECT_ID: "block-convey---blog"
+  VITE_STORAGE_BUCKET: "block-convey---blog.firebasestorage.app"
+  VITE_MESSAGING_SENDER_ID: "930903797002"
+  VITE_APP_ID: "1:930903797002:web:75bfaa696b2115bc3f1ef3"
+
