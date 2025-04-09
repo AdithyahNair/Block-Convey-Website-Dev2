@@ -1,5 +1,5 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react";
+import { motion } from "framer-motion";
 import {
   CheckCircle2,
   ArrowRight,
@@ -11,10 +11,10 @@ import {
   Rocket,
   Lightbulb,
   Crown,
-} from 'lucide-react'
-import { Footer } from '../components/landing/Footer'
-import { Navbar } from '../components/landing/Navbar'
-import { Link } from 'react-router-dom'
+} from "lucide-react";
+import { Footer } from "../components/landing/Footer";
+import { Navbar } from "../components/landing/Navbar";
+import { Link } from "react-router-dom";
 
 export const PrismPage: React.FC = () => {
   return (
@@ -26,11 +26,11 @@ export const PrismPage: React.FC = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div
           className="absolute -top-96 -left-96 w-[50rem] h-[50rem] rounded-full bg-gradient-to-br from-brand-light/20 to-brand/10 blur-3xl"
-          style={{ transform: 'translate3d(0, 0, 0)' }}
+          style={{ transform: "translate3d(0, 0, 0)" }}
         />
         <div
           className="absolute -bottom-96 -right-96 w-[50rem] h-[50rem] rounded-full bg-gradient-to-tr from-brand-light/20 to-brand/10 blur-3xl"
-          style={{ transform: 'translate3d(0, 0, 0)' }}
+          style={{ transform: "translate3d(0, 0, 0)" }}
         />
       </div>
 
@@ -123,7 +123,7 @@ export const PrismPage: React.FC = () => {
                     <span className="text-gray-700 font-bold">DZ</span>
                   </div>
                   <div>
-                    <p className="text-gray-900 font-medium">Davor Zillac</p>
+                    <p className="text-gray-900 font-medium">Davor Žilić</p>
                     <p className="text-gray-600 text-sm">
                       AML Consultant, D28 Finance
                     </p>
@@ -356,7 +356,7 @@ export const PrismPage: React.FC = () => {
             >
               <div
                 className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand text-white p-2 sm:p-3 rounded-full shadow-sm"
-                style={{ maxWidth: 'calc(100% - 2rem)' }}
+                style={{ maxWidth: "calc(100% - 2rem)" }}
               >
                 <Crown className="h-6 w-6" />
               </div>
@@ -400,5 +400,5 @@ export const PrismPage: React.FC = () => {
       {/* Footer */}
       <Footer />
     </div>
-  )
-}
+  );
+};
