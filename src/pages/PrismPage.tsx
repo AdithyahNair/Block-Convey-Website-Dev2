@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import { Footer } from "../components/landing/Footer";
 import { Navbar } from "../components/landing/Navbar";
-import { Link } from "react-router-dom";
 
 export const PrismPage: React.FC = () => {
   return (
@@ -94,13 +93,15 @@ export const PrismPage: React.FC = () => {
               </p>
 
               <div className="flex items-center space-x-4">
-                <Link
-                  to="/coming-soon"
+                <a
+                  href="https://prism.blockconvey.com"
                   className="inline-flex items-center justify-center gap-2 bg-brand text-white px-6 py-3 rounded-xl font-medium hover:bg-brand-dark transition-colors shadow-sm hover:shadow-md"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Get Started with PRISM Free Today
                   <ArrowRight className="h-5 w-5" />
-                </Link>
+                </a>
               </div>
             </motion.div>
 
