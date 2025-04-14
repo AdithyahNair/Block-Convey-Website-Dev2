@@ -1,16 +1,10 @@
 import React from "react";
 
 export const AnnouncementBanner: React.FC = () => {
-  // Direct navigation handler
-  const navigateToProductHunt = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.open("https://ai-gov-dashboard.vercel.app/", "_blank");
-  };
-
   return (
     <div className="bg-gray-50 border-2 border-gray-200 rounded-lg shadow-sm relative overflow-hidden hover:bg-gray-100 transition-colors duration-300 mx-4 my-3">
       {/* Interactive highlight effect on hover */}
-      <div className="absolute inset-0 bg-gradient-to-r from-teal-100/0 via-teal-100/20 to-teal-100/0 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-teal-100/0 via-teal-100/20 to-teal-100/0 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
       {/* Left accent bar - using teal/seafoam green color */}
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#5e9b99]"></div>
@@ -35,24 +29,24 @@ export const AnnouncementBanner: React.FC = () => {
             <span className="font-medium">
               Support Block Convey on Product Hunt!
             </span>
-            <span className="font-medium text-[#5e9b99]">
-              We're going LIVE SOON 🚀
-            </span>
+            <span className="font-medium text-[#5e9b99]">Live NOW! 🚀</span>
           </div>
 
-          {/* Simple button with hover effect */}
-          <button
-            onClick={navigateToProductHunt}
-            className="flex items-center bg-white border border-gray-200 px-3 py-2 rounded-full shadow-sm hover:shadow-md hover:border-[#5e9b99] transition-all duration-300 cursor-pointer group"
+          {/* Product Hunt Badge - with enhanced clickable area */}
+          <a
+            href="https://www.producthunt.com/posts/prism-by-block-convey?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-prism&#0045;by&#0045;block&#0045;convey"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center cursor-pointer z-10"
           >
-            <span className="text-sm text-gray-600 mr-1">
-              Launching soon on
-            </span>
-            <span className="text-orange-500 font-bold">Product Hunt</span>
-            <span className="ml-2 transform transition-transform duration-300 text-[#5e9b99] group-hover:translate-x-1">
-              →
-            </span>
-          </button>
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=953097&theme=light&t=1744595922977"
+              alt="PRISM&#0032;by&#0032;Block&#0032;Convey - Monitor&#0032;models&#0044;&#0032;explain&#0032;decisions&#0044;&#0032;&#0038;&#0032;future&#0045;proof&#0032;models&#0046;"
+              style={{ width: "250px", height: "54px" }}
+              width="250"
+              height="54"
+            />
+          </a>
         </div>
       </div>
     </div>
