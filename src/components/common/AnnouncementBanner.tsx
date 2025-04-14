@@ -34,7 +34,7 @@ export const AnnouncementBanner: React.FC = () => {
 
           {/* Product Hunt Badge - with enhanced clickable area */}
           <a
-            href="https://www.producthunt.com/posts/prism-by-block-convey?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-prism&#0045;by&#0045;block&#0045;convey"
+            href="https://www.producthunt.com/posts/prism-by-block-convey?utm_source=other&utm_medium=social"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center cursor-pointer z-10"
