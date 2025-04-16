@@ -31,9 +31,8 @@ function initializeGoogleAnalytics() {
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
-  // Define gtag function to match Google Analytics expectations
-  window.gtag = function (...args: unknown[]) {
-    window.dataLayer.push({ arguments: args });
+  window.gtag = function (...args) {
+    window.dataLayer.push(args);
   };
   window.gtag("js", new Date());
   window.gtag("config", import.meta.env.VITE_GA_MEASUREMENT_ID);
