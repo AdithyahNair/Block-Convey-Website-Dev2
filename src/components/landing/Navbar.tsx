@@ -3,7 +3,7 @@ import { NavContainer } from './nav/NavContainer'
 import { NavLogo } from './nav/NavLogo'
 import { NavLinks } from './nav/NavLinks'
 import { NavActions } from './nav/NavActions'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Search } from 'lucide-react'
 
 const navItems = [
   {
@@ -152,23 +152,32 @@ export const Navbar: React.FC = () => {
 
   return (
     <NavContainer>
-      <div className="flex items-center justify-between h-16 px-4">
-        <div className="flex items-center gap-8">
+      <div className="flex items-center justify-between h-16">
+        <div className="flex items-center">
           <NavLogo />
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center">
-            <NavLinks items={navItems} />
-          </div>
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="hidden lg:block">
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center justify-center flex-1 px-8">
+          <NavLinks items={navItems} />
+        </div>
+
+        <div className="flex items-center">
+          <button 
+            className="p-2 text-gray-600 hover:text-gray-900"
+            aria-label="Search"
+          >
+            <Search className="h-5 w-5" />
+          </button>
+          <div className="hidden lg:block ml-4">
             <NavActions />
           </div>
+          
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-gray-600 hover:text-gray-900"
+            className="lg:hidden ml-2 text-gray-600 hover:text-gray-900"
+            aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -177,10 +186,10 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden mt-2 pb-4 px-4">
-          <div className="border-t pt-4">
+        <div className="lg:hidden pb-4">
+          <div className="pt-2 pb-3 border-t border-gray-200">
             <NavLinks items={navItems} />
-            <div className="mt-4">
+            <div className="mt-4 px-4">
               <NavActions />
             </div>
           </div>

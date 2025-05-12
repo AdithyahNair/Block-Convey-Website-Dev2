@@ -20,6 +20,7 @@ export default {
         counter: "counter 2s ease-out",
         float: "float 3s ease-in-out infinite",
         pulse: "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        scroll: "scroll 20s linear infinite",
       },
       keyframes: {
         counter: {
@@ -34,8 +35,21 @@ export default {
           "0%, 100%": { opacity: "0.5" },
           "50%": { opacity: "0.1" },
         },
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.hover\\:pause-animation:hover': {
+          'animation-play-state': 'paused',
+        },
+      }
+      addUtilities(newUtilities)
+    },
+  ],
 };

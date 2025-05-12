@@ -4,8 +4,11 @@ import { CTAContent } from "./CTAContent";
 
 export const WavyCTA: React.FC = () => {
   return (
-    <section className="relative min-h-[500px] overflow-hidden">
+    <section className="relative overflow-hidden">
+      {/* Background with animated waves */}
       <WavyBackground />
+      
+      {/* Content overlay */}
       <CTAContent />
     </section>
   );

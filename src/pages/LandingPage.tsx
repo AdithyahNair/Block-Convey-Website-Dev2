@@ -17,7 +17,6 @@ export const LandingPage: React.FC = () => {
         <Partners />
         <CircleTextSection />
         <WhyChooseUs />
-
         <WavyCTA />
         <Footer />
       </main>
