@@ -5,8 +5,7 @@ import { CircleTextSection } from "../components/landing/CircleTextSection";
 // import { Statistics } from "../components/landing/Statistics";
 import { Partners } from "../components/landing/Partners";
 import { BusinessValueSection } from "../components/landing/BusinessValueSection";
-import { WhyChooseUs } from "../components/landing/WhyChooseUs";
-import { CertificationProcessSection } from "../components/landing/CertificationProcessSection";
+import { WhyChooseBlockConveySection } from "../components/landing/WhyChooseBlockConveySection";
 import { Footer } from "../components/landing/Footer";
 import { WavyCTA } from "../components/common/cta/WavyCTA";
 
@@ -19,8 +18,7 @@ export const LandingPage: React.FC = () => {
         <Partners />
         <BusinessValueSection />
         <CircleTextSection />
-        <WhyChooseUs />
-        <CertificationProcessSection />
+        <WhyChooseBlockConveySection />
         <WavyCTA />
         <Footer />
       </main>
