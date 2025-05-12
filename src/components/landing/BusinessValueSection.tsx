@@ -11,38 +11,54 @@ import {
   Clock,
   Activity,
 } from "lucide-react";
+import tab from "../../../public/tab.png";
 
 export const BusinessValueSection: React.FC = () => {
   // The main categories from the diagram
   const valueCategories = [
     {
-      title: "Deliver High Performance AI",
+      title: "Deploy AI with Confidence",
       icon: <Eye className="w-5 h-5 text-teal-600" />,
       items: [
         { name: "Performance", icon: <BarChart4 className="w-4 h-4" /> },
-        { name: "Quality", icon: <CheckCircle className="w-4 h-4" /> },
+        { name: "Fairness", icon: <CheckCircle className="w-4 h-4" /> },
         { name: "Metrics monitoring", icon: <Monitor className="w-4 h-4" /> },
-        { name: "Correctness", icon: <CheckCircle className="w-4 h-4" /> },
-      ],
-    },
-    {
-      title: "Reduce Costs, Increase ROI",
-      icon: <TrendingUp className="w-5 h-5 text-teal-600" />,
-      items: [
-        { name: "ROI analysis", icon: <TrendingUp className="w-4 h-4" /> },
-        { name: "A/B test", icon: <Activity className="w-4 h-4" /> },
-        { name: "Latency", icon: <Clock className="w-4 h-4" /> },
-        { name: "Traffic", icon: <Zap className="w-4 h-4" /> },
+        {
+          name: "Model Explainability",
+          icon: <CheckCircle className="w-4 h-4" />,
+        },
       ],
     },
     {
       title: "Responsible Governance",
+      icon: <TrendingUp className="w-5 h-5 text-teal-600" />,
+      items: [
+        {
+          name: "EU AI Act Readiness",
+          icon: <TrendingUp className="w-4 h-4" />,
+        },
+        { name: "ISO 42001 checklist", icon: <Activity className="w-4 h-4" /> },
+        { name: "NIST AI RMF", icon: <Clock className="w-4 h-4" /> },
+        { name: "Traffic", icon: <Zap className="w-4 h-4" /> },
+      ],
+    },
+    {
+      title: "Reduce Risk, Increase Value",
       icon: <Shield className="w-5 h-5 text-teal-600" />,
       items: [
-        { name: "Bias", icon: <Activity className="w-4 h-4" /> },
-        { name: "Protection", icon: <Shield className="w-4 h-4" /> },
-        { name: "Safety", icon: <Shield className="w-4 h-4" /> },
-        { name: "Privacy", icon: <Shield className="w-4 h-4" /> },
+        {
+          name: "Transparent AI Registry",
+          icon: <Activity className="w-4 h-4" />,
+        },
+        {
+          name: "Synth Data Generation",
+          icon: <Shield className="w-4 h-4" />,
+        },
+        {
+          name: "Failure Prevention",
+          icon: <Shield className="w-4 h-4" />,
+        },
+        { name: "Exposure minimization", icon: <Shield className="w-4 h-4" /> },
       ],
     },
   ];
@@ -91,23 +107,10 @@ export const BusinessValueSection: React.FC = () => {
         <div className="relative">
           {/* Main diagram */}
           <div className="relative bg-white/70 backdrop-blur-sm rounded-3xl border border-teal-500/50 shadow-md p-4">
-            {/* Teal logo at top */}
-            <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-teal-500 rounded-md p-2.5 z-10 shadow-lg">
-              <div className="h-5 w-5 text-white flex items-center justify-center">
-                <svg
-                  className="w-4 h-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 10L12 15L17 10"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+            {/* Block Convey tab at top */}
+            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
+              <div className="flex items-center justify-center">
+                <img src={tab} alt="Block Convey Tab" className="h-12 w-auto" />
               </div>
             </div>
 
