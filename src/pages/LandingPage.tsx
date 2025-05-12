@@ -4,7 +4,9 @@ import { Hero } from "../components/landing/Hero";
 import { CircleTextSection } from "../components/landing/CircleTextSection";
 // import { Statistics } from "../components/landing/Statistics";
 import { Partners } from "../components/landing/Partners";
+import { BusinessValueSection } from "../components/landing/BusinessValueSection";
 import { WhyChooseUs } from "../components/landing/WhyChooseUs";
+import { CertificationProcessSection } from "../components/landing/CertificationProcessSection";
 import { Footer } from "../components/landing/Footer";
 import { WavyCTA } from "../components/common/cta/WavyCTA";
 
@@ -15,8 +17,10 @@ export const LandingPage: React.FC = () => {
       <main>
         <Hero />
         <Partners />
+        <BusinessValueSection />
         <CircleTextSection />
         <WhyChooseUs />
+        <CertificationProcessSection />
         <WavyCTA />
         <Footer />
       </main>

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { motion, useInView, useMotionValue, useTransform, useSpring } from "framer-motion";
+import { motion, useInView, useMotionValue } from "framer-motion";
 import {
   Link2,
   Activity,
@@ -70,11 +70,11 @@ export const WhyChooseUs: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
-  
+
   // Mouse position values for animation effects
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  
+
   // Handle mouse movement
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -86,20 +86,20 @@ export const WhyChooseUs: React.FC = () => {
         mouseY.set(y);
       }
     };
-    
+
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
-  
+
   // Title animation variants
   const titleVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.03
-      }
-    }
+        staggerChildren: 0.03,
+      },
+    },
   };
 
   const letterVariants = {
@@ -110,36 +110,37 @@ export const WhyChooseUs: React.FC = () => {
       transition: {
         type: "spring",
         stiffness: 400,
-        damping: 40
-      }
-    }
+        damping: 40,
+      },
+    },
   };
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-24 relative overflow-hidden"
-      style={{ 
-        background: "radial-gradient(circle at 50% 50%, rgba(94, 163, 163, 0.05), transparent 70%)"
+      style={{
+        background:
+          "radial-gradient(circle at 50% 50%, rgba(94, 163, 163, 0.05), transparent 70%)",
       }}
     >
       {/* Subtle grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ADD2C933_0.5px,transparent_0.5px),linear-gradient(to_bottom,#ADD2C933_0.5px,transparent_0.5px)] bg-[size:24px_24px]" />
-      
+
       {/* Subtle animated gradient background */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0"
         animate={{
           background: [
             "radial-gradient(circle at 30% 20%, rgba(94, 163, 163, 0.03), transparent 60%)",
-            "radial-gradient(circle at 70% 80%, rgba(94, 163, 163, 0.03), transparent 60%)"
-          ]
+            "radial-gradient(circle at 70% 80%, rgba(94, 163, 163, 0.03), transparent 60%)",
+          ],
         }}
         transition={{
           duration: 15,
           ease: "easeInOut",
           repeat: Infinity,
-          repeatType: "reverse"
+          repeatType: "reverse",
         }}
       />
 
@@ -148,11 +149,10 @@ export const WhyChooseUs: React.FC = () => {
         <motion.div
           className="text-center mb-20 relative"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={titleVariants}
             initial="hidden"
@@ -164,8 +164,8 @@ export const WhyChooseUs: React.FC = () => {
                 key={`${char}-${index}`}
                 variants={letterVariants}
                 className={`inline-block ${char === " " ? "mr-2" : ""} ${
-                  char === "B" || char === "C" 
-                    ? "text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-dark" 
+                  char === "B" || char === "C"
+                    ? "text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-dark"
                     : ""
                 }`}
               >
@@ -173,7 +173,7 @@ export const WhyChooseUs: React.FC = () => {
               </motion.span>
             ))}
           </motion.h2>
-          
+
           {/* Animated underline */}
           <motion.div
             className="h-1 w-24 rounded-full bg-brand mx-auto"
@@ -182,16 +182,17 @@ export const WhyChooseUs: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           />
-          
-          <motion.p 
+
+          <motion.p
             className="text-lg text-gray-600 max-w-3xl mx-auto mt-6"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Our comprehensive platform provides the tools and oversight needed for responsible 
-            <span className="text-brand font-medium"> AI governance </span> 
+            Our comprehensive platform provides the tools and oversight needed
+            for responsible
+            <span className="text-brand font-medium"> AI governance </span>
             in financial services.
           </motion.p>
         </motion.div>
@@ -207,10 +208,10 @@ export const WhyChooseUs: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ 
+                transition={{
                   duration: 0.5,
                   delay: index * 0.1,
-                  ease: "easeOut"
+                  ease: "easeOut",
                 }}
                 whileHover={{ y: -5 }}
                 onMouseEnter={() => setActiveIndex(index)}
@@ -218,77 +219,89 @@ export const WhyChooseUs: React.FC = () => {
               >
                 <motion.div
                   className="h-full bg-white backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
-                  whileHover={{ 
+                  whileHover={{
                     boxShadow: `0 12px 30px -10px ${benefit.accentColor}20`,
-                    borderColor: `${benefit.accentColor}40`
+                    borderColor: `${benefit.accentColor}40`,
                   }}
                   transition={{ duration: 0.2 }}
                 >
                   {/* Card colorful top bar */}
-                  <div 
-                    className="h-2 w-full" 
-                    style={{ backgroundColor: benefit.accentColor }} 
+                  <div
+                    className="h-2 w-full"
+                    style={{ backgroundColor: benefit.accentColor }}
                   />
-                  
+
                   <div className="p-8">
                     <div className="mb-6 flex items-center">
-                      <div 
+                      <div
                         className={`w-14 h-14 rounded-xl flex items-center justify-center shadow-sm`}
-                        style={{ 
+                        style={{
                           backgroundColor: `${benefit.accentColor}10`,
-                          border: `1px solid ${benefit.accentColor}20` 
+                          border: `1px solid ${benefit.accentColor}20`,
                         }}
                       >
                         <motion.div
                           whileHover={{ rotate: 360 }}
                           transition={{ duration: 0.5 }}
                         >
-                          <Icon 
-                            size={24} 
-                            style={{ color: benefit.accentColor }} 
+                          <Icon
+                            size={24}
+                            style={{ color: benefit.accentColor }}
                           />
                         </motion.div>
                       </div>
-                      
-                      <motion.h3 
+
+                      <motion.h3
                         className="text-xl font-semibold ml-4 text-gray-900"
-                        animate={activeIndex === index ? { color: benefit.accentColor } : {}}
+                        animate={
+                          activeIndex === index
+                            ? { color: benefit.accentColor }
+                            : {}
+                        }
                         transition={{ duration: 0.2 }}
                       >
                         {benefit.title}
                       </motion.h3>
                     </div>
-                    
-                    <motion.p 
+
+                    <motion.p
                       className="text-gray-600"
-                      animate={activeIndex === index ? { opacity: 1 } : { opacity: 0.9 }}
+                      animate={
+                        activeIndex === index
+                          ? { opacity: 1 }
+                          : { opacity: 0.9 }
+                      }
                     >
                       {benefit.description}
                     </motion.p>
-                    
+
                     {/* Learn more link */}
-                    <motion.div 
+                    <motion.div
                       className="mt-6 inline-flex items-center text-sm font-medium"
                       initial={{ opacity: 0.8 }}
                       whileHover={{ x: 3 }}
                       style={{ color: benefit.accentColor }}
                     >
                       Learn more
-                      <svg 
-                        width="16" 
-                        height="16" 
-                        viewBox="0 0 16 16" 
-                        fill="none" 
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
                         className="ml-2"
                       >
-                        <motion.path 
-                          d="M1 8H15M15 8L8 1M15 8L8 15" 
-                          stroke="currentColor" 
-                          strokeWidth="2" 
-                          strokeLinecap="round" 
+                        <motion.path
+                          d="M1 8H15M15 8L8 1M15 8L8 15"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
                           strokeLinejoin="round"
                           initial={{ pathLength: 0 }}
-                          animate={activeIndex === index ? { pathLength: 1 } : { pathLength: 0 }}
+                          animate={
+                            activeIndex === index
+                              ? { pathLength: 1 }
+                              : { pathLength: 0 }
+                          }
                           transition={{ duration: 0.3 }}
                         />
                       </svg>
