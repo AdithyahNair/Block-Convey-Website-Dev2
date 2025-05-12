@@ -54,33 +54,31 @@ export const WhyChooseBlockConveySection: React.FC = () => {
       <div className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-teal-300/10 blur-[100px]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Centered heading */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
+            How We Achieve <span className="text-cyan-300">AI Governance</span>
+          </h2>
+
+          {/* Animated underline */}
+          <motion.div
+            className="h-1 w-24 bg-cyan-400 rounded-full mx-auto"
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{ width: 120, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          />
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left content: Title and process steps */}
+          {/* Left content: Process steps */}
           <div>
-            <motion.div
-              className="mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
-                Why Choose
-              </h2>
-              <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-6">
-                Block Convey
-              </h2>
-
-              {/* Animated underline */}
-              <motion.div
-                className="h-1 w-24 bg-cyan-400 rounded-full"
-                initial={{ width: 0, opacity: 0 }}
-                whileInView={{ width: 120, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              />
-            </motion.div>
-
             <div className="space-y-10">
               {chooseBlockConveySteps.map((step) => (
                 <motion.div
