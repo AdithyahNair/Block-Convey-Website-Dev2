@@ -26,7 +26,7 @@ export const BusinessValueSection: React.FC = () => {
       ],
     },
     {
-      title: "Reduce Costs and Increase ROI",
+      title: "Reduce Costs, Increase ROI",
       icon: <TrendingUp className="w-5 h-5 text-teal-600" />,
       items: [
         { name: "ROI analysis", icon: <TrendingUp className="w-4 h-4" /> },
@@ -36,7 +36,7 @@ export const BusinessValueSection: React.FC = () => {
       ],
     },
     {
-      title: "Be Responsible with Governance",
+      title: "Responsible Governance",
       icon: <Shield className="w-5 h-5 text-teal-600" />,
       items: [
         { name: "Bias", icon: <Activity className="w-4 h-4" /> },
@@ -62,8 +62,17 @@ export const BusinessValueSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 relative overflow-hidden">
+      {/* Block Convey styled background */}
+      <div className="absolute inset-0 bg-gray-50"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ADD2C933_1px,transparent_1px),linear-gradient(to_bottom,#ADD2C933_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-lightest to-transparent"></div>
+
+      {/* Subtle gradient orbs */}
+      <div className="absolute -top-20 left-1/4 w-[300px] h-[300px] bg-teal-400/5 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-0 right-1/3 w-[250px] h-[250px] bg-cyan-400/5 rounded-full blur-[100px]"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           className="text-center mb-10"
           initial={{ opacity: 0, y: 20 }}
@@ -81,12 +90,9 @@ export const BusinessValueSection: React.FC = () => {
 
         <div className="relative">
           {/* Main diagram */}
-          <div className="relative">
-            {/* Outer border */}
-            <div className="absolute -inset-2 border border-teal-500 rounded-3xl"></div>
-
+          <div className="relative bg-white/70 backdrop-blur-sm rounded-3xl border border-teal-500/50 shadow-md p-4">
             {/* Teal logo at top */}
-            <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-teal-500 rounded-md p-2.5 z-10">
+            <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-teal-500 rounded-md p-2.5 z-10 shadow-lg">
               <div className="h-5 w-5 text-white flex items-center justify-center">
                 <svg
                   className="w-4 h-4"
@@ -105,9 +111,9 @@ export const BusinessValueSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 pt-6 pb-6 pl-3 pr-3">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 pt-6 pb-6 pl-3 pr-3">
               {/* Left side - Input models */}
-              <div className="md:col-span-3 flex flex-col justify-center space-y-4 z-10">
+              <div className="lg:col-span-3 flex flex-col justify-center space-y-4 z-10">
                 {inputModels.map((model, index) => (
                   <motion.div
                     key={model.title}
@@ -119,7 +125,7 @@ export const BusinessValueSection: React.FC = () => {
                   >
                     <div className="flex items-center space-x-2.5 mb-1">
                       <div className="text-lg">{model.icon}</div>
-                      <h3 className="font-semibold text-gray-800 text-sm">
+                      <h3 className="font-semibold text-gray-800 text-sm whitespace-nowrap">
                         {model.title}
                       </h3>
                     </div>
@@ -129,7 +135,7 @@ export const BusinessValueSection: React.FC = () => {
               </div>
 
               {/* Connection lines */}
-              <div className="md:col-span-1 relative hidden md:block">
+              <div className="lg:col-span-1 relative hidden lg:block">
                 <div className="absolute h-full w-0.5 bg-gray-200 left-1/2 transform -translate-x-1/2"></div>
                 <div className="absolute top-1/4 h-2 w-2 bg-teal-500 rounded-full left-1/2 transform -translate-x-1/2"></div>
                 <div className="absolute bottom-1/4 h-2 w-2 bg-teal-500 rounded-full left-1/2 transform -translate-x-1/2"></div>
@@ -139,7 +145,7 @@ export const BusinessValueSection: React.FC = () => {
               </div>
 
               {/* Main platform categories */}
-              <div className="md:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-8">
                 {valueCategories.map((category, index) => (
                   <motion.div
                     key={category.title}
@@ -147,14 +153,14 @@ export const BusinessValueSection: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-                    className="bg-cyan-50/80 rounded-lg p-4"
+                    className="bg-cyan-50/80 rounded-lg py-3 px-3"
                   >
                     <div className="flex justify-center mb-2">
                       <div className="p-1.5 bg-white rounded-full shadow-sm">
                         {category.icon}
                       </div>
                     </div>
-                    <h3 className="text-center text-base font-semibold text-gray-800 mb-3">
+                    <h3 className="text-center text-sm font-semibold text-gray-800 mb-3 whitespace-nowrap px-1 overflow-visible">
                       {category.title}
                     </h3>
 
@@ -162,7 +168,7 @@ export const BusinessValueSection: React.FC = () => {
                       {category.items.map((item) => (
                         <div
                           key={item.name}
-                          className="bg-cyan-100/90 rounded-md py-2 px-2 text-center text-gray-700 text-sm font-medium flex items-center justify-center"
+                          className="bg-cyan-100/90 rounded-md py-1.5 px-2 text-center text-gray-700 text-xs font-medium flex items-center justify-center truncate"
                         >
                           {item.name}
                         </div>
@@ -202,18 +208,22 @@ export const BusinessValueSection: React.FC = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-base font-semibold text-gray-800">
+                <h3 className="text-base font-semibold text-gray-800 truncate">
                   Organizational alignment
                 </h3>
               </div>
 
               {/* Bottom text */}
-              <div className="flex justify-center items-center space-x-1 mt-3 text-gray-600 text-xs font-medium">
-                <span>Single source of truth</span>
+              <div className="flex flex-wrap justify-center gap-1 mt-3 text-gray-600 text-xs font-medium">
+                <span className="whitespace-nowrap">
+                  Single source of truth
+                </span>
                 <span className="text-teal-500 font-bold">•</span>
-                <span>Eliminate silos</span>
+                <span className="whitespace-nowrap">Eliminate silos</span>
                 <span className="text-teal-500 font-bold">•</span>
-                <span>Efficiency improvement</span>
+                <span className="whitespace-nowrap">
+                  Efficiency improvement
+                </span>
               </div>
             </motion.div>
           </div>
