@@ -1,6 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
-import { motion, useScroll, useTransform, useMotionValue, useSpring, useInView, AnimatePresence } from "framer-motion";
-import { NavMegaDropdown } from "./NavMegaDropdown";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValue,
+  useSpring,
+  useInView,
+  AnimatePresence,
+} from "framer-motion";
 
 export const CircleTextSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -8,7 +15,7 @@ export const CircleTextSection: React.FC = () => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const [activeCard, setActiveCard] = useState<number | null>(null);
-  
+
   // Data points for financial chart animation
   const [chartPoints] = useState(() => {
     return Array.from({ length: 20 }, (_, i) => {
@@ -39,11 +46,25 @@ export const CircleTextSection: React.FC = () => {
   // Create floating data elements (numbers, symbols)
   const createDataElements = () => {
     const elements = [
-      '₿', '📊', '💹', '$', '€', '¥', '£', '📈', 
-      '+2.4%', '-1.3%', '+0.8%', '1.45x', '3.2M', '79.5K', 
-      '0.025', '1,324', '5.7B'
+      "₿",
+      "📊",
+      "💹",
+      "$",
+      "€",
+      "¥",
+      "£",
+      "📈",
+      "+2.4%",
+      "-1.3%",
+      "+0.8%",
+      "1.45x",
+      "3.2M",
+      "79.5K",
+      "0.025",
+      "1,324",
+      "5.7B",
     ];
-    
+
     return Array.from({ length: 25 }).map((_, i) => {
       const element = elements[i % elements.length];
       const size = Math.random() * 14 + 10;
@@ -52,7 +73,7 @@ export const CircleTextSection: React.FC = () => {
       const delay = Math.random() * 5;
       const duration = Math.random() * 15 + 10;
       const opacity = Math.random() * 0.3 + 0.04;
-      
+
       return (
         <motion.div
           key={i}
@@ -92,47 +113,54 @@ export const CircleTextSection: React.FC = () => {
   // Scroll animations
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   const contentY = useTransform(scrollYProgress, [0, 0.5, 1], [80, 0, -80]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const contentOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 1, 1, 0]
+  );
   const parallaxY = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
   // Feature cards with fintech-focused content
   const features = [
-    { 
-      title: 'Fairness Analysis',
-      icon: '⚖️',
-      gradient: 'from-cyan-400/90 to-teal-500/90',
-      glowColor: 'cyan',
-      description: 'Ensure equal treatment across demographic segments and eliminate bias in financial decisions',
-      stats: '99.7% accuracy'
+    {
+      title: "Fairness Analysis",
+      icon: "⚖️",
+      gradient: "from-cyan-400/90 to-teal-500/90",
+      glowColor: "cyan",
+      description:
+        "Ensure equal treatment across demographic segments and eliminate bias in financial decisions",
+      stats: "99.7% accuracy",
     },
-    { 
-      title: 'Risk Detection',
-      icon: '🔍',
-      gradient: 'from-brand/90 to-brand-dark/90',
-      glowColor: 'blue',
-      description: 'Identify potential risks in your models with advanced anomaly detection algorithms',
-      stats: '2.3x faster detection'
+    {
+      title: "Risk Detection",
+      icon: "🔍",
+      gradient: "from-brand/90 to-brand-dark/90",
+      glowColor: "blue",
+      description:
+        "Identify potential risks in your models with advanced anomaly detection algorithms",
+      stats: "2.3x faster detection",
     },
-    { 
-      title: 'Compliance Shield',
-      icon: '🛡️',
-      gradient: 'from-teal-500/90 to-green-600/90',
-      glowColor: 'green',
-      description: 'Stay compliant with ISO, ECCOA, GDPR and other financial regulatory requirements',
-      stats: '100% audit-ready'
-    }
+    {
+      title: "Compliance Shield",
+      icon: "🛡️",
+      gradient: "from-teal-500/90 to-green-600/90",
+      glowColor: "green",
+      description:
+        "Stay compliant with ISO, ECCOA, GDPR and other financial regulatory requirements",
+      stats: "100% audit-ready",
+    },
   ];
 
   // Text animation with financial terms
   const titleText = "Financial Models";
   const subTitle = "Single-Platform Assessment for Your";
-  
+
   return (
-    <motion.div 
+    <motion.div
       ref={containerRef}
       className="relative min-h-[90vh] w-full overflow-hidden bg-gradient-to-b from-gray-50 via-white to-gray-50 flex items-center justify-center py-20"
       style={{ perspective: 1500 }}
@@ -149,15 +177,25 @@ export const CircleTextSection: React.FC = () => {
           rotateX: springRotateX,
           rotateY: springRotateY,
           transformStyle: "preserve-3d",
-          boxShadow: "0 30px 80px -20px rgba(94, 163, 163, 0.25), 0 30px 40px -30px rgba(0, 0, 0, 0.1)",
+          boxShadow:
+            "0 30px 80px -20px rgba(94, 163, 163, 0.25), 0 30px 40px -30px rgba(0, 0, 0, 0.1)",
           y: useTransform(scrollYProgress, [0, 1], [30, -30]),
         }}
       >
         {/* Financial chart line in background */}
         <div className="absolute left-0 right-0 h-40 bottom-[10%] opacity-25">
-          <svg className="w-full h-full" viewBox="0 0 1000 200" preserveAspectRatio="none">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 1000 200"
+            preserveAspectRatio="none"
+          >
             <motion.path
-              d={`M0,${200 - chartPoints[0]} ${chartPoints.map((point, i) => `L${(i / (chartPoints.length - 1)) * 1000},${200 - point}`).join(' ')}`}
+              d={`M0,${200 - chartPoints[0]} ${chartPoints
+                .map(
+                  (point, i) =>
+                    `L${(i / (chartPoints.length - 1)) * 1000},${200 - point}`
+                )
+                .join(" ")}`}
               fill="none"
               stroke="url(#chart-gradient)"
               strokeWidth="3"
@@ -167,7 +205,13 @@ export const CircleTextSection: React.FC = () => {
               transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }}
             />
             <defs>
-              <linearGradient id="chart-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient
+                id="chart-gradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
                 <stop offset="0%" stopColor="#5EA3A3" stopOpacity="0.2" />
                 <stop offset="50%" stopColor="#5EA3A3" stopOpacity="0.8" />
                 <stop offset="100%" stopColor="#5EA3A3" stopOpacity="0.2" />
@@ -177,9 +221,9 @@ export const CircleTextSection: React.FC = () => {
         </div>
 
         {/* Animated background gradient blobs */}
-        <motion.div 
+        <motion.div
           className="absolute top-[-30%] right-[-5%] w-[50%] h-[80%] bg-gradient-to-br from-brand-light/10 to-brand/10 rounded-full filter blur-3xl"
-          animate={{ 
+          animate={{
             scale: [1, 1.1, 1],
             x: [0, 20, 0],
             y: [0, -20, 0],
@@ -187,52 +231,60 @@ export const CircleTextSection: React.FC = () => {
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         />
-        
-        <motion.div 
+
+        <motion.div
           className="absolute bottom-[-20%] left-[-5%] w-[40%] h-[60%] bg-gradient-to-tr from-brand/10 to-brand-light/10 rounded-full filter blur-3xl"
-          animate={{ 
+          animate={{
             scale: [1, 1.2, 1],
             x: [0, -15, 0],
             y: [0, 15, 0],
             opacity: [0.15, 0.25, 0.15],
           }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
         />
 
-        <div className="relative z-20 flex flex-col items-center" style={{ transformStyle: "preserve-3d" }}>
+        <div
+          className="relative z-20 flex flex-col items-center"
+          style={{ transformStyle: "preserve-3d" }}
+        >
           {/* Main title with 3D effect */}
-          <motion.div 
+          <motion.div
             className="mb-4 text-center"
             style={{ translateY: parallaxY, transformStyle: "preserve-3d" }}
           >
             {/* Subtitle */}
             <motion.div className="overflow-hidden mb-1">
-              <motion.h2 
+              <motion.h2
                 className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-800"
                 initial={{ y: 40, opacity: 0 }}
                 animate={isInView ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                {subTitle.split('').map((char, index) => (
+                {subTitle.split("").map((char, index) => (
                   <motion.span
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ 
+                    transition={{
                       duration: 0.4,
                       delay: 0.1 + index * 0.02,
-                      ease: "easeOut"
+                      ease: "easeOut",
                     }}
                     className="inline-block"
                   >
-                    {char === ' ' ? '\u00A0' : char}
+                    {char === " " ? "\u00A0" : char}
                   </motion.span>
                 ))}
               </motion.h2>
             </motion.div>
-            
+
             {/* Main title */}
-            <motion.div 
+            <motion.div
               className="relative inline-block"
               style={{ transformStyle: "preserve-3d" }}
             >
@@ -243,48 +295,52 @@ export const CircleTextSection: React.FC = () => {
                   style={{ transformStyle: "preserve-3d" }}
                 >
                   {/* Shadow text (depth effect) */}
-                  <div 
+                  <div
                     className="absolute text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent select-none opacity-10"
-                    style={{ 
-                      top: '0.15em',
-                      left: '0.05em',
+                    style={{
+                      top: "0.15em",
+                      left: "0.05em",
                       right: 0,
-                      WebkitTextStroke: '1px rgba(94, 163, 163, 0.2)',
-                      transform: 'translateZ(-20px)',
-                      transformStyle: 'preserve-3d'
+                      WebkitTextStroke: "1px rgba(94, 163, 163, 0.2)",
+                      transform: "translateZ(-20px)",
+                      transformStyle: "preserve-3d",
                     }}
                   >
                     {titleText}
                   </div>
 
                   {/* Main text */}
-                  <motion.h1 
+                  <motion.h1
                     className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
                     style={{ transformStyle: "preserve-3d" }}
                   >
-                    {titleText.split('').map((char, index) => (
+                    {titleText.split("").map((char, index) => (
                       <motion.span
                         key={index}
                         className={`inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-dark`}
                         initial={{ opacity: 0, y: 40, z: -40 }}
-                        animate={isInView ? { 
-                          opacity: 1, 
-                          y: 0,
-                          z: index % 2 === 0 ? 10 : 30,
-                          rotateX: 0,
-                        } : {}}
-                        transition={{ 
+                        animate={
+                          isInView
+                            ? {
+                                opacity: 1,
+                                y: 0,
+                                z: index % 2 === 0 ? 10 : 30,
+                                rotateX: 0,
+                              }
+                            : {}
+                        }
+                        transition={{
                           duration: 0.7,
                           delay: 0.4 + index * 0.04,
                           type: "spring",
-                          stiffness: 80
+                          stiffness: 80,
                         }}
-                        style={{ 
+                        style={{
                           transformStyle: "preserve-3d",
-                          textShadow: '0 10px 20px rgba(94, 163, 163, 0.15)'
+                          textShadow: "0 10px 20px rgba(94, 163, 163, 0.15)",
                         }}
                       >
-                        {char === ' ' ? '\u00A0' : char}
+                        {char === " " ? "\u00A0" : char}
                       </motion.span>
                     ))}
                   </motion.h1>
@@ -294,7 +350,7 @@ export const CircleTextSection: React.FC = () => {
                 <div className="relative h-10">
                   <motion.div
                     className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand to-transparent"
-                    style={{ 
+                    style={{
                       bottom: 0,
                       transformStyle: "preserve-3d",
                       boxShadow: "0 0 8px 1px rgba(94, 163, 163, 0.6)",
@@ -303,10 +359,10 @@ export const CircleTextSection: React.FC = () => {
                     animate={isInView ? { scaleX: 1, opacity: 1 } : {}}
                     transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
                   />
-                  
+
                   {/* Data points on the line */}
                   {[0.2, 0.5, 0.8].map((pos, i) => (
-                    <motion.div 
+                    <motion.div
                       key={i}
                       className="absolute bottom-[-3px] w-2 h-2 rounded-full bg-brand shadow-lg"
                       style={{
@@ -314,17 +370,21 @@ export const CircleTextSection: React.FC = () => {
                         boxShadow: "0 0 8px 2px rgba(94, 163, 163, 0.6)",
                       }}
                       initial={{ scale: 0, opacity: 0 }}
-                      animate={isInView ? { 
-                        scale: [0, 1.5, 1],
-                        opacity: [0, 1, 0.8]
-                      } : {}}
-                      transition={{ 
+                      animate={
+                        isInView
+                          ? {
+                              scale: [0, 1.5, 1],
+                              opacity: [0, 1, 0.8],
+                            }
+                          : {}
+                      }
+                      transition={{
                         duration: 0.5,
-                        delay: 1 + i * 0.2
+                        delay: 1 + i * 0.2,
                       }}
                     />
                   ))}
-                  
+
                   {/* Moving data cursor */}
                   <motion.div
                     className="absolute bottom-[-4px] w-3 h-3 rounded-full bg-white"
@@ -333,10 +393,14 @@ export const CircleTextSection: React.FC = () => {
                       z: 30,
                     }}
                     initial={{ left: "0%", opacity: 0 }}
-                    animate={isInView ? {
-                      left: ["0%", "100%"],
-                      opacity: [0, 1, 0.8, 0],
-                    } : {}}
+                    animate={
+                      isInView
+                        ? {
+                            left: ["0%", "100%"],
+                            opacity: [0, 1, 0.8, 0],
+                          }
+                        : {}
+                    }
                     transition={{
                       duration: 3,
                       times: [0, 0.1, 0.9, 1],
@@ -354,11 +418,11 @@ export const CircleTextSection: React.FC = () => {
           {/* Description with fintech terminology */}
           <motion.div
             className="max-w-3xl text-center mt-10 relative"
-            style={{ 
-              translateY: contentY, 
+            style={{
+              translateY: contentY,
               opacity: contentOpacity,
               transformStyle: "preserve-3d",
-              z: 20
+              z: 20,
             }}
           >
             <AnimatePresence>
@@ -368,23 +432,25 @@ export const CircleTextSection: React.FC = () => {
                   animate={{ opacity: 1 }}
                   className="relative px-4 py-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10"
                 >
-                  <motion.p 
+                  <motion.p
                     className="text-gray-700 text-lg leading-relaxed"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
                   >
-                    Consolidate real-time detection of fairness issues, bias, and model drift to maintain optimal performance. Ensure compliance with ISO, ECCOA, and GDPR
-                    <motion.span 
+                    Consolidate real-time detection of fairness issues, bias,
+                    and model drift to maintain optimal performance. Ensure
+                    compliance with ISO, ECCOA, and GDPR
+                    <motion.span
                       className="inline-block text-brand-dark font-medium mx-1"
-                      animate={{ 
+                      animate={{
                         scale: [1, 1.1, 1],
                         opacity: [1, 0.8, 1],
                       }}
-                      transition={{ 
+                      transition={{
                         duration: 2,
                         repeat: Infinity,
-                        repeatType: "reverse"
+                        repeatType: "reverse",
                       }}
                     >
                       —all in one enterprise-grade tool.
@@ -396,32 +462,38 @@ export const CircleTextSection: React.FC = () => {
           </motion.div>
 
           {/* Interactive feature cards with fintech visual style */}
-          <motion.div 
+          <motion.div
             className="w-full mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 relative pb-6"
             style={{ transformStyle: "preserve-3d", z: 30 }}
           >
             {features.map((feature, i) => (
               <motion.div
                 key={i}
-                className={`${activeCard === i ? 'z-20' : 'z-10'} relative h-[220px] rounded-2xl overflow-hidden group`}
-                style={{ 
+                className={`${
+                  activeCard === i ? "z-20" : "z-10"
+                } relative h-[220px] rounded-2xl overflow-hidden group`}
+                style={{
                   transformStyle: "preserve-3d",
-                  transformOrigin: "center"
+                  transformOrigin: "center",
                 }}
                 initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { 
-                  opacity: 1, 
-                  y: 0,
-                  rotateX: activeCard === i ? 0 : 5,
-                  rotateY: activeCard === i ? 0 : -5,
-                  z: activeCard === i ? 40 : 0
-                } : {}}
-                transition={{ 
-                  duration: 0.5, 
+                animate={
+                  isInView
+                    ? {
+                        opacity: 1,
+                        y: 0,
+                        rotateX: activeCard === i ? 0 : 5,
+                        rotateY: activeCard === i ? 0 : -5,
+                        z: activeCard === i ? 40 : 0,
+                      }
+                    : {}
+                }
+                transition={{
+                  duration: 0.5,
                   delay: 1 + i * 0.15,
                   type: "spring",
                   stiffness: 100,
-                  damping: 15
+                  damping: 15,
                 }}
                 onMouseEnter={() => {
                   setActiveCard(i);
@@ -429,36 +501,42 @@ export const CircleTextSection: React.FC = () => {
                 onMouseLeave={() => {
                   setActiveCard(null);
                 }}
-                whileHover={{ 
-                  scale: 1.03, 
+                whileHover={{
+                  scale: 1.03,
                   rotateX: 0,
                   rotateY: 0,
                   z: 40,
-                  transition: { type: "spring", stiffness: 300, damping: 20 }
+                  transition: { type: "spring", stiffness: 300, damping: 20 },
                 }}
               >
                 {/* Card background with gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} transition-all duration-300`} />
-                
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} transition-all duration-300`}
+                />
+
                 {/* Geometric patterns (fintech style) */}
                 <div className="absolute inset-0 overflow-hidden opacity-20">
-                  <svg className="absolute right-0 top-0 h-full" viewBox="0 0 100 220" preserveAspectRatio="none">
-                    <motion.path 
-                      d="M100,0 L60,0 L100,40 Z" 
+                  <svg
+                    className="absolute right-0 top-0 h-full"
+                    viewBox="0 0 100 220"
+                    preserveAspectRatio="none"
+                  >
+                    <motion.path
+                      d="M100,0 L60,0 L100,40 Z"
                       fill="rgba(255,255,255,0.4)"
                       initial={{ opacity: 0 }}
                       animate={isInView ? { opacity: 1 } : {}}
                       transition={{ duration: 0.5, delay: 1.2 + i * 0.1 }}
                     />
-                    <motion.path 
-                      d="M100,50 L50,50 L100,100 Z" 
+                    <motion.path
+                      d="M100,50 L50,50 L100,100 Z"
                       fill="rgba(255,255,255,0.3)"
                       initial={{ opacity: 0 }}
                       animate={isInView ? { opacity: 1 } : {}}
                       transition={{ duration: 0.5, delay: 1.3 + i * 0.1 }}
                     />
-                    <motion.path 
-                      d="M100,120 L70,120 L100,150 Z" 
+                    <motion.path
+                      d="M100,120 L70,120 L100,150 Z"
                       fill="rgba(255,255,255,0.2)"
                       initial={{ opacity: 0 }}
                       animate={isInView ? { opacity: 1 } : {}}
@@ -466,73 +544,98 @@ export const CircleTextSection: React.FC = () => {
                     />
                   </svg>
                 </div>
-                
+
                 {/* Glass highlight effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent h-1/3" />
-                
+
                 {/* Animated glow effect on hover */}
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
-                  style={{ 
-                    boxShadow: `0 0 30px 5px rgba(${feature.glowColor === 'cyan' ? '6, 182, 212' : 
-                                  feature.glowColor === 'blue' ? '94, 163, 163' : 
-                                  '16, 185, 129'}, 0.3)`,
-                    transition: "box-shadow 0.3s ease, opacity 0.3s ease"
+                  style={{
+                    boxShadow: `0 0 30px 5px rgba(${
+                      feature.glowColor === "cyan"
+                        ? "6, 182, 212"
+                        : feature.glowColor === "blue"
+                        ? "94, 163, 163"
+                        : "16, 185, 129"
+                    }, 0.3)`,
+                    transition: "box-shadow 0.3s ease, opacity 0.3s ease",
                   }}
-                  animate={activeCard === i ? { opacity: [0, 0.6, 0] } : { opacity: 0 }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  animate={
+                    activeCard === i ? { opacity: [0, 0.6, 0] } : { opacity: 0 }
+                  }
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 />
 
                 {/* Card content */}
                 <div className="relative z-10 p-6 h-full flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <motion.span 
+                      <motion.span
                         className="text-3xl"
-                        animate={activeCard === i ? { 
-                          y: [0, -8, 0],
-                          rotateY: [0, 10, -10, 0]
-                        } : {}}
-                        transition={{ 
-                          duration: 3, 
-                          repeat: Infinity, 
-                          ease: "easeInOut" 
+                        animate={
+                          activeCard === i
+                            ? {
+                                y: [0, -8, 0],
+                                rotateY: [0, 10, -10, 0],
+                              }
+                            : {}
+                        }
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
                         }}
                       >
                         {feature.icon}
                       </motion.span>
 
                       {/* Stats badge */}
-                      <motion.div 
+                      <motion.div
                         className="text-xs font-medium text-white bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full"
                         initial={{ scale: 0, opacity: 0 }}
-                        animate={activeCard === i ? { scale: 1, opacity: 1 } : {}}
-                        transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.1 }}
+                        animate={
+                          activeCard === i ? { scale: 1, opacity: 1 } : {}
+                        }
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                          delay: 0.1,
+                        }}
                       >
                         {feature.stats}
                       </motion.div>
                     </div>
-                    
-                    <motion.h3 
+
+                    <motion.h3
                       className="text-xl font-bold text-white mb-2"
-                      animate={activeCard === i ? { scale: 1.02 } : { scale: 1 }}
+                      animate={
+                        activeCard === i ? { scale: 1.02 } : { scale: 1 }
+                      }
                       transition={{ duration: 0.3 }}
                     >
                       {feature.title}
                     </motion.h3>
-                    
-                    <motion.p 
+
+                    <motion.p
                       className="text-white/90 text-sm"
                       initial={{ opacity: 0.7 }}
-                      animate={activeCard === i ? { opacity: 1 } : { opacity: 0.7 }}
+                      animate={
+                        activeCard === i ? { opacity: 1 } : { opacity: 0.7 }
+                      }
                       transition={{ duration: 0.3 }}
                     >
                       {feature.description}
                     </motion.p>
                   </div>
-                  
+
                   {/* Bottom action button */}
-                  <motion.div 
+                  <motion.div
                     className="mt-auto pt-3 self-end"
                     initial={{ opacity: 0, y: 10 }}
                     animate={activeCard === i ? { opacity: 1, y: 0 } : {}}
@@ -540,25 +643,35 @@ export const CircleTextSection: React.FC = () => {
                   >
                     <span className="text-white/80 text-sm flex items-center group-hover:text-white transition-colors">
                       Learn more
-                      <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </span>
+                      <svg
+                        className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </span>
                   </motion.div>
 
                   {/* Subtle animated data lines */}
                   {activeCard === i && (
                     <motion.div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/20">
-                      <motion.div 
+                      <motion.div
                         className="absolute top-0 h-full bg-white/60"
-                        style={{ width: '20%' }}
-                        animate={{ 
-                          left: ['0%', '80%', '0%']
+                        style={{ width: "20%" }}
+                        animate={{
+                          left: ["0%", "80%", "0%"],
                         }}
-                        transition={{ 
+                        transition={{
                           duration: 2,
                           repeat: Infinity,
-                          ease: "easeInOut"
+                          ease: "easeInOut",
                         }}
                       />
                     </motion.div>
@@ -567,7 +680,7 @@ export const CircleTextSection: React.FC = () => {
               </motion.div>
             ))}
           </motion.div>
-    </div>
+        </div>
       </motion.div>
     </motion.div>
   );
