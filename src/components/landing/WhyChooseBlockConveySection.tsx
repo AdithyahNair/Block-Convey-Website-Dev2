@@ -1,32 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { CheckCircle, List, FileText, Database } from "lucide-react";
 
 export const WhyChooseBlockConveySection: React.FC = () => {
-  // Define the steps for why to choose Block Convey
+  // Track which step is being hovered
+  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
+
+  // Define the steps with new titles
   const chooseBlockConveySteps = [
     {
       number: 1,
-      title: "End-to-End Observability",
+      title: "End-to-End Model Evaluation",
+      icon: <List className="w-6 h-6 text-white" />,
       description:
-        "Our platform provides comprehensive monitoring of all AI systems with intuitive dashboards and real-time metrics that help you optimize performance and identify issues quickly.",
+        "Comprehensively assess your AI models across performance, quality, bias, and safety metrics. Our platform provides detailed insights to identify and resolve issues before deployment.",
     },
     {
       number: 2,
-      title: "Cost Efficiency",
+      title: "Automated Compliance Checklist",
+      icon: <CheckCircle className="w-6 h-6 text-white" />,
       description:
-        "Reduce operational costs by identifying inefficiencies in your AI systems, optimizing resource allocation, and improving ROI through data-driven insights.",
+        "Automatically verify compliance with key AI governance frameworks, including ISO 42001, NIST AI RMF, and EU AI Act. Reduce manual effort and ensure adherence to industry standards.",
+      standards: [
+        "ISO 42001 AI Management System",
+        "NIST AI Risk Management Framework",
+        "EU AI Act Requirements",
+      ],
     },
     {
       number: 3,
-      title: "Governance & Compliance",
+      title: "Generate Report",
+      icon: <FileText className="w-6 h-6 text-white" />,
       description:
-        "Stay compliant with industry regulations and standards with built-in governance features that ensure responsible AI usage and minimize legal risks.",
+        "Create comprehensive documentation and reports with a single click. Export detailed analyses for stakeholders, auditors, and regulators with evidence of compliance and model performance.",
     },
     {
       number: 4,
-      title: "Seamless Integration",
+      title: "Auditable AI Registry",
+      icon: <Database className="w-6 h-6 text-white" />,
       description:
-        "Easily integrate with your existing infrastructure and tools with our flexible APIs and pre-built connectors, minimizing disruption to your workflow.",
+        "Maintain a complete registry of all AI models with version history, training data, and governance documentation. Ensure traceability and accountability throughout the AI lifecycle.",
     },
   ];
 
@@ -77,24 +90,61 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: step.number * 0.1 }}
+                  onMouseEnter={() => setHoveredStep(step.number)}
+                  onMouseLeave={() => setHoveredStep(null)}
                 >
-                  {/* Step number */}
+                  {/* Step number with hover effect */}
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-teal-300 flex items-center justify-center shadow-lg shadow-cyan-700/20">
-                      <span className="text-teal-900 font-bold text-2xl">
-                        {step.number}
-                      </span>
+                    <div
+                      className={`w-16 h-16 rounded-full flex items-center justify-center shadow-lg shadow-cyan-700/20 transition-all duration-300 ${
+                        hoveredStep === step.number
+                          ? "bg-cyan-400 scale-110"
+                          : "bg-gradient-to-br from-cyan-400 to-teal-300"
+                      }`}
+                    >
+                      {/* Show number by default, icon on hover */}
+                      {hoveredStep === step.number ? (
+                        step.icon
+                      ) : (
+                        <span className="text-teal-900 font-bold text-2xl">
+                          {step.number}
+                        </span>
+                      )}
                     </div>
                   </div>
 
-                  {/* Step content */}
-                  <div>
+                  {/* Step content with hover effect */}
+                  <div
+                    className={`transition-all duration-300 ${
+                      hoveredStep === step.number ? "translate-x-2" : ""
+                    }`}
+                  >
                     <h3 className="text-2xl font-bold text-white mb-2">
                       {step.title}
                     </h3>
                     <p className="text-cyan-50 text-lg opacity-90 leading-relaxed">
                       {step.description}
                     </p>
+
+                    {/* Compliance standards for step 2 */}
+                    {step.number === 2 && step.standards && (
+                      <div className="mt-4 bg-white/10 rounded-lg p-3">
+                        <h4 className="text-white text-sm font-medium mb-2">
+                          Compliance Standards:
+                        </h4>
+                        <ul className="space-y-2">
+                          {step.standards.map((standard, idx) => (
+                            <li
+                              key={idx}
+                              className="flex items-center text-cyan-50 text-sm"
+                            >
+                              <CheckCircle className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                              <span>{standard}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -124,25 +174,57 @@ export const WhyChooseBlockConveySection: React.FC = () => {
 
               <div className="p-6">
                 <div className="flex mb-4 space-x-8 text-sm text-gray-600 border-b pb-2">
-                  <span className="border-b-2 border-teal-500 pb-2 text-teal-600 font-medium">
-                    Overview
+                  <span
+                    className={`border-b-2 border-teal-500 pb-2 text-teal-600 font-medium ${
+                      hoveredStep === 1 ? "bg-teal-50 px-2 rounded-t-md" : ""
+                    }`}
+                  >
+                    Model Evaluation
                   </span>
-                  <span>Performance</span>
-                  <span>Models</span>
-                  <span>Governance</span>
-                  <span>Reports</span>
+                  <span
+                    className={
+                      hoveredStep === 2 ? "bg-teal-50 px-2 rounded-t-md" : ""
+                    }
+                  >
+                    Compliance
+                  </span>
+                  <span
+                    className={
+                      hoveredStep === 3 ? "bg-teal-50 px-2 rounded-t-md" : ""
+                    }
+                  >
+                    Reports
+                  </span>
+                  <span
+                    className={
+                      hoveredStep === 4 ? "bg-teal-50 px-2 rounded-t-md" : ""
+                    }
+                  >
+                    Registry
+                  </span>
                 </div>
 
                 <div className="py-4">
                   <span className="text-sm text-gray-500">
-                    AI Models / Production
+                    AI Governance /{" "}
+                    {hoveredStep
+                      ? chooseBlockConveySteps[hoveredStep - 1]?.title
+                      : "Overview"}
                   </span>
 
-                  <div className="mt-6 bg-gray-50 rounded-lg p-4">
+                  <div
+                    className={`mt-6 bg-gray-50 rounded-lg p-4 transition-all duration-300 ${
+                      hoveredStep ? "border-l-4 border-teal-500" : ""
+                    }`}
+                  >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
                         <h3 className="text-lg font-medium">
-                          Model Performance
+                          {hoveredStep === 1 && "Model Performance Analysis"}
+                          {hoveredStep === 2 && "Compliance Status"}
+                          {hoveredStep === 3 && "Report Generation"}
+                          {hoveredStep === 4 && "AI Registry"}
+                          {!hoveredStep && "Model Overview"}
                         </h3>
                         <svg
                           className="h-4 w-4 ml-2 text-gray-500"
@@ -153,24 +235,72 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                         </svg>
                       </div>
                       <div className="text-sm text-gray-500">Status</div>
-                      <div className="text-sm text-gray-500">Latency</div>
+                      <div className="text-sm text-gray-500">Action</div>
                     </div>
 
-                    <div className="h-4 w-full bg-gray-200 rounded-full mt-4"></div>
-
-                    <div className="h-4 w-full bg-gray-200 rounded-full mt-2"></div>
-                    <div className="h-4 w-3/4 bg-gray-200 rounded-full mt-2"></div>
+                    {/* Dynamic content based on hovered step */}
+                    {hoveredStep === 2 ? (
+                      <div className="mt-4 space-y-2">
+                        <div className="flex items-center justify-between text-sm">
+                          <div className="flex items-center">
+                            <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                            <span>ISO 42001</span>
+                          </div>
+                          <span className="text-green-500 font-medium">
+                            Complete
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-between text-sm">
+                          <div className="flex items-center">
+                            <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                            <span>NIST AI RMF</span>
+                          </div>
+                          <span className="text-green-500 font-medium">
+                            Complete
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-between text-sm">
+                          <div className="flex items-center">
+                            <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                            <span>EU AI Act</span>
+                          </div>
+                          <span className="text-green-500 font-medium">
+                            Complete
+                          </span>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="h-4 w-full bg-gray-200 rounded-full mt-4"></div>
+                        <div className="h-4 w-full bg-gray-200 rounded-full mt-2"></div>
+                        <div className="h-4 w-3/4 bg-gray-200 rounded-full mt-2"></div>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Floating cards */}
-            <div className="absolute -right-4 top-36 bg-white rounded-xl shadow-xl p-4 w-64 border border-cyan-100/30">
+            {/* Floating cards - adjusted based on hovered step */}
+            <div
+              className={`absolute -right-4 top-36 bg-white rounded-xl shadow-xl p-4 w-64 border transition-all duration-300 ${
+                hoveredStep === 1
+                  ? "border-teal-500 transform scale-105"
+                  : "border-cyan-100/30"
+              }`}
+            >
               <div className="flex items-center mb-2">
-                <div className="w-8 h-8 rounded-full bg-teal-50 flex items-center justify-center mr-2 border border-teal-100">
+                <div
+                  className={`w-8 h-8 rounded-full flex items-center justify-center mr-2 ${
+                    hoveredStep === 1
+                      ? "bg-teal-100 border-teal-300"
+                      : "bg-teal-50 border border-teal-100"
+                  }`}
+                >
                   <svg
-                    className="h-4 w-4 text-teal-500"
+                    className={`h-4 w-4 ${
+                      hoveredStep === 1 ? "text-teal-600" : "text-teal-500"
+                    }`}
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -181,7 +311,7 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                     />
                   </svg>
                 </div>
-                <span className="font-medium">Model Quality</span>
+                <span className="font-medium">Model Evaluation</span>
               </div>
 
               <div className="space-y-2 mt-4">
@@ -221,58 +351,82 @@ export const WhyChooseBlockConveySection: React.FC = () => {
               </div>
             </div>
 
-            <div className="absolute -bottom-6 -left-4 bg-gradient-to-br from-teal-600 to-teal-700 rounded-xl p-6 w-72 text-white shadow-xl border border-teal-500/30">
+            <div
+              className={`absolute -bottom-6 -left-4 rounded-xl p-6 w-72 text-white shadow-xl border transition-all duration-300 ${
+                hoveredStep === 4
+                  ? "bg-gradient-to-br from-cyan-600 to-cyan-700 border-cyan-500/30 transform scale-105"
+                  : "bg-gradient-to-br from-teal-600 to-teal-700 border-teal-500/30"
+              }`}
+            >
               <div className="flex items-center mb-2">
                 <div className="mr-4">
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  {hoveredStep === 4 ? (
+                    <Database className="w-8 h-8" />
+                  ) : (
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
                 </div>
                 <div>
                   <p className="text-lg font-semibold">
-                    Block Convey helps you maintain visibility across your
-                    entire AI ecosystem.
+                    {hoveredStep === 4
+                      ? "Comprehensive registry of all AI models and governance records"
+                      : "Block Convey helps you maintain visibility across your entire AI ecosystem."}
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="absolute top-1/2 right-4 bg-gradient-to-br from-cyan-600 to-cyan-700 rounded-xl p-6 w-72 text-white shadow-xl border border-cyan-500/30">
+            <div
+              className={`absolute top-1/2 right-4 rounded-xl p-6 w-72 text-white shadow-xl border transition-all duration-300 ${
+                hoveredStep === 3
+                  ? "bg-gradient-to-br from-amber-500 to-amber-600 border-amber-400/30 transform scale-105"
+                  : "bg-gradient-to-br from-cyan-600 to-cyan-700 border-cyan-500/30"
+              }`}
+            >
               <div className="flex items-center mb-2">
                 <div className="mr-4">
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  {hoveredStep === 3 ? (
+                    <FileText className="w-8 h-8" />
+                  ) : (
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
                 </div>
                 <div>
-                  <p className="font-bold text-xl mb-1">82% Reduction</p>
+                  <p className="font-bold text-xl mb-1">
+                    {hoveredStep === 3 ? "Generate Reports" : "82% Reduction"}
+                  </p>
                   <p className="text-sm text-cyan-50">
-                    Our customers report an average 82% reduction in AI-related
-                    operational issues.
+                    {hoveredStep === 3
+                      ? "One-click comprehensive report generation for all stakeholders"
+                      : "Our customers report an average 82% reduction in AI-related operational issues."}
                   </p>
                 </div>
               </div>
