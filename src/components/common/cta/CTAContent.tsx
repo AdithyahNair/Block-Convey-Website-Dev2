@@ -279,7 +279,7 @@ export const CTAContent: React.FC = () => {
                         {
                           [
                             "Risk Score",
-                            "Compliance",
+                            "ISO Compliance",
                             "Transparency",
                             "Performance",
                           ][i]
