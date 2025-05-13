@@ -158,274 +158,298 @@ export const WhyChooseBlockConveySection: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             {/* Main dashboard */}
-            <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-white/10">
-              <div className="p-4 border-b border-gray-100">
-                <div className="flex items-center space-x-6">
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+              {/* Browser-like header */}
+              <div className="p-4 border-b border-gray-100 flex items-center justify-between">
+                <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                   <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                  <span className="text-sm text-gray-600 ml-2">
-                    Block Convey Dashboard
+                </div>
+                <div className="flex items-center">
+                  <div className="flex items-center">
+                    <div className="bg-teal-500 h-10 w-10 rounded-lg flex items-center justify-center mr-3">
+                      <svg
+                        className="h-5 w-5 text-white"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
+                      </svg>
+                    </div>
+                    <span className="font-medium text-gray-800 text-lg">
+                      PRISM
+                    </span>
+                  </div>
+                  <span className="text-base text-gray-500 ml-4">
+                    by Block Convey
                   </span>
                 </div>
               </div>
 
-              <div className="p-6">
-                <div className="flex mb-4 space-x-8 text-sm text-gray-600 border-b pb-2">
-                  <span
-                    className={`border-b-2 border-teal-500 pb-2 text-teal-600 font-medium ${
-                      hoveredStep === 1 ? "bg-teal-50 px-2 rounded-t-md" : ""
-                    }`}
-                  >
-                    Model Evaluation
-                  </span>
-                  <span
-                    className={
-                      hoveredStep === 2 ? "bg-teal-50 px-2 rounded-t-md" : ""
-                    }
-                  >
-                    Compliance
-                  </span>
-                  <span
-                    className={
-                      hoveredStep === 3 ? "bg-teal-50 px-2 rounded-t-md" : ""
-                    }
-                  >
-                    Reports
-                  </span>
-                  <span
-                    className={
-                      hoveredStep === 4 ? "bg-teal-50 px-2 rounded-t-md" : ""
-                    }
-                  >
-                    Registry
-                  </span>
+              <div className="p-8">
+                {/* Title section */}
+                <div className="mb-10">
+                  <h2 className="text-3xl font-bold text-gray-800 mb-1">
+                    ISO 42001 Documentation
+                  </h2>
+                  <p className="text-gray-600 text-base">
+                    Manage AI governance documentation and policies
+                  </p>
                 </div>
 
-                <div className="py-4">
-                  <span className="text-sm text-gray-500">
-                    AI Governance /{" "}
-                    {hoveredStep
-                      ? chooseBlockConveySteps[hoveredStep - 1]?.title
-                      : "Overview"}
-                  </span>
-
-                  <div
-                    className={`mt-6 bg-gray-50 rounded-lg p-4 transition-all duration-300 ${
-                      hoveredStep ? "border-l-4 border-teal-500" : ""
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <h3 className="text-lg font-medium">
-                          {hoveredStep === 1 && "Model Performance Analysis"}
-                          {hoveredStep === 2 && "Compliance Status"}
-                          {hoveredStep === 3 && "Report Generation"}
-                          {hoveredStep === 4 && "AI Registry"}
-                          {!hoveredStep && "Model Overview"}
-                        </h3>
+                {/* Dashboard grid layout */}
+                <div className="grid grid-cols-2 gap-6 mb-10">
+                  {/* Left column */}
+                  <div className="space-y-6">
+                    {/* Framework Adaptation */}
+                    <div className="bg-gray-50 rounded-xl p-6">
+                      <h3 className="flex items-center text-xl font-semibold text-gray-800 mb-5">
                         <svg
-                          className="h-4 w-4 ml-2 text-gray-500"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
+                          className="h-5 w-5 text-blue-600 mr-3"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         >
-                          <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                          <polyline points="14 2 14 8 20 8"></polyline>
+                          <line x1="16" y1="13" x2="8" y2="13"></line>
+                          <line x1="16" y1="17" x2="8" y2="17"></line>
+                          <polyline points="10 9 9 9 8 9"></polyline>
                         </svg>
+                        Framework Adaptation
+                      </h3>
+
+                      <div className="space-y-5">
+                        <div>
+                          <div className="flex justify-between mb-1">
+                            <span className="text-gray-700">
+                              Model Documentation
+                            </span>
+                            <span className="text-teal-600 font-medium">
+                              92%
+                            </span>
+                          </div>
+                          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                            <div
+                              className="bg-teal-500 h-2 rounded-full"
+                              style={{ width: "92%" }}
+                            ></div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="flex justify-between mb-1">
+                            <span className="text-gray-700">
+                              Risk Assessment
+                            </span>
+                            <span className="text-amber-600 font-medium">
+                              78%
+                            </span>
+                          </div>
+                          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                            <div
+                              className="bg-amber-500 h-2 rounded-full"
+                              style={{ width: "78%" }}
+                            ></div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="flex justify-between mb-1">
+                            <span className="text-gray-700">
+                              Performance Monitoring
+                            </span>
+                            <span className="text-teal-600 font-medium">
+                              95%
+                            </span>
+                          </div>
+                          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                            <div
+                              className="bg-teal-500 h-2 rounded-full"
+                              style={{ width: "95%" }}
+                            ></div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="text-sm text-gray-500">Status</div>
-                      <div className="text-sm text-gray-500">Action</div>
                     </div>
 
-                    {/* Dynamic content based on hovered step */}
-                    {hoveredStep === 2 ? (
-                      <div className="mt-4 space-y-2">
-                        <div className="flex items-center justify-between text-sm">
-                          <div className="flex items-center">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                            <span>ISO 42001</span>
-                          </div>
-                          <span className="text-green-500 font-medium">
-                            Complete
-                          </span>
+                    {/* Required Actions */}
+                    <div className="bg-gray-50 rounded-xl p-6">
+                      <h3 className="flex items-center text-xl font-semibold text-gray-800 mb-5">
+                        <svg
+                          className="h-5 w-5 text-blue-600 mr-3"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        Required Actions
+                      </h3>
+
+                      <div className="space-y-4">
+                        <div className="flex items-start">
+                          <div className="w-5 h-5 rounded-full border-2 border-gray-300 flex-shrink-0 mt-0.5 mr-3"></div>
+                          <p className="text-gray-700">
+                            Update model validation report
+                          </p>
                         </div>
-                        <div className="flex items-center justify-between text-sm">
-                          <div className="flex items-center">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                            <span>NIST AI RMF</span>
-                          </div>
-                          <span className="text-green-500 font-medium">
-                            Complete
-                          </span>
+                        <div className="flex items-start">
+                          <div className="w-5 h-5 rounded-full border-2 border-gray-300 flex-shrink-0 mt-0.5 mr-3"></div>
+                          <p className="text-gray-700">
+                            Complete Q2 risk assessment
+                          </p>
                         </div>
-                        <div className="flex items-center justify-between text-sm">
-                          <div className="flex items-center">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                            <span>EU AI Act</span>
-                          </div>
-                          <span className="text-green-500 font-medium">
-                            Complete
-                          </span>
+                        <div className="flex items-start">
+                          <div className="w-5 h-5 rounded-full border-2 border-gray-300 flex-shrink-0 mt-0.5 mr-3"></div>
+                          <p className="text-gray-700">
+                            Review bias mitigation procedures
+                          </p>
                         </div>
                       </div>
-                    ) : (
-                      <>
-                        <div className="h-4 w-full bg-gray-200 rounded-full mt-4"></div>
-                        <div className="h-4 w-full bg-gray-200 rounded-full mt-2"></div>
-                        <div className="h-4 w-3/4 bg-gray-200 rounded-full mt-2"></div>
-                      </>
-                    )}
+                    </div>
+                  </div>
+
+                  {/* Right column */}
+                  <div className="space-y-6">
+                    {/* Compliance Score */}
+                    <div className="bg-gray-50 rounded-xl p-6">
+                      <h3 className="flex items-center text-xl font-semibold text-gray-800 mb-5">
+                        <svg
+                          className="h-5 w-5 text-purple-600 mr-3"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Compliance Score
+                      </h3>
+
+                      <div className="flex flex-col items-center">
+                        <div className="text-[5rem] font-bold text-gray-800 leading-none mb-4">
+                          85%
+                        </div>
+
+                        <div className="w-full h-2.5 bg-gray-200 rounded-full mb-3">
+                          <div
+                            className="bg-purple-500 h-2.5 rounded-full"
+                            style={{ width: "85%" }}
+                          ></div>
+                        </div>
+
+                        <p className="text-sm text-gray-500">
+                          Based on ISO 42001 requirements
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Model Compliance Summary */}
+                    <div className="bg-gray-50 rounded-xl p-6">
+                      <h3 className="flex items-center text-xl font-semibold text-gray-800 mb-5">
+                        <svg
+                          className="h-5 w-5 text-teal-600 mr-3"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                          <polyline points="14 2 14 8 20 8"></polyline>
+                          <line x1="16" y1="13" x2="8" y2="13"></line>
+                          <line x1="16" y1="17" x2="8" y2="17"></line>
+                          <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        Model Compliance Summary
+                      </h3>
+
+                      <div className="space-y-4">
+                        <div>
+                          <div className="flex justify-between mb-2">
+                            <span className="text-gray-700">
+                              Customer Sentiment Analysis
+                            </span>
+                            <span className="text-teal-600 font-medium">
+                              96% Compliant
+                            </span>
+                          </div>
+                          <div className="w-full h-2 bg-gray-200 rounded-full">
+                            <div
+                              className="bg-teal-500 h-2 rounded-full"
+                              style={{ width: "96%" }}
+                            ></div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="flex justify-between mb-2">
+                            <span className="text-gray-700">
+                              Fraud Detection System
+                            </span>
+                            <span className="text-teal-600 font-medium">
+                              89% Compliant
+                            </span>
+                          </div>
+                          <div className="w-full h-2 bg-gray-200 rounded-full">
+                            <div
+                              className="bg-teal-500 h-2 rounded-full"
+                              style={{ width: "89%" }}
+                            ></div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="flex justify-between mb-2">
+                            <span className="text-gray-700">
+                              Credit Risk Assessment
+                            </span>
+                            <span className="text-amber-600 font-medium">
+                              76% Compliant
+                            </span>
+                          </div>
+                          <div className="w-full h-2 bg-gray-200 rounded-full">
+                            <div
+                              className="bg-amber-500 h-2 rounded-full"
+                              style={{ width: "76%" }}
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Floating cards - adjusted based on hovered step */}
-            <div
-              className={`absolute -right-4 top-36 bg-white rounded-xl shadow-xl p-4 w-64 border transition-all duration-300 ${
-                hoveredStep === 1
-                  ? "border-teal-500 transform scale-105"
-                  : "border-cyan-100/30"
-              }`}
-            >
-              <div className="flex items-center mb-2">
-                <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center mr-2 ${
-                    hoveredStep === 1
-                      ? "bg-teal-100 border-teal-300"
-                      : "bg-teal-50 border border-teal-100"
-                  }`}
-                >
-                  <svg
-                    className={`h-4 w-4 ${
-                      hoveredStep === 1 ? "text-teal-600" : "text-teal-500"
-                    }`}
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <span className="font-medium">Model Evaluation</span>
-              </div>
-
-              <div className="space-y-2 mt-4">
-                <div className="h-2 bg-gray-200 rounded-full"></div>
-                <div className="h-2 bg-gray-200 rounded-full"></div>
-                <div className="h-2 bg-gray-200 rounded-full"></div>
-              </div>
-
-              <div className="mt-6 flex justify-center">
-                <div className="relative w-24 h-24">
-                  <svg className="w-full h-full" viewBox="0 0 36 36">
-                    <path
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      fill="none"
-                      stroke="#E5E7EB"
-                      strokeWidth="3"
-                    />
-                    <path
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      fill="none"
-                      stroke="#0D9488"
-                      strokeWidth="3"
-                      strokeDasharray="92, 100"
-                    />
-                    <text
-                      x="18"
-                      y="21"
-                      textAnchor="middle"
-                      fontSize="8"
-                      fill="#374151"
-                      fontWeight="bold"
-                    >
-                      92%
-                    </text>
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <div
-              className={`absolute -bottom-6 -left-4 rounded-xl p-6 w-72 text-white shadow-xl border transition-all duration-300 ${
-                hoveredStep === 4
-                  ? "bg-gradient-to-br from-cyan-600 to-cyan-700 border-cyan-500/30 transform scale-105"
-                  : "bg-gradient-to-br from-teal-600 to-teal-700 border-teal-500/30"
-              }`}
-            >
-              <div className="flex items-center mb-2">
-                <div className="mr-4">
-                  {hoveredStep === 4 ? (
-                    <Database className="w-8 h-8" />
-                  ) : (
+                {/* New Report Button */}
+                <div className="flex justify-end">
+                  <button className="px-5 py-3 bg-teal-500 text-white rounded-lg flex items-center hover:bg-teal-600 transition-colors shadow-sm">
                     <svg
-                      width="32"
-                      height="32"
-                      viewBox="0 0 24 24"
+                      className="w-5 h-5 mr-2"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  )}
-                </div>
-                <div>
-                  <p className="text-lg font-semibold">
-                    {hoveredStep === 4
-                      ? "Comprehensive registry of all AI models and governance records"
-                      : "Block Convey helps you maintain visibility across your entire AI ecosystem."}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div
-              className={`absolute top-1/2 right-4 rounded-xl p-6 w-72 text-white shadow-xl border transition-all duration-300 ${
-                hoveredStep === 3
-                  ? "bg-gradient-to-br from-amber-500 to-amber-600 border-amber-400/30 transform scale-105"
-                  : "bg-gradient-to-br from-cyan-600 to-cyan-700 border-cyan-500/30"
-              }`}
-            >
-              <div className="flex items-center mb-2">
-                <div className="mr-4">
-                  {hoveredStep === 3 ? (
-                    <FileText className="w-8 h-8" />
-                  ) : (
-                    <svg
-                      width="32"
-                      height="32"
                       viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
-                      <path
-                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
                     </svg>
-                  )}
-                </div>
-                <div>
-                  <p className="font-bold text-xl mb-1">
-                    {hoveredStep === 3 ? "Generate Reports" : "82% Reduction"}
-                  </p>
-                  <p className="text-sm text-cyan-50">
-                    {hoveredStep === 3
-                      ? "One-click comprehensive report generation for all stakeholders"
-                      : "Our customers report an average 82% reduction in AI-related operational issues."}
-                  </p>
+                    New Report
+                  </button>
                 </div>
               </div>
             </div>
