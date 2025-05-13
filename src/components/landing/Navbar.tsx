@@ -3,7 +3,7 @@ import { NavContainer } from "./nav/NavContainer";
 import { NavLogo } from "./nav/NavLogo";
 import { NavLinks } from "./nav/NavLinks";
 import { NavActions } from "./nav/NavActions";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   {
@@ -142,18 +142,12 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center justify-center flex-1 px-12">
+        <div className="hidden lg:flex items-center justify-center flex-1 px-6">
           <NavLinks items={navItems} />
         </div>
 
         <div className="flex items-center">
-          <button
-            className="p-2 text-gray-600 hover:text-gray-900"
-            aria-label="Search"
-          >
-            <Search className="h-5 w-5" />
-          </button>
-          <div className="hidden lg:block ml-4">
+          <div className="hidden lg:block">
             <NavActions />
           </div>
 
