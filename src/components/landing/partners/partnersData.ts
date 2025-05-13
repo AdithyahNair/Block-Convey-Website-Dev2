@@ -12,16 +12,13 @@ export const partners = [
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6dVyqioOYB2_9ojzSd9QQYJ2BavbmiktXFw&s",
   },
   {
-    name: "Cornell Blockchain",
+    name: "Cornell",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT116q__HJvr7j7xpQ96hfkbfKZ8hJ62J1eAQ&s",
   },
-  {
-    name: "World Blockchain Summit",
-    logo: "https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/ilwirpnuxgqvsepf4noc",
-  },
+
   {
     name: "Mercury",
-    logo: "https://mercury.com/blog/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F73xfpczb%2Fproduction%2F61a64dacdf6aa307375b300c9636ea1428357734-1536x864.jpg%3Ffit%3Dmax%26auto%3Dformat&w=828&q=75",
+    logo: "https://s4-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/607/000/original/mercury-icon-black_(1).png?1644437644",
   },
   {
     name: "youngStartUp ventures",
