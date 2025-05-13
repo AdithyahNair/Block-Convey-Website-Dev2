@@ -39,7 +39,7 @@ export const BusinessValueSection: React.FC = () => {
         },
         { name: "ISO 42001 checklist", icon: <Activity className="w-4 h-4" /> },
         { name: "NIST AI RMF", icon: <Clock className="w-4 h-4" /> },
-        { name: "Traffic", icon: <Zap className="w-4 h-4" /> },
+        { name: "SR 11-7", icon: <Zap className="w-4 h-4" /> },
       ],
     },
     {
@@ -97,7 +97,7 @@ export const BusinessValueSection: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-            The AI Observability Platform that Drives
+            The AI Governance Platform that Drives
           </h2>
           <h2 className="text-4xl md:text-5xl font-bold text-teal-500">
             Business Value
