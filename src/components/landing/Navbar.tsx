@@ -142,7 +142,7 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center justify-center flex-1 px-6">
+        <div className="hidden lg:flex items-center -ml-24">
           <NavLinks items={navItems} />
         </div>
 
