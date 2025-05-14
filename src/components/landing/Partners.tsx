@@ -35,11 +35,11 @@ export const Partners: React.FC = () => {
                 key={`${partner.name}-${idx}`}
                 className="flex items-center justify-center mx-8"
               >
-                <div className="bg-white p-4 rounded-lg shadow-sm border border-brand-light/30 w-[180px] h-[100px] flex items-center justify-center hover:shadow-md transition-all">
+                <div className="bg-white p-3 rounded-lg shadow-sm border border-brand-light/30 w-[180px] h-[100px] flex items-center justify-center overflow-hidden group hover:shadow-md transition-all">
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="h-12 max-w-[150px] object-contain transition-all"
+                    className="h-auto w-auto max-h-[70px] max-w-[160px] object-contain transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
               </div>
