@@ -1,22 +1,76 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Hero: React.FC = () => {
+  // State for typing animations for standards
+  const [currentStandard, setCurrentStandard] = useState(0);
+  const [typedStandards, setTypedStandards] = useState(["", "", ""]);
+  const [animationComplete, setAnimationComplete] = useState(false);
+
+  // Standards to type
+  const standards = [
+    { text: "EU AI Act", color: "text-brand-dark font-medium" },
+    { text: "ISO 42001", color: "text-brand font-medium" },
+    { text: "NIST", color: "text-brand-dark font-medium" },
+  ];
+
+  // Start typing animation when component mounts
+  useEffect(() => {
+    // Small delay before starting animation
+    const initialTimeout = setTimeout(() => {
+      setCurrentStandard(0);
+    }, 500);
+
+    return () => clearTimeout(initialTimeout);
+  }, []);
+
+  // Handle typing animation for standards
+  useEffect(() => {
+    if (currentStandard < standards.length) {
+      const targetText = standards[currentStandard].text;
+      const currentText = typedStandards[currentStandard];
+
+      if (currentText.length < targetText.length) {
+        // Continue typing current standard
+        const timeout = setTimeout(() => {
+          const newTypedStandards = [...typedStandards];
+          newTypedStandards[currentStandard] = targetText.slice(
+            0,
+            currentText.length + 1
+          );
+          setTypedStandards(newTypedStandards);
+        }, 100);
+
+        return () => clearTimeout(timeout);
+      } else {
+        // Move to next standard after a short pause
+        const timeout = setTimeout(() => {
+          setCurrentStandard(currentStandard + 1);
+        }, 300);
+
+        return () => clearTimeout(timeout);
+      }
+    } else if (currentStandard === standards.length && !animationComplete) {
+      // All standards have been typed
+      setAnimationComplete(true);
+    }
+  }, [currentStandard, typedStandards, standards, animationComplete]);
+
   return (
     <div
       id="main"
-      className="relative min-h-[75vh] flex items-end bg-brand-lightest overflow-hidden py-8 pb-24">
-    
+      className="relative min-h-[75vh] flex items-end bg-brand-lightest overflow-hidden py-8 pb-24"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ADD2C933_1px,transparent_1px),linear-gradient(to_bottom,#ADD2C933_1px,transparent_1px)] bg-[size:14px_24px]" />
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-lightest to-transparent" />
-      
+
       {/* Subtle gradient orbs */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-brand-light/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[600px] bg-brand/20 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2" />
       <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[100px]" />
-      
+
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left Column - Bold Message */}
@@ -26,43 +80,77 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-left"
           >
-            <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4 leading-[1.1]"
+            <motion.h1
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-[1.1]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.7, 
+              transition={{
+                duration: 0.7,
                 ease: [0.22, 1, 0.36, 1],
-                delay: 0.1
+                delay: 0.1,
               }}
             >
-              Revolutionize Enterprise AI with{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-dark">
-                Explainable AI
-              </span>
+              The Fastest Path to AI Compliance
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               className="text-lg md:text-xl text-gray-700 mb-6 max-w-xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.7, 
+              transition={{
+                duration: 0.7,
                 ease: [0.22, 1, 0.36, 1],
-                delay: 0.2
+                delay: 0.2,
               }}
             >
-              Automate claims processing for unbiased and faster settlements with our powerful AI governance platform.
+              Block Convey's AI Governance Platform automates model evaluation
+              and compliance—making you audit-ready for
             </motion.p>
 
-            <motion.div 
+            {/* Standards with individual typing animations */}
+            <motion.div
+              className="flex flex-wrap gap-2 mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.3,
+              }}
+            >
+              {standards.map((standard, index) => (
+                <motion.div
+                  key={index}
+                  className={`px-3 py-1 rounded-full bg-white shadow-sm border border-gray-200 min-w-[100px] ${standard.color} flex justify-center items-center`}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{
+                    opacity: typedStandards[index].length > 0 ? 1 : 0.5,
+                    scale: 1,
+                  }}
+                  transition={{ duration: 0.3 }}
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 0 15px rgba(94, 163, 163, 0.3)",
+                  }}
+                >
+                  <div className="text-center">
+                    {typedStandards[index]}
+                    <span className="animate-pulse">
+                      {currentStandard === index ? "|" : ""}
+                    </span>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
               className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.7, 
+              transition={{
+                duration: 0.7,
                 ease: [0.22, 1, 0.36, 1],
-                delay: 0.3
+                delay: 0.4,
               }}
             >
               <a
@@ -107,7 +195,7 @@ export const Hero: React.FC = () => {
                 overflow: "hidden",
               }}
             ></iframe>
-            
+
             {/* Decorative element */}
             <div className="absolute -bottom-5 -right-5 w-10 h-10 bg-brand rounded-full border-4 border-white"></div>
           </motion.div>
