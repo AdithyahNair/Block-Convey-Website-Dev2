@@ -3,59 +3,78 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Hero: React.FC = () => {
-  // State for typing animations for standards
-  const [currentStandard, setCurrentStandard] = useState(0);
-  const [typedStandards, setTypedStandards] = useState(["", "", ""]);
-  const [animationComplete, setAnimationComplete] = useState(false);
+  // State for cycling typing animation
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [standardIndex, setStandardIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Standards to type
+  // Standards to cycle through
   const standards = [
-    { text: "EU AI Act", color: "text-brand-dark font-medium" },
-    { text: "ISO 42001", color: "text-brand font-medium" },
-    { text: "NIST", color: "text-brand-dark font-medium" },
+    {
+      text: "EU AI Act",
+      color:
+        "text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-600",
+    },
+    {
+      text: "ISO 42001",
+      color:
+        "text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-dark",
+    },
+    {
+      text: "NIST",
+      color:
+        "text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-brand",
+    },
   ];
 
-  // Start typing animation when component mounts
+  // Handle typing animation effect
   useEffect(() => {
-    // Small delay before starting animation
-    const initialTimeout = setTimeout(() => {
-      setCurrentStandard(0);
-    }, 500);
+    const currentStandard = standards[standardIndex].text;
 
-    return () => clearTimeout(initialTimeout);
-  }, []);
+    // Speed settings - increased typing and deleting speeds
+    const typingSpeed = 80; // Faster typing (was 120)
+    const deletingSpeed = 50; // Faster deleting (was 80)
+    const pauseBeforeDelete = 1000;
+    const pauseBeforeNextStandard = 800;
 
-  // Handle typing animation for standards
-  useEffect(() => {
-    if (currentStandard < standards.length) {
-      const targetText = standards[currentStandard].text;
-      const currentText = typedStandards[currentStandard];
+    let timeout: NodeJS.Timeout;
 
-      if (currentText.length < targetText.length) {
-        // Continue typing current standard
-        const timeout = setTimeout(() => {
-          const newTypedStandards = [...typedStandards];
-          newTypedStandards[currentStandard] = targetText.slice(
-            0,
-            currentText.length + 1
-          );
-          setTypedStandards(newTypedStandards);
-        }, 100);
-
-        return () => clearTimeout(timeout);
-      } else {
-        // Move to next standard after a short pause
-        const timeout = setTimeout(() => {
-          setCurrentStandard(currentStandard + 1);
-        }, 300);
-
-        return () => clearTimeout(timeout);
-      }
-    } else if (currentStandard === standards.length && !animationComplete) {
-      // All standards have been typed
-      setAnimationComplete(true);
+    if (isPaused) {
+      timeout = setTimeout(() => {
+        setIsPaused(false);
+        if (displayText === currentStandard) {
+          setIsDeleting(true);
+        }
+      }, pauseBeforeDelete);
+      return () => clearTimeout(timeout);
     }
-  }, [currentStandard, typedStandards, standards, animationComplete]);
+
+    if (isDeleting) {
+      if (displayText === "") {
+        setIsDeleting(false);
+        setStandardIndex((standardIndex + 1) % standards.length);
+        setIsPaused(true);
+        timeout = setTimeout(() => {
+          setIsPaused(false);
+        }, pauseBeforeNextStandard);
+      } else {
+        timeout = setTimeout(() => {
+          setDisplayText(displayText.slice(0, -1));
+        }, deletingSpeed);
+      }
+    } else {
+      if (displayText === currentStandard) {
+        setIsPaused(true);
+      } else {
+        timeout = setTimeout(() => {
+          setDisplayText(currentStandard.slice(0, displayText.length + 1));
+        }, typingSpeed);
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, standardIndex, isPaused, standards]);
 
   return (
     <div
@@ -93,8 +112,8 @@ export const Hero: React.FC = () => {
               The Fastest Path to AI Compliance
             </motion.h1>
 
-            <motion.p
-              className="text-lg md:text-xl text-gray-700 mb-6 max-w-xl"
+            <motion.div
+              className="mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -103,44 +122,20 @@ export const Hero: React.FC = () => {
                 delay: 0.2,
               }}
             >
-              Block Convey's AI Governance Platform automates model evaluation
-              and compliance—making you audit-ready for
-            </motion.p>
-
-            {/* Standards with individual typing animations */}
-            <motion.div
-              className="flex flex-wrap gap-2 mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.7,
-                ease: [0.22, 1, 0.36, 1],
-                delay: 0.3,
-              }}
-            >
-              {standards.map((standard, index) => (
-                <motion.div
-                  key={index}
-                  className={`px-3 py-1 rounded-full bg-white shadow-sm border border-gray-200 min-w-[100px] ${standard.color} flex justify-center items-center`}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{
-                    opacity: typedStandards[index].length > 0 ? 1 : 0.5,
-                    scale: 1,
-                  }}
-                  transition={{ duration: 0.3 }}
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 0 15px rgba(94, 163, 163, 0.3)",
-                  }}
+              <p className="text-lg md:text-xl text-gray-700 mb-2">
+                Block Convey's AI Governance Platform automates model evaluation
+                and compliance. Making you audit-ready for
+              </p>
+              <div className="h-16 mt-4">
+                <span
+                  className={`text-3xl md:text-4xl lg:text-5xl font-semibold ${standards[standardIndex].color} inline-block`}
                 >
-                  <div className="text-center">
-                    {typedStandards[index]}
-                    <span className="animate-pulse">
-                      {currentStandard === index ? "|" : ""}
-                    </span>
-                  </div>
-                </motion.div>
-              ))}
+                  {displayText}
+                  <span className="inline-block animate-pulse ml-0.5 border-r-4 border-teal-500 h-8 md:h-10 align-middle">
+                    &#8203;
+                  </span>
+                </span>
+              </div>
             </motion.div>
 
             <motion.div
