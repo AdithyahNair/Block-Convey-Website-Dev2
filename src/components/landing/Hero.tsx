@@ -123,8 +123,7 @@ export const Hero: React.FC = () => {
               }}
             >
               <p className="text-lg md:text-xl text-gray-700 mb-2">
-                Block Convey's AI Governance Platform automates model evaluation
-                and compliance. Making you audit-ready for
+                Making you audit-ready for
               </p>
               <div className="h-16 mt-4">
                 <span
