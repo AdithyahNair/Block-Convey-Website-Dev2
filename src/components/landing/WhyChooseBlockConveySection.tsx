@@ -12,15 +12,13 @@ export const WhyChooseBlockConveySection: React.FC = () => {
       number: 1,
       title: "End-to-End Model Evaluation",
       icon: <List className="w-6 h-6 text-white" />,
-      description:
-        "Comprehensively assess your AI models across performance, quality, bias, and safety metrics. Our platform provides detailed insights to identify and resolve issues before deployment.",
+      description: "",
     },
     {
       number: 2,
       title: "Automated Compliance Checklist",
       icon: <CheckCircle className="w-6 h-6 text-white" />,
-      description:
-        "Automatically verify compliance with key AI governance frameworks, including ISO 42001, NIST AI RMF, and EU AI Act. Reduce manual effort and ensure adherence to industry standards.",
+      description: "",
       standards: [
         "ISO 42001 AI Management System",
         "NIST AI Risk Management Framework",
@@ -31,38 +29,36 @@ export const WhyChooseBlockConveySection: React.FC = () => {
       number: 3,
       title: "Generate Report",
       icon: <FileText className="w-6 h-6 text-white" />,
-      description:
-        "Create comprehensive documentation and reports with a single click. Export detailed analyses for stakeholders, auditors, and regulators with evidence of compliance and model performance.",
+      description: "",
     },
     {
       number: 4,
       title: "Auditable AI Registry",
       icon: <Database className="w-6 h-6 text-white" />,
-      description:
-        "Maintain a complete registry of all AI models with version history, training data, and governance documentation. Ensure traceability and accountability throughout the AI lifecycle.",
+      description: "",
     },
   ];
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-28">
+    <section className="relative overflow-hidden py-16 md:py-24">
       {/* Block Convey styled background with subtle grid */}
       <div className="absolute inset-0 bg-gradient-to-r from-teal-800 via-teal-700 to-cyan-700"></div>
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
       {/* Subtle glowing orbs */}
-      <div className="absolute top-40 left-20 w-64 h-64 rounded-full bg-cyan-400/10 blur-[80px]"></div>
-      <div className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-teal-300/10 blur-[100px]"></div>
+      <div className="absolute top-40 left-20 w-56 h-56 rounded-full bg-cyan-400/10 blur-[80px]"></div>
+      <div className="absolute bottom-20 right-20 w-72 h-72 rounded-full bg-teal-300/10 blur-[100px]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Centered heading */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
             How We Achieve <span className="text-cyan-300">AI Governance</span>
           </h2>
 
@@ -76,14 +72,14 @@ export const WhyChooseBlockConveySection: React.FC = () => {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left content: Process steps */}
           <div>
-            <div className="space-y-10">
+            <div className="space-y-8">
               {chooseBlockConveySteps.map((step) => (
                 <motion.div
                   key={step.number}
-                  className="flex items-start gap-6"
+                  className="flex items-start gap-5"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -94,7 +90,7 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                   {/* Step number with hover effect */}
                   <div className="flex-shrink-0">
                     <div
-                      className={`w-16 h-16 rounded-full flex items-center justify-center shadow-lg shadow-cyan-700/20 transition-all duration-300 ${
+                      className={`w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-cyan-700/20 transition-all duration-300 ${
                         hoveredStep === step.number
                           ? "bg-cyan-400 scale-110"
                           : "bg-gradient-to-br from-cyan-400 to-teal-300"
@@ -104,7 +100,7 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                       {hoveredStep === step.number ? (
                         step.icon
                       ) : (
-                        <span className="text-teal-900 font-bold text-2xl">
+                        <span className="text-teal-900 font-bold text-xl">
                           {step.number}
                         </span>
                       )}
@@ -117,16 +113,13 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                       hoveredStep === step.number ? "translate-x-2" : ""
                     }`}
                   >
-                    <h3 className="text-2xl font-bold text-white mb-2">
+                    <h3 className="text-xl font-bold text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-cyan-50 text-lg opacity-90 leading-relaxed">
-                      {step.description}
-                    </p>
 
                     {/* Compliance standards for step 2 */}
                     {step.number === 2 && step.standards && (
-                      <div className="mt-4 bg-white/10 rounded-lg p-3">
+                      <div className="mt-3 bg-white/10 rounded-lg p-3">
                         <h4 className="text-white text-sm font-medium mb-2">
                           Compliance Standards:
                         </h4>
@@ -157,56 +150,56 @@ export const WhyChooseBlockConveySection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            {/* Main dashboard */}
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+            {/* Main dashboard - Scaled down version with same content */}
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 transform scale-85 origin-top-left">
               {/* Browser-like header */}
-              <div className="p-4 border-b border-gray-100 flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
+              <div className="p-3 border-b border-gray-100 flex items-center justify-between">
+                <div className="flex items-center space-x-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
                 </div>
                 <div className="flex items-center">
                   <div className="flex items-center">
-                    <div className="bg-teal-500 h-10 w-10 rounded-lg flex items-center justify-center mr-3">
+                    <div className="bg-teal-500 h-8 w-8 rounded-lg flex items-center justify-center mr-2">
                       <svg
-                        className="h-5 w-5 text-white"
+                        className="h-4 w-4 text-white"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                       >
                         <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
                       </svg>
                     </div>
-                    <span className="font-medium text-gray-800 text-lg">
+                    <span className="font-medium text-gray-800 text-base">
                       PRISM
                     </span>
                   </div>
-                  <span className="text-base text-gray-500 ml-4">
+                  <span className="text-sm text-gray-500 ml-3">
                     by Block Convey
                   </span>
                 </div>
               </div>
 
-              <div className="p-8">
+              <div className="p-6">
                 {/* Title section */}
-                <div className="mb-10">
-                  <h2 className="text-3xl font-bold text-gray-800 mb-1">
+                <div className="mb-6">
+                  <h2 className="text-2xl font-bold text-gray-800 mb-1">
                     ISO 42001 Documentation
                   </h2>
-                  <p className="text-gray-600 text-base">
+                  <p className="text-gray-600 text-sm">
                     Manage AI governance documentation and policies
                   </p>
                 </div>
 
                 {/* Dashboard grid layout */}
-                <div className="grid grid-cols-2 gap-6 mb-10">
+                <div className="grid grid-cols-2 gap-4 mb-6">
                   {/* Left column */}
-                  <div className="space-y-6">
+                  <div className="space-y-4">
                     {/* Framework Adaptation */}
-                    <div className="bg-gray-50 rounded-xl p-6">
-                      <h3 className="flex items-center text-xl font-semibold text-gray-800 mb-5">
+                    <div className="bg-gray-50 rounded-xl p-4">
+                      <h3 className="flex items-center text-base font-semibold text-gray-800 mb-3">
                         <svg
-                          className="h-5 w-5 text-blue-600 mr-3"
+                          className="h-4 w-4 text-blue-600 mr-2"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -223,19 +216,19 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                         Framework Adaptation
                       </h3>
 
-                      <div className="space-y-5">
+                      <div className="space-y-3">
                         <div>
                           <div className="flex justify-between mb-1">
-                            <span className="text-gray-700">
+                            <span className="text-gray-700 text-sm">
                               Model Documentation
                             </span>
-                            <span className="text-teal-600 font-medium">
+                            <span className="text-teal-600 font-medium text-sm">
                               92%
                             </span>
                           </div>
-                          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                          <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
                             <div
-                              className="bg-teal-500 h-2 rounded-full"
+                              className="bg-teal-500 h-1.5 rounded-full"
                               style={{ width: "92%" }}
                             ></div>
                           </div>
@@ -243,16 +236,16 @@ export const WhyChooseBlockConveySection: React.FC = () => {
 
                         <div>
                           <div className="flex justify-between mb-1">
-                            <span className="text-gray-700">
+                            <span className="text-gray-700 text-sm">
                               Risk Assessment
                             </span>
-                            <span className="text-amber-600 font-medium">
+                            <span className="text-amber-600 font-medium text-sm">
                               78%
                             </span>
                           </div>
-                          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                          <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
                             <div
-                              className="bg-amber-500 h-2 rounded-full"
+                              className="bg-amber-500 h-1.5 rounded-full"
                               style={{ width: "78%" }}
                             ></div>
                           </div>
@@ -260,16 +253,16 @@ export const WhyChooseBlockConveySection: React.FC = () => {
 
                         <div>
                           <div className="flex justify-between mb-1">
-                            <span className="text-gray-700">
+                            <span className="text-gray-700 text-sm">
                               Performance Monitoring
                             </span>
-                            <span className="text-teal-600 font-medium">
+                            <span className="text-teal-600 font-medium text-sm">
                               95%
                             </span>
                           </div>
-                          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                          <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
                             <div
-                              className="bg-teal-500 h-2 rounded-full"
+                              className="bg-teal-500 h-1.5 rounded-full"
                               style={{ width: "95%" }}
                             ></div>
                           </div>
@@ -278,10 +271,10 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                     </div>
 
                     {/* Required Actions */}
-                    <div className="bg-gray-50 rounded-xl p-6">
-                      <h3 className="flex items-center text-xl font-semibold text-gray-800 mb-5">
+                    <div className="bg-gray-50 rounded-xl p-4">
+                      <h3 className="flex items-center text-base font-semibold text-gray-800 mb-3">
                         <svg
-                          className="h-5 w-5 text-blue-600 mr-3"
+                          className="h-4 w-4 text-blue-600 mr-2"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -295,22 +288,22 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                         Required Actions
                       </h3>
 
-                      <div className="space-y-4">
+                      <div className="space-y-2">
                         <div className="flex items-start">
-                          <div className="w-5 h-5 rounded-full border-2 border-gray-300 flex-shrink-0 mt-0.5 mr-3"></div>
-                          <p className="text-gray-700">
+                          <div className="w-4 h-4 rounded-full border-2 border-gray-300 flex-shrink-0 mt-0.5 mr-2"></div>
+                          <p className="text-gray-700 text-sm">
                             Update model validation report
                           </p>
                         </div>
                         <div className="flex items-start">
-                          <div className="w-5 h-5 rounded-full border-2 border-gray-300 flex-shrink-0 mt-0.5 mr-3"></div>
-                          <p className="text-gray-700">
+                          <div className="w-4 h-4 rounded-full border-2 border-gray-300 flex-shrink-0 mt-0.5 mr-2"></div>
+                          <p className="text-gray-700 text-sm">
                             Complete Q2 risk assessment
                           </p>
                         </div>
                         <div className="flex items-start">
-                          <div className="w-5 h-5 rounded-full border-2 border-gray-300 flex-shrink-0 mt-0.5 mr-3"></div>
-                          <p className="text-gray-700">
+                          <div className="w-4 h-4 rounded-full border-2 border-gray-300 flex-shrink-0 mt-0.5 mr-2"></div>
+                          <p className="text-gray-700 text-sm">
                             Review bias mitigation procedures
                           </p>
                         </div>
@@ -319,12 +312,12 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                   </div>
 
                   {/* Right column */}
-                  <div className="space-y-6">
+                  <div className="space-y-4">
                     {/* Compliance Score */}
-                    <div className="bg-gray-50 rounded-xl p-6">
-                      <h3 className="flex items-center text-xl font-semibold text-gray-800 mb-5">
+                    <div className="bg-gray-50 rounded-xl p-4">
+                      <h3 className="flex items-center text-base font-semibold text-gray-800 mb-3">
                         <svg
-                          className="h-5 w-5 text-purple-600 mr-3"
+                          className="h-4 w-4 text-purple-600 mr-2"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -339,28 +332,28 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                       </h3>
 
                       <div className="flex flex-col items-center">
-                        <div className="text-[5rem] font-bold text-gray-800 leading-none mb-4">
+                        <div className="text-4xl font-bold text-gray-800 leading-none mb-3">
                           85%
                         </div>
 
-                        <div className="w-full h-2.5 bg-gray-200 rounded-full mb-3">
+                        <div className="w-full h-2 bg-gray-200 rounded-full mb-2">
                           <div
-                            className="bg-purple-500 h-2.5 rounded-full"
+                            className="bg-purple-500 h-2 rounded-full"
                             style={{ width: "85%" }}
                           ></div>
                         </div>
 
-                        <p className="text-sm text-gray-500">
+                        <p className="text-xs text-gray-500">
                           Based on ISO 42001 requirements
                         </p>
                       </div>
                     </div>
 
                     {/* Model Compliance Summary */}
-                    <div className="bg-gray-50 rounded-xl p-6">
-                      <h3 className="flex items-center text-xl font-semibold text-gray-800 mb-5">
+                    <div className="bg-gray-50 rounded-xl p-4">
+                      <h3 className="flex items-center text-base font-semibold text-gray-800 mb-3">
                         <svg
-                          className="h-5 w-5 text-teal-600 mr-3"
+                          className="h-4 w-4 text-teal-600 mr-2"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -377,53 +370,53 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                         Model Compliance Summary
                       </h3>
 
-                      <div className="space-y-4">
+                      <div className="space-y-2">
                         <div>
-                          <div className="flex justify-between mb-2">
-                            <span className="text-gray-700">
+                          <div className="flex justify-between mb-1">
+                            <span className="text-gray-700 text-sm">
                               Customer Sentiment Analysis
                             </span>
-                            <span className="text-teal-600 font-medium">
-                              96% Compliant
+                            <span className="text-teal-600 font-medium text-sm">
+                              96%
                             </span>
                           </div>
-                          <div className="w-full h-2 bg-gray-200 rounded-full">
+                          <div className="w-full h-1.5 bg-gray-200 rounded-full">
                             <div
-                              className="bg-teal-500 h-2 rounded-full"
+                              className="bg-teal-500 h-1.5 rounded-full"
                               style={{ width: "96%" }}
                             ></div>
                           </div>
                         </div>
 
                         <div>
-                          <div className="flex justify-between mb-2">
-                            <span className="text-gray-700">
+                          <div className="flex justify-between mb-1">
+                            <span className="text-gray-700 text-sm">
                               Fraud Detection System
                             </span>
-                            <span className="text-teal-600 font-medium">
-                              89% Compliant
+                            <span className="text-teal-600 font-medium text-sm">
+                              89%
                             </span>
                           </div>
-                          <div className="w-full h-2 bg-gray-200 rounded-full">
+                          <div className="w-full h-1.5 bg-gray-200 rounded-full">
                             <div
-                              className="bg-teal-500 h-2 rounded-full"
+                              className="bg-teal-500 h-1.5 rounded-full"
                               style={{ width: "89%" }}
                             ></div>
                           </div>
                         </div>
 
                         <div>
-                          <div className="flex justify-between mb-2">
-                            <span className="text-gray-700">
+                          <div className="flex justify-between mb-1">
+                            <span className="text-gray-700 text-sm">
                               Credit Risk Assessment
                             </span>
-                            <span className="text-amber-600 font-medium">
-                              76% Compliant
+                            <span className="text-amber-600 font-medium text-sm">
+                              76%
                             </span>
                           </div>
-                          <div className="w-full h-2 bg-gray-200 rounded-full">
+                          <div className="w-full h-1.5 bg-gray-200 rounded-full">
                             <div
-                              className="bg-amber-500 h-2 rounded-full"
+                              className="bg-amber-500 h-1.5 rounded-full"
                               style={{ width: "76%" }}
                             ></div>
                           </div>
@@ -435,9 +428,9 @@ export const WhyChooseBlockConveySection: React.FC = () => {
 
                 {/* New Report Button */}
                 <div className="flex justify-end">
-                  <button className="px-5 py-3 bg-teal-500 text-white rounded-lg flex items-center hover:bg-teal-600 transition-colors shadow-sm">
+                  <button className="px-4 py-2 bg-teal-500 text-white rounded-lg flex items-center hover:bg-teal-600 transition-colors shadow-sm text-sm">
                     <svg
-                      className="w-5 h-5 mr-2"
+                      className="w-4 h-4 mr-1.5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
