@@ -20,6 +20,10 @@ export const partners = [
     logo: "https://static.wixstatic.com/media/2984b2_88180e1bf1854edbbc645925e66bd483~mv2.png/v1/fill/w_491,h_276,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo_PNG_Black.png",
   },
   {
+    name: "Kaneko Law",
+    logo: "https://images.squarespace-cdn.com/content/v1/65d623cf9f337c1aa27a2089/0c64b1fd-ef1c-426d-aae2-fdebce955c37/Secondary+Logo+Kaneko+Law.png?format=1500w",
+  },
+  {
     name: "NYU Stern",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6dVyqioOYB2_9ojzSd9QQYJ2BavbmiktXFw&s",
   },
