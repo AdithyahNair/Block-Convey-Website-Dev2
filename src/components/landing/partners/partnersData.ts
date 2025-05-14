@@ -1,7 +1,7 @@
 export const partners = [
   {
-    name: "Google for Startups",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLXuRFhFwqzfPvm73fON-zMqq55z8tNs9h4g&s",
+    name: "Google",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png",
   },
   {
     name: "AWS",
