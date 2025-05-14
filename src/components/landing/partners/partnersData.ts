@@ -12,6 +12,10 @@ export const partners = [
     logo: "https://ph-static.imgix.net/ph-logo-1.png",
   },
   {
+    name: "Mass Fintech Hub",
+    logo: "https://massfintechhub.com/app/themes/MassTech/dist/images/logo_37ee5f25.svg",
+  },
+  {
     name: "NYU Stern",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6dVyqioOYB2_9ojzSd9QQYJ2BavbmiktXFw&s",
   },
