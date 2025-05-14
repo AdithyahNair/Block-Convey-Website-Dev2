@@ -8,6 +8,10 @@ export const partners = [
     logo: "https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Emblem.png",
   },
   {
+    name: "Product Hunt",
+    logo: "https://ph-static.imgix.net/ph-logo-1.png",
+  },
+  {
     name: "NYU Stern",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6dVyqioOYB2_9ojzSd9QQYJ2BavbmiktXFw&s",
   },
