@@ -122,10 +122,10 @@ export const Hero: React.FC = () => {
                 delay: 0.2,
               }}
             >
-              <p className="text-lg md:text-xl text-gray-700 mb-2">
-                Making you audit-ready for
-              </p>
-              <div className="h-16 mt-4">
+              <div className="flex items-baseline h-16 mt-4">
+                <p className="text-3xl md:text-4xl lg:text-5xl text-gray-700 font-semibold mr-4">
+                  Audit-ready for
+                </p>
                 <span
                   className={`text-3xl md:text-4xl lg:text-5xl font-semibold ${standards[standardIndex].color} inline-block`}
                 >
