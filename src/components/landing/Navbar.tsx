@@ -136,7 +136,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <NavContainer>
-      <div className="flex items-center justify-between h-16">
+      <div className="flex items-center justify-between h-14">
         <div className="flex items-center">
           <NavLogo />
         </div>
