@@ -12,11 +12,12 @@ export const Partners: React.FC = () => {
           transition={{ duration: 0.4 }}
           className="text-center mb-4"
         >
-          <h2 className="text-xl font-bold text-gray-900 mb-1">
+          <h2 className="text-3xl font-bold text-gray-900 mb-1">
             Our Trusted Partners
           </h2>
           <p className="text-base text-gray-600">
-            Partnering with global organizations to drive innovation in AI governance
+            Partnering with global organizations to drive innovation in AI
+            governance
           </p>
         </motion.div>
       </div>
