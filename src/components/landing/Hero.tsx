@@ -177,7 +177,7 @@ export const Hero: React.FC = () => {
               allow="fullscreen;autoplay"
               allowFullScreen
               height="100%"
-              src="https://streamable.com/e/i7gdzj?autoplay=1&muted=1&nocontrols=1"
+              src="https://streamable.com/e/room9d"
               width="100%"
               style={{
                 border: "none",
