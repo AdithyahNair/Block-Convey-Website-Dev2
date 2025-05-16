@@ -100,9 +100,9 @@ export const BusinessValueSection: React.FC = () => {
           </h2>
         </div>
 
-        <div className="relative">
+        <div className="relative flex justify-center">
           {/* Main diagram */}
-          <div className="relative bg-white rounded-3xl border border-gray-100 shadow-xl shadow-teal-500/5 p-10 max-w-[95%] mx-auto">
+          <div className="relative bg-white rounded-3xl border border-gray-100 shadow-xl shadow-teal-500/5 p-6 sm:p-8 md:p-10 w-full max-w-6xl mx-auto">
             {/* Block Convey tab at top */}
             <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
               <div className="flex items-center justify-center">
@@ -114,14 +114,14 @@ export const BusinessValueSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8 pt-4">
               {/* Left side - Input models */}
-              <div className="lg:col-span-3 flex flex-col justify-center space-y-10 z-10 relative">
+              <div className="lg:col-span-3 flex flex-col justify-center space-y-6 md:space-y-10 z-10 relative">
                 {/* Model cards */}
                 {inputModels.map((model) => (
                   <div
                     key={model.title}
-                    className="bg-white border border-gray-200 rounded-xl p-6 shadow-lg relative z-10"
+                    className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-lg relative z-10"
                   >
                     <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 z-20 hidden lg:block">
                       <div className="bg-gradient-to-r from-teal-400 to-teal-500 rounded-full p-1 shadow-lg shadow-teal-300/30">
@@ -165,7 +165,7 @@ export const BusinessValueSection: React.FC = () => {
               </div>
 
               {/* Main platform categories */}
-              <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 {valueCategories.map((category) => (
                   <div
                     key={category.title}
@@ -204,49 +204,55 @@ export const BusinessValueSection: React.FC = () => {
               <div className="h-3 w-3 bg-amber-500 rounded-full mb-3 shadow-md shadow-amber-500/30"></div>
 
               {/* Organizational alignment box */}
-              <div className="bg-gradient-to-r from-amber-50 to-amber-50/60 rounded-xl py-6 px-8 w-full border border-amber-100/50 shadow-md">
+              <div className="bg-gradient-to-r from-amber-50 to-amber-50/60 rounded-xl py-6 px-6 sm:px-8 w-full border border-amber-100/50 shadow-md">
                 <div className="max-w-4xl mx-auto">
-                  <div className="flex flex-col">
-                    <div className="mb-6">
-                      <div className="bg-white w-16 h-16 rounded-full shadow-md flex items-center justify-center mb-5">
+                  <div className="flex flex-col items-center">
+                    <div className="mb-6 text-center">
+                      <div className="bg-white w-16 h-16 rounded-full shadow-md flex items-center justify-center mb-5 mx-auto">
                         <Building2 className="h-7 w-7 text-amber-600" />
                       </div>
 
-                      <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
                         Corporate Social Responsibility Alignment
                       </h3>
 
-                      <div className="flex flex-col space-y-2 mb-6 text-gray-600">
-                        <span className="whitespace-nowrap flex items-center">
-                          <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
-                          Single source of truth
-                        </span>
-                        <span className="whitespace-nowrap flex items-center">
-                          <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
-                          Eliminate silos
-                        </span>
-                        <span className="whitespace-nowrap flex items-center">
-                          <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
-                          Efficiency improvement
-                        </span>
+                      <div className="flex flex-col items-center space-y-2 mb-6 text-gray-600">
+                        <div className="inline-flex w-56 mx-auto">
+                          <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <span className="text-left">
+                            Single source of truth
+                          </span>
+                        </div>
+                        <div className="inline-flex w-56 mx-auto">
+                          <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <span className="text-left">Eliminate silos</span>
+                        </div>
+                        <div className="inline-flex w-56 mx-auto">
+                          <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <span className="text-left">
+                            Efficiency improvement
+                          </span>
+                        </div>
                       </div>
 
-                      <a
-                        href="https://calendly.com/arunprasad-11/product-demo-call"
-                        className="inline-flex items-center text-amber-600 font-medium hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          window.open(
-                            "https://calendly.com/arunprasad-11/product-demo-call",
-                            "_blank"
-                          );
-                        }}
-                      >
-                        Explore alignment
-                        <ArrowRight className="ml-1 h-4 w-4" />
-                      </a>
+                      <div className="text-center">
+                        <a
+                          href="https://calendly.com/arunprasad-11/product-demo-call"
+                          className="inline-flex items-center text-amber-600 font-medium hover:underline"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            window.open(
+                              "https://calendly.com/arunprasad-11/product-demo-call",
+                              "_blank"
+                            );
+                          }}
+                        >
+                          Explore alignment
+                          <ArrowRight className="ml-1 h-4 w-4" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
