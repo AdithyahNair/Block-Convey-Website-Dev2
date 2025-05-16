@@ -161,16 +161,14 @@ export const WhyChooseBlockConveySection: React.FC = () => {
                 </div>
                 <div className="flex items-center">
                   <div className="flex items-center">
-                    <div className="bg-teal-500 h-8 w-8 rounded-lg flex items-center justify-center mr-2">
-                      <svg
-                        className="h-4 w-4 text-white"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
-                      </svg>
+                    <div className="mr-3">
+                      <img
+                        src="/images/prism-logo.png"
+                        alt="PRISM Logo"
+                        className="h-7 w-7"
+                      />
                     </div>
-                    <span className="font-medium text-gray-800 text-base">
+                    <span className="font-semibold text-gray-800 text-base">
                       PRISM
                     </span>
                   </div>
