@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar } from "../components/landing/Navbar";
 import { Hero } from "../components/landing/Hero";
-import { CircleTextSection } from "../components/landing/CircleTextSection";
 // import { Statistics } from "../components/landing/Statistics";
 import { Partners } from "../components/landing/Partners";
 import { BusinessValueSection } from "../components/landing/BusinessValueSection";
@@ -17,7 +16,6 @@ export const LandingPage: React.FC = () => {
         <Hero />
         <Partners />
         <BusinessValueSection />
-        <CircleTextSection />
         <WhyChooseBlockConveySection />
         <WavyCTA />
         <Footer />
