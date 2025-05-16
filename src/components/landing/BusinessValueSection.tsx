@@ -204,31 +204,52 @@ export const BusinessValueSection: React.FC = () => {
               <div className="h-3 w-3 bg-amber-500 rounded-full mb-3 shadow-md shadow-amber-500/30"></div>
 
               {/* Organizational alignment box */}
-              <div className="bg-gradient-to-r from-amber-50 to-amber-50/60 rounded-xl py-6 px-10 w-full text-center border border-amber-100/50 shadow-md">
-                <div className="flex justify-center mb-3">
-                  <div className="p-3 bg-white rounded-full shadow-md">
-                    <Building2 className="h-6 w-6 text-amber-600" />
+              <div className="bg-gradient-to-r from-amber-50 to-amber-50/60 rounded-xl py-6 px-8 w-full border border-amber-100/50 shadow-md">
+                <div className="max-w-4xl mx-auto">
+                  <div className="flex flex-col">
+                    <div className="mb-6">
+                      <div className="bg-white w-16 h-16 rounded-full shadow-md flex items-center justify-center mb-5">
+                        <Building2 className="h-7 w-7 text-amber-600" />
+                      </div>
+
+                      <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                        Corporate Social Responsibility Alignment
+                      </h3>
+
+                      <div className="flex flex-col space-y-2 mb-6 text-gray-600">
+                        <span className="whitespace-nowrap flex items-center">
+                          <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
+                          Single source of truth
+                        </span>
+                        <span className="whitespace-nowrap flex items-center">
+                          <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
+                          Eliminate silos
+                        </span>
+                        <span className="whitespace-nowrap flex items-center">
+                          <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
+                          Efficiency improvement
+                        </span>
+                      </div>
+
+                      <a
+                        href="https://calendly.com/arunprasad-11/product-demo-call"
+                        className="inline-flex items-center text-amber-600 font-medium hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.open(
+                            "https://calendly.com/arunprasad-11/product-demo-call",
+                            "_blank"
+                          );
+                        }}
+                      >
+                        Explore alignment
+                        <ArrowRight className="ml-1 h-4 w-4" />
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">
-                  Organizational alignment
-                </h3>
-              </div>
-
-              {/* Bottom text */}
-              <div className="flex flex-wrap justify-center gap-4 mt-6 text-gray-600 text-base font-medium">
-                <span className="whitespace-nowrap flex items-center">
-                  <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
-                  Single source of truth
-                </span>
-                <span className="whitespace-nowrap flex items-center">
-                  <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
-                  Eliminate silos
-                </span>
-                <span className="whitespace-nowrap flex items-center">
-                  <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
-                  Efficiency improvement
-                </span>
               </div>
             </div>
           </div>

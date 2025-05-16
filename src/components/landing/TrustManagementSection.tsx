@@ -226,8 +226,17 @@ export const TrustManagementSection: React.FC = () => {
                 {/* Explore link - positioned at bottom */}
                 <div className="mt-6">
                   <a
-                    href="#"
+                    href="https://calendly.com/arunprasad-11/product-demo-call"
                     className={`group inline-flex items-center font-medium transition-colors ${card.linkColor}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open(
+                        "https://calendly.com/arunprasad-11/product-demo-call",
+                        "_blank"
+                      );
+                    }}
                   >
                     {card.linkText}
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
