@@ -12,14 +12,14 @@ export const Hero: React.FC = () => {
   // Standards to cycle through
   const standards = [
     {
-      text: "EU AI Act",
-      color:
-        "text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-600",
-    },
-    {
       text: "ISO 42001",
       color:
         "text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-dark",
+    },
+    {
+      text: "EU AI Act",
+      color:
+        "text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-600",
     },
     {
       text: "NIST",
