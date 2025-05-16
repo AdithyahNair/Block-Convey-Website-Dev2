@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Eye,
   TrendingUp,
@@ -10,6 +9,10 @@ import {
   Zap,
   Clock,
   Activity,
+  Building2,
+  ArrowRight,
+  BrainCircuit,
+  BarChart3,
 } from "lucide-react";
 import tab from "../../../public/tab.png";
 
@@ -67,153 +70,145 @@ export const BusinessValueSection: React.FC = () => {
   const inputModels = [
     {
       title: "Generative AI models",
-      icon: "🧠",
+      icon: <BrainCircuit className="w-6 h-6 text-pink-500" />,
       description: "AI applications and LLMs",
     },
     {
       title: "Predictive models",
-      icon: "📊",
+      icon: <BarChart3 className="w-6 h-6 text-blue-500" />,
       description: "Structured and unstructured ML models",
     },
   ];
 
   return (
-    <section className="py-12 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       {/* Block Convey styled background */}
-      <div className="absolute inset-0 bg-gray-50"></div>
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ADD2C933_1px,transparent_1px),linear-gradient(to_bottom,#ADD2C933_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-lightest to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ADD2C920_1px,transparent_1px),linear-gradient(to_bottom,#ADD2C920_1px,transparent_1px)] bg-[size:14px_24px]"></div>
 
       {/* Subtle gradient orbs */}
-      <div className="absolute -top-20 left-1/4 w-[300px] h-[300px] bg-teal-400/5 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-0 right-1/3 w-[250px] h-[250px] bg-cyan-400/5 rounded-full blur-[100px]"></div>
+      <div className="absolute -top-20 left-1/4 w-[400px] h-[400px] bg-teal-400/10 rounded-full blur-[140px]"></div>
+      <div className="absolute bottom-0 right-1/3 w-[350px] h-[350px] bg-cyan-400/10 rounded-full blur-[120px]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <motion.div
-          className="text-center mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+        <div className="text-center mb-14">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-1">
             The AI Governance Platform that Drives
           </h2>
-          <h2 className="text-4xl md:text-5xl font-bold text-teal-500">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-600 to-cyan-500 text-transparent bg-clip-text">
             Business Value
           </h2>
-        </motion.div>
+        </div>
 
         <div className="relative">
           {/* Main diagram */}
-          <div className="relative bg-white/70 backdrop-blur-sm rounded-3xl border border-teal-500/50 shadow-md p-8 max-w-[95%] mx-auto">
+          <div className="relative bg-white rounded-3xl border border-gray-100 shadow-xl shadow-teal-500/5 p-10 max-w-[95%] mx-auto">
             {/* Block Convey tab at top */}
             <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
               <div className="flex items-center justify-center">
-                <img src={tab} alt="Block Convey Tab" className="h-16 w-auto" />
+                <img
+                  src={tab}
+                  alt="Block Convey Tab"
+                  className="h-16 w-auto drop-shadow-md"
+                />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 pb-8 pl-6 pr-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4">
               {/* Left side - Input models */}
-              <div className="lg:col-span-3 flex flex-col justify-center space-y-8 z-10">
-                {inputModels.map((model, index) => (
-                  <motion.div
+              <div className="lg:col-span-3 flex flex-col justify-center space-y-10 z-10 relative">
+                {/* Model cards */}
+                {inputModels.map((model) => (
+                  <div
                     key={model.title}
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.2, duration: 0.5 }}
-                    className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+                    className="bg-white border border-gray-200 rounded-xl p-6 shadow-lg relative z-10"
                   >
-                    <div className="flex items-center space-x-3 mb-3">
-                      <div className="text-3xl">{model.icon}</div>
+                    <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 z-20 hidden lg:block">
+                      <div className="bg-gradient-to-r from-teal-400 to-teal-500 rounded-full p-1 shadow-lg shadow-teal-300/30">
+                        <ArrowRight className="w-4 h-4 text-white" />
+                      </div>
+                    </div>
+
+                    <div className="flex items-center space-x-4 mb-3">
+                      <div className="p-2.5 bg-gradient-to-br from-white to-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                        {model.icon}
+                      </div>
                       <h3 className="font-semibold text-gray-800 text-lg whitespace-normal">
                         {model.title}
                       </h3>
                     </div>
-                    <p className="text-base text-gray-600">
+                    <div className="h-[1px] w-full bg-gradient-to-r from-gray-100 to-transparent mb-3"></div>
+                    <p className="text-base text-gray-600 font-medium">
                       {model.description}
                     </p>
-                  </motion.div>
+                  </div>
                 ))}
+
+                {/* Static connecting flow lines */}
+                <div className="absolute right-0 top-0 h-full w-8 hidden lg:block">
+                  <div className="absolute right-4 h-[75%] w-[2px] bg-gradient-to-b from-transparent via-teal-500/50 to-transparent"></div>
+                  <div className="absolute right-4 top-[40%] h-[20%] w-[2px] bg-teal-500/70"></div>
+                </div>
               </div>
 
               {/* Connection lines */}
               <div className="lg:col-span-1 relative hidden lg:block">
-                <div className="absolute h-full w-1 bg-gray-200 left-1/2 transform -translate-x-1/2"></div>
-                <div className="absolute top-1/4 h-3 w-3 bg-teal-500 rounded-full left-1/2 transform -translate-x-1/2"></div>
-                <div className="absolute bottom-1/4 h-3 w-3 bg-teal-500 rounded-full left-1/2 transform -translate-x-1/2"></div>
+                <div className="absolute h-full w-[2px] bg-gradient-to-b from-teal-400/30 via-teal-500/50 to-teal-400/30 left-1/2 transform -translate-x-1/2"></div>
+                <div className="absolute top-1/4 h-3 w-3 bg-teal-500 rounded-full left-1/2 transform -translate-x-1/2 shadow-md shadow-teal-500/30"></div>
+                <div className="absolute bottom-1/4 h-3 w-3 bg-teal-500 rounded-full left-1/2 transform -translate-x-1/2 shadow-md shadow-teal-500/30"></div>
 
                 {/* Horizontal line to the platform */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 w-16 h-1 bg-gray-200"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 w-16 h-[2px] bg-gradient-to-r from-teal-500/50 to-teal-400/30"></div>
+
+                {/* Static data flow indicator */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 translate-x-5 w-2 h-2 rounded-full bg-teal-500 shadow-md shadow-teal-500/30"></div>
               </div>
 
               {/* Main platform categories */}
-              <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-10">
-                {valueCategories.map((category, index) => (
-                  <motion.div
+              <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                {valueCategories.map((category) => (
+                  <div
                     key={category.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-                    className="bg-cyan-50/80 rounded-lg py-5 px-4"
+                    className="bg-gradient-to-b from-cyan-50/90 to-white rounded-xl py-6 px-5 shadow-md border border-cyan-100/50"
                   >
-                    <div className="flex justify-center mb-3">
-                      <div className="p-2.5 bg-white rounded-full shadow-sm">
+                    <div className="flex justify-center mb-4">
+                      <div className="p-3 bg-gradient-to-br from-white to-cyan-50 rounded-full shadow-md">
                         <div className="transform scale-150">
                           {category.icon}
                         </div>
                       </div>
                     </div>
-                    <h3 className="text-center text-xl font-semibold text-gray-800 mb-4 whitespace-normal px-2 overflow-visible">
+                    <h3 className="text-center text-xl font-semibold text-gray-800 mb-5 whitespace-normal px-2 overflow-visible">
                       {category.title}
                     </h3>
 
-                    <div className="space-y-3">
+                    <div className="space-y-3.5">
                       {category.items.map((item) => (
                         <div
                           key={item.name}
-                          className="bg-cyan-100/90 rounded-md py-3 px-4 text-center text-gray-700 text-base font-medium flex items-center justify-center min-h-[40px]"
+                          className="bg-gradient-to-r from-cyan-100/70 to-white rounded-lg py-3 px-4 text-center text-gray-700 text-base font-medium flex items-center justify-center min-h-[44px] shadow-sm border border-cyan-200/30"
                         >
                           {item.name}
                         </div>
                       ))}
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Bottom organizational alignment box */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-              className="flex flex-col items-center"
-            >
+            <div className="flex flex-col items-center mt-8">
               {/* Connection line */}
-              <div className="h-12 w-1 bg-gray-200 mb-2"></div>
-              <div className="h-3 w-3 bg-teal-500 rounded-full mb-2"></div>
+              <div className="h-12 w-[2px] bg-gradient-to-b from-teal-500/50 to-amber-400/30 mb-2"></div>
+              <div className="h-3 w-3 bg-amber-500 rounded-full mb-3 shadow-md shadow-amber-500/30"></div>
 
               {/* Organizational alignment box */}
-              <div className="bg-amber-50 rounded-lg py-5 px-8 w-full text-center border border-amber-100">
+              <div className="bg-gradient-to-r from-amber-50 to-amber-50/60 rounded-xl py-6 px-10 w-full text-center border border-amber-100/50 shadow-md">
                 <div className="flex justify-center mb-3">
-                  <svg
-                    className="h-8 w-8 text-amber-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
+                  <div className="p-3 bg-white rounded-full shadow-md">
+                    <Building2 className="h-6 w-6 text-amber-600" />
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800">
                   Organizational alignment
@@ -221,18 +216,21 @@ export const BusinessValueSection: React.FC = () => {
               </div>
 
               {/* Bottom text */}
-              <div className="flex flex-wrap justify-center gap-3 mt-5 text-gray-600 text-base font-medium">
-                <span className="whitespace-nowrap">
+              <div className="flex flex-wrap justify-center gap-4 mt-6 text-gray-600 text-base font-medium">
+                <span className="whitespace-nowrap flex items-center">
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
                   Single source of truth
                 </span>
-                <span className="text-teal-500 font-bold">•</span>
-                <span className="whitespace-nowrap">Eliminate silos</span>
-                <span className="text-teal-500 font-bold">•</span>
-                <span className="whitespace-nowrap">
+                <span className="whitespace-nowrap flex items-center">
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
+                  Eliminate silos
+                </span>
+                <span className="whitespace-nowrap flex items-center">
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mr-2"></div>
                   Efficiency improvement
                 </span>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
