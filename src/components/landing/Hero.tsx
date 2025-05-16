@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
   return (
     <div
       id="main"
-      className="relative min-h-[75vh] flex items-end bg-brand-lightest overflow-hidden py-8 pb-24"
+      className="relative min-h-[75vh] flex items-end bg-brand-lightest overflow-hidden py-8 pb-24 pt-28 md:pt-32"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ADD2C933_1px,transparent_1px),linear-gradient(to_bottom,#ADD2C933_1px,transparent_1px)] bg-[size:14px_24px]" />

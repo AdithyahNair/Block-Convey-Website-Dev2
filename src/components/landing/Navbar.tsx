@@ -164,7 +164,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden pb-4">
+        <div className="lg:hidden pb-4 max-h-[80vh] overflow-y-auto">
           <div className="pt-2 pb-3 border-t border-gray-200">
             <NavLinks items={navItems} />
             <div className="mt-4 px-4">
