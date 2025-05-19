@@ -113,7 +113,7 @@ export const Hero: React.FC = () => {
             </motion.h1>
 
             <motion.div
-              className="mb-8"
+              className="mb-8 overflow-x-auto max-w-full"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -122,7 +122,7 @@ export const Hero: React.FC = () => {
                 delay: 0.2,
               }}
             >
-              <div className="flex items-baseline h-16 mt-4">
+              <div className="flex flex-nowrap whitespace-nowrap items-baseline h-16 mt-4 min-w-max">
                 <p className="text-3xl md:text-4xl lg:text-5xl text-gray-700 font-semibold mr-4">
                   Audit-ready for
                 </p>
