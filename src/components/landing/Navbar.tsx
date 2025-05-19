@@ -11,42 +11,26 @@ const navItems = [
     mainPath: "/solutions",
     subitems: [
       {
-        title: "PRISM",
+        title: "AI Registry",
         description:
-          "Predictive Risk and Intelligence Surveillance Monitor - AI governance platform for transparent, fair, and compliant AI systems",
-        path: "/prism",
+          "Centralized inventory of AI systems with complete documentation",
+        path: "/solutions#ai-registry",
       },
       {
-        title: "Application Modules",
+        title: "Vendor Portal",
         description:
-          "Industry-specific modules for credit risk, insurance claims, fraud detection, and financial advisory",
-        path: "/solutions#credit-risk-assessment",
-        submenu: [
-          {
-            title: "Credit Risk Assessment Module",
-            description:
-              "Ensure fairness and compliance in credit scoring with real-time bias detection and explainable decision-making tools",
-            path: "/solutions#credit-risk-assessment",
-          },
-          {
-            title: "Insurance Claims Module",
-            description:
-              "Streamline claims processing with fair, transparent, and compliant AI-powered decisions",
-            path: "/solutions#insurance-claims",
-          },
-          {
-            title: "Fraud Detection Module",
-            description:
-              "Monitor AI-driven fraud detection systems for accuracy, transparency, and ethical anomaly detection",
-            path: "/solutions#fraud-detection",
-          },
-          {
-            title: "Financial Advisory & Customer Service Module",
-            description:
-              "Enhance customer interactions with AI models that deliver personalized, unbiased, and explainable recommendations",
-            path: "/solutions#financial-advisory",
-          },
-        ],
+          "Streamlined vendor assessment and third-party risk management",
+        path: "/solutions#vendor-portal",
+      },
+      {
+        title: "Risk Center",
+        description: "Comprehensive risk assessment and mitigation tools",
+        path: "/solutions#risk-center",
+      },
+      {
+        title: "Regulation automation",
+        description: "Automated compliance with AI regulations and frameworks",
+        path: "/solutions#regulation-automation",
       },
     ],
   },
