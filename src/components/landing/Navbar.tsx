@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   {
-    label: "Solutions",
+    label: "Product",
     mainPath: "/solutions",
     subitems: [
       {
