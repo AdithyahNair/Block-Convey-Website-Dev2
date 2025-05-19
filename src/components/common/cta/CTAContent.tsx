@@ -46,7 +46,7 @@ export const CTAContent: React.FC = () => {
   ];
 
   // Character by character animation variables
-  const titleText = "Try AI Governance";
+  const titleText = "Try Our Platform";
   const sentenceVariants = {
     hidden: { opacity: 1 },
     visible: {
@@ -147,8 +147,8 @@ export const CTAContent: React.FC = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            Experience the future of AI management with our comprehensive
-            blockchain-powered platform
+            Experience the future of AI Risk Management and Compliance with our
+            comprehensive platform
           </motion.p>
 
           {/* Features list */}

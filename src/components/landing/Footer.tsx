@@ -19,8 +19,9 @@ export const Footer: React.FC = () => {
                 The Fastest Path to AI Compliance
               </p>
               <p className="text-sm">
-                Secure, transparent, and audit-ready AI governance powered by
-                blockchain technology.
+                Block Convey is an AI compliance automation platform that
+                evaluates, monitors, and audits AI models to industry-specific
+                regulatory frameworks
               </p>
             </div>
             <NewsletterForm />
