@@ -6,8 +6,8 @@ import { FeatureShowcase } from "../components/features/FeatureShowcase";
 import { FeatureMetrics } from "../components/features/FeatureMetrics";
 import { FeatureCTA } from "../components/features/FeatureCTA";
 import { motion } from "framer-motion";
-import { FinancialModelSection } from '../components/landing/FinancialModelSection';
-import { AIGovernanceSection } from '../components/landing/AIGovernanceSection';
+import { FinancialModelSection } from "../components/landing/FinancialModelSection";
+import { AIGovernanceSection } from "../components/landing/AIGovernanceSection";
 
 export const FeaturesPage: React.FC = () => {
   return (
@@ -48,7 +48,7 @@ export const FeaturesPage: React.FC = () => {
 
         {/* Financial Models Section */}
         <FinancialModelSection />
-        
+
         {/* AI Governance Section */}
         <AIGovernanceSection />
       </main>
