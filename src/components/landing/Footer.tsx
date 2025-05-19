@@ -14,10 +14,15 @@ export const Footer: React.FC = () => {
             <div className="mb-0">
               <FooterLogo />
             </div>
-            <p className="text-gray-600 max-w-md">
-              Revolutionizing enterprise AI with blockchain-powered governance
-              solutions for transparent, compliant, and efficient operations.
-            </p>
+            <div className="text-gray-600 max-w-md space-y-2">
+              <p className="font-medium text-gray-700">
+                The Fastest Path to AI Compliance
+              </p>
+              <p className="text-sm">
+                Secure, transparent, and audit-ready AI governance powered by
+                blockchain technology.
+              </p>
+            </div>
             <NewsletterForm />
           </div>
           <div className="lg:col-span-9">
