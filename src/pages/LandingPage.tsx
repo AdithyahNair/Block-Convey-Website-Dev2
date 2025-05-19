@@ -3,7 +3,7 @@ import { Navbar } from "../components/landing/Navbar";
 import { Hero } from "../components/landing/Hero";
 // import { Statistics } from "../components/landing/Statistics";
 import { Partners } from "../components/landing/Partners";
-import { BusinessValueSection } from "../components/landing/BusinessValueSection";
+import { BusinessValueImage } from "../components/landing/BusinessValueImage";
 import { TrustManagementSection } from "../components/landing/TrustManagementSection";
 import { WhyChooseBlockConveySection } from "../components/landing/WhyChooseBlockConveySection";
 import { Footer } from "../components/landing/Footer";
@@ -16,7 +16,7 @@ export const LandingPage: React.FC = () => {
       <main>
         <Hero />
         <Partners />
-        <BusinessValueSection />
+        <BusinessValueImage />
         <TrustManagementSection />
         <WhyChooseBlockConveySection />
         <WavyCTA />
