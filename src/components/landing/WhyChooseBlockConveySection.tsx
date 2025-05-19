@@ -150,8 +150,8 @@ export const WhyChooseBlockConveySection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            {/* Main dashboard - Scaled down version with same content */}
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 transform scale-80 origin-top-left lg:-ml-24 lg:mr-4 w-[130%]">
+            {/* Main dashboard - Responsive scaling and width */}
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 w-full lg:w-[130%] lg:transform lg:scale-80 lg:origin-top-left lg:-ml-24 lg:mr-4 overflow-x-auto">
               {/* Browser-like header */}
               <div className="p-3 border-b border-gray-100 flex items-center justify-between">
                 <div className="flex items-center space-x-1.5">
