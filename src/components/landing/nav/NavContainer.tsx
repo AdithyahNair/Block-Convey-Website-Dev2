@@ -4,10 +4,10 @@ export const NavContainer: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   return (
-    <nav className="absolute top-5 left-0 right-0 z-50 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-white rounded-[38px] shadow-sm border border-teal-500/30 px-5 py-2.5">
-          {children}
+    <nav className="fixed top-2 left-0 right-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mt-4">
+        <div className="bg-brand-lightest/80 backdrop-blur-md border border-brand-light rounded-2xl shadow-sm">
+          <div className="px-4 sm:px-6">{children}</div>
         </div>
       </div>
     </nav>

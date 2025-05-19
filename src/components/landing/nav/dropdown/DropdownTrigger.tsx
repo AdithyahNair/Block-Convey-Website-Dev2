@@ -15,9 +15,9 @@ export const DropdownTrigger: React.FC<DropdownTriggerProps> = ({
   return (
     <button
       onClick={onClick}
-      className="group inline-flex items-center gap-1.5 text-gray-600 hover:text-brand font-medium py-2 px-3 rounded-lg transition-all"
+      className="group inline-flex items-center justify-center gap-1.5 text-gray-700 hover:text-brand font-medium py-2.5 px-3 rounded-lg transition-all whitespace-nowrap"
     >
-      {label}
+      <span>{label}</span>
       <ChevronDown
         className={`h-4 w-4 transition-all duration-200 ${
           isOpen ? "rotate-180 text-brand" : ""

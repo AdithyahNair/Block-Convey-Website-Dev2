@@ -11,26 +11,42 @@ const navItems = [
     mainPath: "/solutions",
     subitems: [
       {
-        title: "AI Registry",
+        title: "PRISM",
         description:
-          "Centralized inventory of AI systems with complete documentation",
-        path: "/solutions#ai-registry",
+          "Predictive Risk and Intelligence Surveillance Monitor - AI governance platform for transparent, fair, and compliant AI systems",
+        path: "/prism",
       },
       {
-        title: "Vendor Portal",
+        title: "Application Modules",
         description:
-          "Streamlined vendor assessment and third-party risk management",
-        path: "/solutions#vendor-portal",
-      },
-      {
-        title: "Risk Center",
-        description: "Comprehensive risk assessment and mitigation tools",
-        path: "/solutions#risk-center",
-      },
-      {
-        title: "Regulation automation",
-        description: "Automated compliance with AI regulations and frameworks",
-        path: "/solutions#regulation-automation",
+          "Industry-specific modules for credit risk, insurance claims, fraud detection, and financial advisory",
+        path: "/solutions#credit-risk-assessment",
+        submenu: [
+          {
+            title: "Credit Risk Assessment Module",
+            description:
+              "Ensure fairness and compliance in credit scoring with real-time bias detection and explainable decision-making tools",
+            path: "/solutions#credit-risk-assessment",
+          },
+          {
+            title: "Insurance Claims Module",
+            description:
+              "Streamline claims processing with fair, transparent, and compliant AI-powered decisions",
+            path: "/solutions#insurance-claims",
+          },
+          {
+            title: "Fraud Detection Module",
+            description:
+              "Monitor AI-driven fraud detection systems for accuracy, transparency, and ethical anomaly detection",
+            path: "/solutions#fraud-detection",
+          },
+          {
+            title: "Financial Advisory & Customer Service Module",
+            description:
+              "Enhance customer interactions with AI models that deliver personalized, unbiased, and explainable recommendations",
+            path: "/solutions#financial-advisory",
+          },
+        ],
       },
     ],
   },
@@ -120,25 +136,23 @@ export const Navbar: React.FC = () => {
 
   return (
     <NavContainer>
-      <div className="flex items-center justify-between h-14">
-        <div className="flex items-center">
+      <div className="flex items-center justify-between h-20 px-4">
+        <div className="flex items-center gap-10">
           <NavLogo />
-        </div>
-
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center -ml-24">
-          <NavLinks items={navItems} />
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center">
+            <NavLinks items={navItems} />
+          </div>
         </div>
 
         <div className="flex items-center">
           <div className="hidden lg:block">
             <NavActions />
           </div>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden ml-2 text-gray-600 hover:text-gray-900"
+            className="lg:hidden ml-4 text-gray-600 hover:text-gray-900 focus:outline-none"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -148,10 +162,10 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden pb-4 max-h-[80vh] overflow-y-auto">
-          <div className="pt-2 pb-3 border-t border-gray-200">
+        <div className="lg:hidden mt-2 pb-6 px-4">
+          <div className="border-t pt-4 space-y-4">
             <NavLinks items={navItems} />
-            <div className="mt-4 px-4">
+            <div className="mt-6 flex justify-center">
               <NavActions />
             </div>
           </div>

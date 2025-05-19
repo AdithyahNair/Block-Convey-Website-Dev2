@@ -19,13 +19,16 @@ export const NavLogo: React.FC = () => {
   return (
     <div
       onClick={() => handleClick("/#main")}
-      className="flex items-center cursor-pointer select-none"
-      style={{ minWidth: 240 }}
+      className="flex items-center cursor-pointer transition-opacity hover:opacity-90"
     >
       <img
         src={logo}
-        className="h-28 w-auto mr-4"
-        style={{ maxHeight: 128 }}
+        alt="Block Convey"
+        className="h-16 w-32 object-contain"
+        style={{
+          transform: "scale(1.4)",
+          transformOrigin: "left center",
+        }}
       />
     </div>
   );
