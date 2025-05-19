@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
   // Standards to cycle through
   const standards = [
     {
-      text: "ISO 42001",
+      text: "ISO",
       color:
         "text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-dark",
     },
