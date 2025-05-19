@@ -10,8 +10,8 @@ export const Footer: React.FC = () => {
     <footer className="bg-gradient-to-b from-brand-lightest to-white border-t border-brand-light/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid gap-8 lg:grid-cols-12">
-          <div className="lg:col-span-3 space-y-8">
-            <div className="mb-2">
+          <div className="lg:col-span-3 space-y-4">
+            <div className="mb-0">
               <FooterLogo />
             </div>
             <p className="text-gray-600 max-w-md">
