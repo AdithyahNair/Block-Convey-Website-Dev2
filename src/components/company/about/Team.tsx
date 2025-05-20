@@ -6,7 +6,7 @@ import tim_team from "../../../assets/tim_team.png";
 import cam_team from "../../../assets/cam_team.png";
 import wei_adv from "../../../assets/wei_adv.png";
 import gou_adv from "../../../assets/gou_adv.png";
-import veera_adv from "../../../assets/veera_adv.png";
+// import veera_adv from "../../../assets/veera_adv.png";
 import illias_adv from "../../../assets/illias_adv.png";
 import son_le from "../../../assets/son_le.png";
 import connor from "../../../assets/connor.png";
@@ -56,12 +56,12 @@ const teamMembers = {
       linkedin: "https://www.linkedin.com/in/gourabmukherjee/",
       image: gou_adv,
     },
-    {
-      name: "Veera Budhi",
-      role: "Blockchain and AI",
-      linkedin: "https://www.linkedin.com/in/veerabudhi/",
-      image: veera_adv,
-    },
+    // {
+    //   name: "Veera Budhi",
+    //   role: "Blockchain and AI",
+    //   linkedin: "https://www.linkedin.com/in/veerabudhi/",
+    //   image: veera_adv,
+    // },
     {
       name: "Ilais Anwar",
       role: "Marketing and Community Building",
