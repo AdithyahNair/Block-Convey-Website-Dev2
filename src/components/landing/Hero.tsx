@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -9,24 +9,27 @@ export const Hero: React.FC = () => {
   const [standardIndex, setStandardIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Standards to cycle through
-  const standards = [
-    {
-      text: "ISO",
-      color:
-        "text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-dark",
-    },
-    {
-      text: "EU AI Act",
-      color:
-        "text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-600",
-    },
-    {
-      text: "NIST",
-      color:
-        "text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-brand",
-    },
-  ];
+  // Standards to cycle through - wrapped in useMemo to prevent recreation on every render
+  const standards = useMemo(
+    () => [
+      {
+        text: "ISO",
+        color:
+          "text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-dark",
+      },
+      {
+        text: "EU AI Act",
+        color:
+          "text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-600",
+      },
+      {
+        text: "NIST",
+        color:
+          "text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-brand",
+      },
+    ],
+    []
+  );
 
   // Handle typing animation effect
   useEffect(() => {

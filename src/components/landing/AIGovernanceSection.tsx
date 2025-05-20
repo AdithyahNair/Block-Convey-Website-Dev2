@@ -1,9 +1,7 @@
 import React from "react";
-import { motion, useInView } from "framer-motion";
 
 export const AIGovernanceSection: React.FC = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: false, amount: 0.2 });
 
   // Cards for AI governance features
   const features = [
