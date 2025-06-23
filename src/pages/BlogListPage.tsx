@@ -182,6 +182,15 @@ export const BlogListPage: React.FC = () => {
                               src={blog.imageUrl}
                               alt={blog.title}
                               className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.onerror = null; // Prevent infinite loop
+                                target.src = "/images/default-blog-image.png"; // Replace with your default image
+                                console.error(
+                                  `Failed to load image for blog: ${blog.title}`,
+                                  blog.imageUrl
+                                );
+                              }}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                           </div>
