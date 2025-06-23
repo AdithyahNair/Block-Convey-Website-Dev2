@@ -22,24 +22,20 @@ export const ContactSection: React.FC = () => {
     setSubmitStatus("idle");
 
     try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbyvkPKr56sJqhfFx_YBqHxJTJ2nw-p5pG-qrPte4wRuzgpJE5-3YSUyNG8r2I064b3e4w/exec",
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbwS_bjDPgwCmz0I0QuAflvtkpI-Y3nraBaOXMOEfpy-9PwwpLnyP3R-LQchuCylOMc/exec",
         {
           method: "POST",
+          mode: "no-cors",
           headers: {
             "Content-Type": "application/json",
           },
-          mode: "cors",
           body: JSON.stringify(formData),
         }
       );
 
-      const data = await response.json();
-
-      if (!response.ok || data.status === "error") {
-        throw new Error(data.message || "Failed to submit");
-      }
-
+      // Since no-cors doesn't give us access to the response body,
+      // we'll assume success if we get here (no error thrown)
       setSubmitStatus("success");
       setFormData({
         firstName: "",
