@@ -14,6 +14,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { BlogPost, Section } from "../types/blog";
+import { MainLayout } from "../components/layout/MainLayout";
 
 export const BlogDetailPage: React.FC = () => {
   const { slug } = useParams();
@@ -260,32 +261,36 @@ export const BlogDetailPage: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-brand-lightest to-white">
-        <Navbar />
-        <div className="flex items-center justify-center min-h-[60vh]">
-          <div className="animate-pulse text-brand">Loading article...</div>
+      <MainLayout>
+        <div className="min-h-screen bg-gradient-to-b from-brand-lightest to-white">
+          <Navbar />
+          <div className="flex items-center justify-center min-h-[60vh]">
+            <div className="animate-pulse text-brand">Loading article...</div>
+          </div>
         </div>
-      </div>
+      </MainLayout>
     );
   }
 
   if (error || !blog) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-brand-lightest to-white">
-        <Navbar />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <p className="text-red-500 mb-4">{error}</p>
-            <Link
-              to="/blogs"
-              className="inline-flex items-center text-brand hover:text-brand-dark transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to all articles
-            </Link>
+      <MainLayout>
+        <div className="min-h-screen bg-gradient-to-b from-brand-lightest to-white">
+          <Navbar />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <p className="text-red-500 mb-4">{error}</p>
+              <Link
+                to="/blogs"
+                className="inline-flex items-center text-brand hover:text-brand-dark transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to all articles
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </MainLayout>
     );
   }
 
@@ -293,203 +298,205 @@ export const BlogDetailPage: React.FC = () => {
   console.log("Table of contents:", tableOfContents);
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
+    <MainLayout>
+      <div className="min-h-screen bg-white">
+        <Navbar />
 
-      <main className="relative pt-24">
-        {/* Back to articles link at top */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between py-8">
-            <Link
-              to="/blogs"
-              className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-brand transition-all duration-300"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to all articles
-            </Link>
+        <main className="relative pt-24">
+          {/* Back to articles link at top */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between py-8">
+              <Link
+                to="/blogs"
+                className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-brand transition-all duration-300"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to all articles
+              </Link>
 
-            {/* Tags moved to top right */}
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <Tag className="h-5 w-5 text-brand" />
-                <span className="font-medium text-gray-700">Tags:</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {blog.tags && blog.tags.length > 0 ? (
-                  blog.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="bg-brand-light/20 text-brand px-3 py-1 rounded-full text-sm font-medium hover:bg-brand-light/30 transition-colors cursor-pointer"
-                    >
-                      {tag}
-                    </span>
-                  ))
-                ) : (
-                  <span className="text-gray-500 text-sm">No tags</span>
-                )}
+              {/* Tags moved to top right */}
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <Tag className="h-5 w-5 text-brand" />
+                  <span className="font-medium text-gray-700">Tags:</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {blog.tags && blog.tags.length > 0 ? (
+                    blog.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="bg-brand-light/20 text-brand px-3 py-1 rounded-full text-sm font-medium hover:bg-brand-light/30 transition-colors cursor-pointer"
+                      >
+                        {tag}
+                      </span>
+                    ))
+                  ) : (
+                    <span className="text-gray-500 text-sm">No tags</span>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Hero Section with Title */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            {blog.title}
-          </h1>
+          {/* Hero Section with Title */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {blog.title}
+            </h1>
 
-          <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-8">
-            <div className="flex items-center gap-2">
-              <User className="h-4 w-4" />
-              <span>{blog.author}</span>
+            <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-8">
+              <div className="flex items-center gap-2">
+                <User className="h-4 w-4" />
+                <span>{blog.author}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                <span>{formatDate(blog.createdAt.toDate())}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4" />
+                <span>{estimateReadTime(sections)} min read</span>
+              </div>
+              <button
+                onClick={handleShare}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 text-brand hover:bg-brand/20 transition-colors"
+              >
+                <Share2 className="h-4 w-4" />
+                Share Article
+              </button>
+              {showShareTooltip && (
+                <div className="absolute mt-2 px-4 py-2 bg-gray-900 text-white text-sm rounded-lg">
+                  Link copied to clipboard!
+                </div>
+              )}
             </div>
-            <div className="flex items-center gap-2">
-              <Calendar className="h-4 w-4" />
-              <span>{formatDate(blog.createdAt.toDate())}</span>
+
+            <div className="flex flex-wrap gap-2 mb-8">
+              {blog.categories.map((category, index) => (
+                <span
+                  key={index}
+                  className="bg-brand-light/20 text-brand px-3 py-1 rounded-full text-sm font-medium"
+                >
+                  {category}
+                </span>
+              ))}
             </div>
-            <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4" />
-              <span>{estimateReadTime(sections)} min read</span>
-            </div>
-            <button
-              onClick={handleShare}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 text-brand hover:bg-brand/20 transition-colors"
-            >
-              <Share2 className="h-4 w-4" />
-              Share Article
-            </button>
-            {showShareTooltip && (
-              <div className="absolute mt-2 px-4 py-2 bg-gray-900 text-white text-sm rounded-lg">
-                Link copied to clipboard!
+
+            {/* Featured Image */}
+            {blog.imageUrl && (
+              <div className="w-full h-[400px] rounded-xl overflow-hidden mb-12">
+                <img
+                  src={blog.imageUrl}
+                  alt={blog.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
             )}
           </div>
 
-          <div className="flex flex-wrap gap-2 mb-8">
-            {blog.categories.map((category, index) => (
-              <span
-                key={index}
-                className="bg-brand-light/20 text-brand px-3 py-1 rounded-full text-sm font-medium"
-              >
-                {category}
-              </span>
-            ))}
-          </div>
+          {/* Content Section with New Layout */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+            <div className="flex flex-col lg:flex-row gap-12">
+              {/* Table of Contents Sidebar - New Design */}
+              <div className="lg:w-1/4 lg:max-w-xs">
+                <div className="sticky top-24">
+                  <h2 className="text-xl font-semibold mb-6 text-gray-900">
+                    Table of Contents
+                  </h2>
 
-          {/* Featured Image */}
-          {blog.imageUrl && (
-            <div className="w-full h-[400px] rounded-xl overflow-hidden mb-12">
-              <img
-                src={blog.imageUrl}
-                alt={blog.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          )}
-        </div>
-
-        {/* Content Section with New Layout */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Table of Contents Sidebar - New Design */}
-            <div className="lg:w-1/4 lg:max-w-xs">
-              <div className="sticky top-24">
-                <h2 className="text-xl font-semibold mb-6 text-gray-900">
-                  Table of Contents
-                </h2>
-
-                <nav className="flex flex-col space-y-1">
-                  {tableOfContents.map((section, index) => {
-                    const isActive =
-                      activeSection === getSectionIdStr(section.sectionId);
-                    return (
-                      <button
-                        key={index}
-                        onClick={() => scrollToSection(section.sectionId)}
-                        className={`flex items-center py-3 px-4 rounded-lg transition-all ${
-                          isActive
-                            ? "text-brand font-medium bg-brand-light/10 border-l-4 border-brand"
-                            : "text-gray-600 hover:bg-gray-100"
-                        }`}
-                      >
-                        <div className="mr-2 flex items-center">
-                          <div
-                            className={`w-2 h-2 rounded-full mr-2 ${
-                              isActive ? "bg-brand" : "bg-gray-400"
-                            }`}
-                          ></div>
-                          {getSectionTitle(section.content)}
-                        </div>
-
-                        <ChevronRight
-                          className={`h-4 w-4 ml-auto transition-transform ${
-                            isActive ? "rotate-90 text-brand" : ""
+                  <nav className="flex flex-col space-y-1">
+                    {tableOfContents.map((section, index) => {
+                      const isActive =
+                        activeSection === getSectionIdStr(section.sectionId);
+                      return (
+                        <button
+                          key={index}
+                          onClick={() => scrollToSection(section.sectionId)}
+                          className={`flex items-center py-3 px-4 rounded-lg transition-all ${
+                            isActive
+                              ? "text-brand font-medium bg-brand-light/10 border-l-4 border-brand"
+                              : "text-gray-600 hover:bg-gray-100"
                           }`}
-                        />
-                      </button>
-                    );
-                  })}
-                </nav>
-              </div>
-            </div>
+                        >
+                          <div className="mr-2 flex items-center">
+                            <div
+                              className={`w-2 h-2 rounded-full mr-2 ${
+                                isActive ? "bg-brand" : "bg-gray-400"
+                              }`}
+                            ></div>
+                            {getSectionTitle(section.content)}
+                          </div>
 
-            {/* Main Content */}
-            <div className="lg:w-3/4">
-              <div className="prose prose-lg max-w-none">
-                {sections.map((section, index) => {
-                  if (section.type === "heading" && section.level === 1) {
-                    return (
-                      <h2
-                        key={index}
-                        data-section-id={getSectionIdStr(section.sectionId)}
-                        className="text-3xl font-bold text-gray-900 mt-12 mb-6 scroll-mt-24"
-                      >
-                        {section.content}
-                      </h2>
-                    );
-                  } else if (
-                    section.type === "heading" &&
-                    section.level === 2
-                  ) {
-                    return (
-                      <h3
-                        key={index}
-                        data-section-id={getSectionIdStr(section.sectionId)}
-                        className="text-2xl font-semibold text-gray-800 mt-8 mb-4 scroll-mt-24"
-                      >
-                        {section.content}
-                      </h3>
-                    );
-                  } else if (
-                    section.type === "introduction" ||
-                    section.type === "paragraph"
-                  ) {
-                    return (
-                      <p
-                        key={index}
-                        className="text-gray-600 leading-relaxed mb-6"
-                        dangerouslySetInnerHTML={{ __html: section.content }}
-                      />
-                    );
-                  } else if (section.type === "list-item") {
-                    return (
-                      <li
-                        key={index}
-                        className="text-gray-600 leading-relaxed mb-2"
-                        dangerouslySetInnerHTML={{ __html: section.content }}
-                      />
-                    );
-                  } else {
-                    return null;
-                  }
-                })}
+                          <ChevronRight
+                            className={`h-4 w-4 ml-auto transition-transform ${
+                              isActive ? "rotate-90 text-brand" : ""
+                            }`}
+                          />
+                        </button>
+                      );
+                    })}
+                  </nav>
+                </div>
+              </div>
+
+              {/* Main Content */}
+              <div className="lg:w-3/4">
+                <div className="prose prose-lg max-w-none">
+                  {sections.map((section, index) => {
+                    if (section.type === "heading" && section.level === 1) {
+                      return (
+                        <h2
+                          key={index}
+                          data-section-id={getSectionIdStr(section.sectionId)}
+                          className="text-3xl font-bold text-gray-900 mt-12 mb-6 scroll-mt-24"
+                        >
+                          {section.content}
+                        </h2>
+                      );
+                    } else if (
+                      section.type === "heading" &&
+                      section.level === 2
+                    ) {
+                      return (
+                        <h3
+                          key={index}
+                          data-section-id={getSectionIdStr(section.sectionId)}
+                          className="text-2xl font-semibold text-gray-800 mt-8 mb-4 scroll-mt-24"
+                        >
+                          {section.content}
+                        </h3>
+                      );
+                    } else if (
+                      section.type === "introduction" ||
+                      section.type === "paragraph"
+                    ) {
+                      return (
+                        <p
+                          key={index}
+                          className="text-gray-600 leading-relaxed mb-6"
+                          dangerouslySetInnerHTML={{ __html: section.content }}
+                        />
+                      );
+                    } else if (section.type === "list-item") {
+                      return (
+                        <li
+                          key={index}
+                          className="text-gray-600 leading-relaxed mb-2"
+                          dangerouslySetInnerHTML={{ __html: section.content }}
+                        />
+                      );
+                    } else {
+                      return null;
+                    }
+                  })}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </MainLayout>
   );
 };
