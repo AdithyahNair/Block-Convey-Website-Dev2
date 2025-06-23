@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 export const AIGovernanceSection: React.FC = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -32,7 +32,9 @@ export const AIGovernanceSection: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full bg-purple-100 py-16 md:py-24"
+      className={`relative w-full bg-purple-100 py-16 md:py-24 transition-opacity duration-1000 ${
+        isInView ? "opacity-100" : "opacity-0"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main heading */}
