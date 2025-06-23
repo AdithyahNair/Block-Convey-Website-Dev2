@@ -468,18 +468,16 @@ export const BlogDetailPage: React.FC = () => {
                       <p
                         key={index}
                         className="text-gray-600 leading-relaxed mb-6"
-                      >
-                        {section.content}
-                      </p>
+                        dangerouslySetInnerHTML={{ __html: section.content }}
+                      />
                     );
                   } else if (section.type === "list-item") {
                     return (
                       <li
                         key={index}
                         className="text-gray-600 leading-relaxed mb-2"
-                      >
-                        {section.content}
-                      </li>
+                        dangerouslySetInnerHTML={{ __html: section.content }}
+                      />
                     );
                   } else {
                     return null;
