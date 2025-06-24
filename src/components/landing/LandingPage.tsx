@@ -1,13 +1,12 @@
 import React from "react";
-import { Navbar } from "../components/landing/Navbar";
-import { Hero } from "../components/landing/Hero";
-// import { Statistics } from "../components/landing/Statistics";
-import { Partners } from "../components/landing/Partners";
-import { BusinessValueSection } from "../components/landing/BusinessValueSection";
-import { TrustManagementSection } from "../components/landing/TrustManagementSection";
-import { WhyChooseBlockConveySection } from "../components/landing/WhyChooseBlockConveySection";
-import { Footer } from "../components/landing/Footer";
-import { WavyCTA } from "../components/common/cta/WavyCTA";
+import { Navbar } from "./Navbar";
+import { Hero } from "./Hero";
+// import { Statistics } from "./Statistics";
+import { Partners } from "./Partners";
+import { TrustManagementSection } from "./TrustManagementSection";
+import { WhyChooseBlockConveySection } from "./WhyChooseBlockConveySection";
+import { Footer } from "./Footer";
+import { WavyCTA } from "../common/cta/WavyCTA";
 
 export const LandingPage: React.FC = () => {
   return (
@@ -16,7 +15,6 @@ export const LandingPage: React.FC = () => {
       <main>
         <Hero />
         <Partners />
-        <BusinessValueSection />
         <TrustManagementSection />
         <WhyChooseBlockConveySection />
         <WavyCTA />
