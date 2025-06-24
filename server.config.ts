@@ -3,15 +3,17 @@ import { resolve } from "path";
 
 export default defineConfig({
   build: {
-    ssr: resolve(__dirname, "server.ts"),
+    ssr: true,
     outDir: "dist/server",
     target: "node20",
     minify: false,
     rollupOptions: {
-      input: "server.ts",
+      input: resolve(__dirname, "server.ts"),
       output: {
         format: "esm",
+        dir: "dist/server",
         entryFileNames: "server.js",
+        preserveModules: false,
       },
       external: [
         "express",

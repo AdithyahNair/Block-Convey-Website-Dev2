@@ -21,20 +21,15 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase only if we have the required config
-if (!firebaseConfig.apiKey || !firebaseConfig.projectId) {
-  console.error("Firebase configuration is missing required fields:", {
-    apiKey: !!firebaseConfig.apiKey,
-    projectId: !!firebaseConfig.projectId,
-    authDomain: !!firebaseConfig.authDomain,
-    storageBucket: !!firebaseConfig.storageBucket,
-    messagingSenderId: !!firebaseConfig.messagingSenderId,
-    appId: !!firebaseConfig.appId,
-  });
-  process.exit(1);
-}
+let app;
+let db;
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+try {
+  app = initializeApp(firebaseConfig);
+  db = getFirestore(app);
+} catch (error) {
+  console.error("Error initializing Firebase:", error);
+}
 
 const expressApp = express();
 const PORT = process.env.PORT || 8080; // GAE uses port 8080 by default
@@ -118,7 +113,7 @@ const pageMeta: Record<string, MetaTags> = {
 function readTemplate(): string {
   try {
     // In App Engine, the working directory is where your app.yaml is located
-    const indexPath = path.join(process.cwd(), "dist/client/index.html");
+    const indexPath = path.join(process.cwd(), "dist/index.html");
     if (!fs.existsSync(indexPath)) {
       console.error("Template file not found at:", indexPath);
       return "<!DOCTYPE html><html><head></head><body><div id='root'></div></body></html>";
@@ -186,8 +181,8 @@ expressApp.get("/_ah/health", (req: Request, res: Response) => {
   res.status(200).send("OK");
 });
 
-// Serve static files from the client directory
-expressApp.use(express.static(path.join(process.cwd(), "dist/client")));
+// Serve static files from the dist directory
+expressApp.use(express.static(path.join(process.cwd(), "dist")));
 
 // Handle all routes
 expressApp.get("*", async (req: Request, res: Response) => {
