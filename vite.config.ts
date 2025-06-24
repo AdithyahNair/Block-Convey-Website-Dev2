@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from "path";
+import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,16 +12,24 @@ export default defineConfig({
   build: {
     assetsDir: "assets",
     rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        server: resolve(__dirname, "server.ts"),
+      },
       output: {
-        assetFileNames: "assets/[name]-[hash][extname]",
+        entryFileNames: (chunkInfo) => {
+          return chunkInfo.name === "server"
+            ? "[name].js"
+            : "assets/[name]-[hash].js";
+        },
       },
     },
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@assets": path.resolve(__dirname, "./src/assets"),
-      "@public": path.resolve(__dirname, "./public"),
+      "@": resolve(__dirname, "./src"),
+      "@assets": resolve(__dirname, "./src/assets"),
+      "@public": resolve(__dirname, "./public"),
     },
   },
 });

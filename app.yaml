@@ -1,32 +1,32 @@
 service: blockconvey-main-website
-runtime: nodejs20 # Change to nodejs20 for App Engine support
+runtime: nodejs20
 instance_class: F4_1G
 automatic_scaling:
   target_cpu_utilization: 0.85
   min_instances: 1
   max_instances: 10
+
 handlers:
   - url: /static
-    static_dir: dist/static
+    static_dir: dist/client/static
     http_headers:
       Cache-Control: "public, max-age=31536000"
 
   - url: /(.*\.(js|css|png|jpg|svg|ico|json))
-    static_files: dist/\1
-    upload: dist/.*\.(js|css|png|jpg|svg|ico|json)
+    static_files: dist/client/\1
+    upload: dist/client/.*\.(js|css|png|jpg|svg|ico|json)
     http_headers:
       Cache-Control: "public, max-age=31536000"
 
   - url: /.*
-    static_files: dist/index.html
-    upload: dist/index.html
+    script: auto
     secure: always
 
 env_variables:
   NODE_ENV: production
-  VITE_API_KEY: "AIzaSyAfe6vLmhpFxch7F1S7_IN2pnFjvKB54Ic"
-  VITE_AUTH_DOMAIN: "block-convey---blog.firebaseapp.com"
-  VITE_PROJECT_ID: "block-convey---blog"
-  VITE_STORAGE_BUCKET: "block-convey---blog.firebasestorage.app"
-  VITE_MESSAGING_SENDER_ID: "930903797002"
-  VITE_APP_ID: "1:930903797002:web:75bfaa696b2115bc3f1ef3"
+  FIREBASE_API_KEY: "AIzaSyAfe6vLmhpFxch7F1S7_IN2pnFjvKB54Ic"
+  FIREBASE_AUTH_DOMAIN: "block-convey---blog.firebaseapp.com"
+  FIREBASE_PROJECT_ID: "block-convey---blog"
+  FIREBASE_STORAGE_BUCKET: "block-convey---blog.firebasestorage.app"
+  FIREBASE_MESSAGING_SENDER_ID: "930903797002"
+  FIREBASE_APP_ID: "1:930903797002:web:75bfaa696b2115bc3f1ef3"
