@@ -6,6 +6,8 @@ automatic_scaling:
   min_instances: 1
   max_instances: 10
 
+entrypoint: node ./dist/server/server.js
+
 handlers:
   - url: /static
     static_dir: dist/client/static
