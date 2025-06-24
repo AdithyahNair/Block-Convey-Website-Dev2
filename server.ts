@@ -72,7 +72,7 @@ const defaultMeta: MetaTags = {
   title: "Block Convey - The Fastest Path to AI Compliance",
   description:
     "Block Convey helps organizations achieve AI compliance through automated governance, risk management, and regulatory compliance solutions.",
-  image: "https://blockconvey.com/images/tab.png",
+  image: "https://blockconvey.com/images/prism-logo.png",
   url: "https://blockconvey.com",
 };
 
@@ -97,7 +97,7 @@ const pageMeta: Record<string, MetaTags> = {
     title: "PRISM - AI Governance Platform - Block Convey",
     description:
       "PRISM: The comprehensive AI governance platform for transparent, compliant, and ethical AI systems.",
-    image: "https://blockconvey.com/images/prism-logo.png",
+    image: "https://blockconvey.com/images/how-aigov.png",
     url: "https://blockconvey.com/prism",
   },
   "/resources": {
