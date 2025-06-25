@@ -3,7 +3,6 @@ import { useParams, Link } from "react-router-dom";
 import { collection, query, where, getDocs, limit } from "firebase/firestore";
 import { db } from "../firebase";
 import { Navbar } from "../components/landing/Navbar";
-import { Footer } from "../components/landing/Footer";
 import {
   ArrowLeft,
   Calendar,
@@ -507,7 +506,6 @@ export const BlogDetailPage: React.FC = () => {
             </div>
           </article>
         ) : null}
-        <Footer />
       </div>
     </MainLayout>
   );

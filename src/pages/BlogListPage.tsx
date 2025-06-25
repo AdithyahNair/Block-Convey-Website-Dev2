@@ -3,7 +3,6 @@ import { collection, getDocs, query, where, orderBy } from "firebase/firestore";
 import { db } from "../firebase";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/landing/Navbar";
-import { Footer } from "../components/landing/Footer";
 import { BlogPost } from "../types/blog";
 import { ArrowRight, Search, Calendar, User } from "lucide-react";
 import { motion } from "framer-motion";
@@ -243,8 +242,6 @@ export const BlogListPage: React.FC = () => {
             )}
           </div>
         </main>
-
-        <Footer />
       </div>
     </MainLayout>
   );
