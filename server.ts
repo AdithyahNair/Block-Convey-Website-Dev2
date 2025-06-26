@@ -162,25 +162,37 @@ function injectMetaTags(html: string, meta: MetaTags): string {
     url: meta.url,
   };
 
-  return html.replace(
-    "<head>",
-    `<head>
+  return `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/tab.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${sanitizedMeta.title}</title>
     <meta name="description" content="${sanitizedMeta.description}" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="${sanitizedMeta.url}" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="${sanitizedMeta.url}" />
     <meta property="og:title" content="${sanitizedMeta.title}" />
     <meta property="og:description" content="${sanitizedMeta.description}" />
     <meta property="og:image" content="${sanitizedMeta.image}" />
     <meta property="og:image:alt" content="${sanitizedMeta.title}" />
-    <meta property="og:url" content="${sanitizedMeta.url}" />
-    <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Block Convey" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@blockconvey" />
     <meta name="twitter:title" content="${sanitizedMeta.title}" />
     <meta name="twitter:description" content="${sanitizedMeta.description}" />
     <meta name="twitter:image" content="${sanitizedMeta.image}" />
-    <meta name="twitter:image:alt" content="${sanitizedMeta.title}" />`
-  );
+    <meta name="twitter:image:alt" content="${sanitizedMeta.title}" />
+  </head>
+  <body>
+    <div id="root">${html}</div>
+  </body>
+</html>`;
 }
 
 // Health check endpoint for App Engine
