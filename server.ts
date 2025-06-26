@@ -109,34 +109,51 @@ const pageMeta: Record<string, MetaTags> = {
   },
 };
 
-// Function to safely read the template file
-function readTemplate(): string {
+// Health check endpoint for App Engine
+expressApp.get("/_ah/health", (req: Request, res: Response) => {
+  res.status(200).send("OK");
+});
+
+// Serve static files from the dist directory
+expressApp.use(express.static(path.join(process.cwd(), "dist")));
+
+// Handle all routes
+expressApp.get("*", async (req: Request, res: Response) => {
   try {
-    // In App Engine, the working directory is where your app.yaml is located
-    const indexPath = path.join(process.cwd(), "dist/index.html");
-    if (!fs.existsSync(indexPath)) {
-      console.error("Template file not found at:", indexPath);
-      return "<!DOCTYPE html><html><head></head><body><div id='root'></div></body></html>";
+    // Check if it's a blog post
+    if (req.path.startsWith("/blogs/")) {
+      const slug = req.path.replace("/blogs/", "");
+      const blogData = await getBlogBySlug(slug);
+
+      if (blogData) {
+        const html = createBaseTemplate(blogData);
+        res.send(html);
+        return;
+      }
     }
-    return fs.readFileSync(indexPath, "utf-8");
+
+    // Handle other pages
+    const meta = pageMeta[req.path] || defaultMeta;
+    const html = createBaseTemplate(meta);
+    res.send(html);
   } catch (error) {
-    console.error("Error reading template file:", error);
-    return "<!DOCTYPE html><html><head></head><body><div id='root'></div></body></html>";
+    console.error("Error handling request:", error, {
+      path: req.path,
+      method: req.method,
+      headers: req.headers,
+    });
+    // Send the template with default meta tags in case of error
+    const html = createBaseTemplate(defaultMeta);
+    res.status(500).send(html);
   }
-}
+});
 
-// Read the index.html template
-let template: string;
-try {
-  template = readTemplate();
-} catch (error) {
-  console.error("Failed to read template on startup:", error);
-  template =
-    "<!DOCTYPE html><html><head></head><body><div id='root'></div></body></html>";
-}
+// Start the server
+expressApp.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
-// Function to inject meta tags
-function injectMetaTags(html: string, meta: MetaTags): string {
+function createBaseTemplate(meta: MetaTags): string {
   const sanitizedMeta = {
     title: meta.title.replace(/[<>"'&]/g, (char) => {
       const entities: { [key: string]: string } = {
@@ -162,6 +179,24 @@ function injectMetaTags(html: string, meta: MetaTags): string {
     url: meta.url,
   };
 
+  // Read the index.html to get the latest script and style tags
+  const indexPath = path.join(process.cwd(), "dist/index.html");
+  let scriptTags = "";
+  let styleTags = "";
+
+  if (fs.existsSync(indexPath)) {
+    const indexHtml = fs.readFileSync(indexPath, "utf-8");
+    const scriptMatches =
+      indexHtml.match(/<script[^>]*src="[^"]*"[^>]*><\/script>/g) || [];
+    const styleMatches =
+      indexHtml.match(/<link[^>]*rel="stylesheet"[^>]*>/g) || [];
+    const modulePreloads =
+      indexHtml.match(/<link[^>]*rel="modulepreload"[^>]*>/g) || [];
+
+    scriptTags = [...scriptMatches].join("\n    ");
+    styleTags = [...styleMatches, ...modulePreloads].join("\n    ");
+  }
+
   return `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -182,59 +217,30 @@ function injectMetaTags(html: string, meta: MetaTags): string {
     <meta property="og:image" content="${sanitizedMeta.image}" />
     <meta property="og:image:alt" content="${sanitizedMeta.title}" />
     <meta property="og:site_name" content="Block Convey" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@blockconvey" />
     <meta name="twitter:title" content="${sanitizedMeta.title}" />
     <meta name="twitter:description" content="${sanitizedMeta.description}" />
     <meta name="twitter:image" content="${sanitizedMeta.image}" />
     <meta name="twitter:image:alt" content="${sanitizedMeta.title}" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJXKF0V72K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-JJXKF0V72K');
+    </script>
+
+    <!-- Styles and Scripts -->
+    ${styleTags}
+    ${scriptTags}
   </head>
   <body>
-    <div id="root">${html}</div>
+    <div id="root"></div>
   </body>
 </html>`;
 }
-
-// Health check endpoint for App Engine
-expressApp.get("/_ah/health", (req: Request, res: Response) => {
-  res.status(200).send("OK");
-});
-
-// Serve static files from the dist directory
-expressApp.use(express.static(path.join(process.cwd(), "dist")));
-
-// Handle all routes
-expressApp.get("*", async (req: Request, res: Response) => {
-  try {
-    // Check if it's a blog post
-    if (req.path.startsWith("/blogs/")) {
-      const slug = req.path.replace("/blogs/", "");
-      const blogData = await getBlogBySlug(slug);
-
-      if (blogData) {
-        const html = injectMetaTags(template, blogData);
-        res.send(html);
-        return;
-      }
-    }
-
-    // Handle other pages
-    const meta = pageMeta[req.path] || defaultMeta;
-    const html = injectMetaTags(template, meta);
-    res.send(html);
-  } catch (error) {
-    console.error("Error handling request:", error, {
-      path: req.path,
-      method: req.method,
-      headers: req.headers,
-    });
-    // Send the template with default meta tags in case of error
-    const html = injectMetaTags(template, defaultMeta);
-    res.status(500).send(html);
-  }
-});
-
-// Start the server
-expressApp.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
