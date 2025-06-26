@@ -165,14 +165,21 @@ function injectMetaTags(html: string, meta: MetaTags): string {
   return html.replace(
     "<head>",
     `<head>
+    <title>${sanitizedMeta.title}</title>
+    <meta name="description" content="${sanitizedMeta.description}" />
     <meta property="og:title" content="${sanitizedMeta.title}" />
     <meta property="og:description" content="${sanitizedMeta.description}" />
     <meta property="og:image" content="${sanitizedMeta.image}" />
+    <meta property="og:image:alt" content="${sanitizedMeta.title}" />
     <meta property="og:url" content="${sanitizedMeta.url}" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="${sanitizedMeta.title}" />
-    <meta property="twitter:description" content="${sanitizedMeta.description}" />
-    <meta property="twitter:image" content="${sanitizedMeta.image}" />`
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Block Convey" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@blockconvey" />
+    <meta name="twitter:title" content="${sanitizedMeta.title}" />
+    <meta name="twitter:description" content="${sanitizedMeta.description}" />
+    <meta name="twitter:image" content="${sanitizedMeta.image}" />
+    <meta name="twitter:image:alt" content="${sanitizedMeta.title}" />`
   );
 }
 

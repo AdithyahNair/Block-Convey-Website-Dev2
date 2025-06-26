@@ -20,7 +20,7 @@ const DEFAULT_META = {
   title: "Block Convey - AI Governance Platform",
   description:
     "Block Convey is a leading AI governance platform that ensures transparent, fair, and compliant AI systems for enterprises.",
-  image: "/images/business-value.png",
+  image: "https://blockconvey.com/images/business-value.png",
   imageAlt: "Block Convey AI Governance Platform",
   type: "website",
   keywords: "AI governance, blockchain, compliance, fintech, machine learning",
@@ -31,7 +31,7 @@ const metaConfig: MetaTagsConfig = {
     title: "Block Convey - The Fastest Path to AI Compliance",
     description:
       "Block Convey is a leading AI governance platform that ensures transparent, fair, and compliant AI systems for enterprises. Audit-ready for ISO, EU AI Act, and NIST.",
-    image: "/images/business-value.png",
+    image: "https://blockconvey.com/images/business-value.png",
     imageAlt: "Block Convey AI Governance Platform",
     type: "website",
     keywords:
