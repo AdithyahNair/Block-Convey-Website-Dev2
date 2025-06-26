@@ -1,5 +1,4 @@
 User-agent: * 
 Disallow: 
 
-# Sitemap
 Sitemap: https://blockconvey.com/sitemap.xml 
