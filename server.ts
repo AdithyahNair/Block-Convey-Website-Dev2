@@ -107,6 +107,55 @@ const pageMeta: Record<string, MetaTags> = {
     image: "https://blockconvey.com/images/business-value.png",
     url: "https://blockconvey.com/resources",
   },
+  "/privacy": {
+    title: "Privacy Policy - Block Convey",
+    description:
+      "Block Convey's privacy policy outlines how we collect, use, and protect your personal information.",
+    image: "https://blockconvey.com/images/logo.png",
+    url: "https://blockconvey.com/privacy",
+  },
+  "/terms": {
+    title: "Terms of Service - Block Convey",
+    description:
+      "Block Convey's terms of service outline the rules and guidelines for using our platform and services.",
+    image: "https://blockconvey.com/images/logo.png",
+    url: "https://blockconvey.com/terms",
+  },
+  "/blogs": {
+    title: "AI Compliance Blog - Block Convey",
+    description:
+      "Stay updated with the latest insights, trends, and best practices in AI governance and compliance.",
+    image: "https://blockconvey.com/images/business-value.png",
+    url: "https://blockconvey.com/blogs",
+  },
+  "/consulting": {
+    title: "AI Compliance Consulting Services - Block Convey",
+    description:
+      "Expert consulting services to help organizations implement effective AI governance and compliance frameworks.",
+    image: "https://blockconvey.com/images/businessSection.png",
+    url: "https://blockconvey.com/consulting",
+  },
+  "/services": {
+    title: "AI Compliance Services - Block Convey",
+    description:
+      "Comprehensive AI compliance services including risk assessment, monitoring, and regulatory compliance.",
+    image: "https://blockconvey.com/images/business-value.png",
+    url: "https://blockconvey.com/services",
+  },
+  "/company": {
+    title: "About Block Convey - AI Compliance Solutions",
+    description:
+      "Learn about Block Convey's mission to simplify AI compliance and make ethical AI accessible to all organizations.",
+    image: "https://blockconvey.com/images/logo.png",
+    url: "https://blockconvey.com/company",
+  },
+  "/pricing": {
+    title: "AI Compliance Solutions Pricing - Block Convey",
+    description:
+      "Transparent pricing plans for Block Convey's AI governance and compliance solutions.",
+    image: "https://blockconvey.com/images/business-value.png",
+    url: "https://blockconvey.com/pricing",
+  },
 };
 
 // Health check endpoint for App Engine
