@@ -183,18 +183,23 @@ function createBaseTemplate(meta: MetaTags): string {
   const indexPath = path.join(process.cwd(), "dist/index.html");
   let scriptTags = "";
   let styleTags = "";
+  let modulePreloads = "";
 
   if (fs.existsSync(indexPath)) {
     const indexHtml = fs.readFileSync(indexPath, "utf-8");
-    const scriptMatches =
-      indexHtml.match(/<script[^>]*src="[^"]*"[^>]*><\/script>/g) || [];
+    // Exclude Google Analytics script from the main script tags
+    const scriptMatches = (
+      indexHtml.match(/<script[^>]*src="[^"]*"[^>]*><\/script>/g) || []
+    ).filter((script) => !script.includes("googletagmanager.com"));
+
     const styleMatches =
       indexHtml.match(/<link[^>]*rel="stylesheet"[^>]*>/g) || [];
-    const modulePreloads =
+    const preloadMatches =
       indexHtml.match(/<link[^>]*rel="modulepreload"[^>]*>/g) || [];
 
     scriptTags = [...scriptMatches].join("\n    ");
-    styleTags = [...styleMatches, ...modulePreloads].join("\n    ");
+    styleTags = styleMatches.join("\n    ");
+    modulePreloads = preloadMatches.join("\n    ");
   }
 
   return `<!DOCTYPE html>
@@ -227,16 +232,21 @@ function createBaseTemplate(meta: MetaTags): string {
     <meta name="twitter:image:alt" content="${sanitizedMeta.title}" />
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJXKF0V72K"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6H8KX7QTX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
-      gtag('config', 'G-JJXKF0V72K');
+      gtag('config', 'G-V6H8KX7QTX');
     </script>
 
-    <!-- Styles and Scripts -->
+    <!-- Styles -->
     ${styleTags}
+    
+    <!-- Module Preloads -->
+    ${modulePreloads}
+    
+    <!-- Scripts -->
     ${scriptTags}
   </head>
   <body>
