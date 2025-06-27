@@ -90,7 +90,7 @@ const pageMeta: Record<string, MetaTags> = {
     title: "AI Compliance for Financial Institutions - Block Convey",
     description:
       "Tailored AI compliance solutions for financial institutions, fintech startups, and insurtech companies.",
-    image: "https://blockconvey.com/images/businessSection.png",
+    image: "https://blockconvey.com/images/logo.png",
     url: "https://blockconvey.com/who-we-serve",
   },
   "/prism": {
@@ -132,7 +132,7 @@ const pageMeta: Record<string, MetaTags> = {
     title: "AI Compliance Consulting Services - Block Convey",
     description:
       "Expert consulting services to help organizations implement effective AI governance and compliance frameworks.",
-    image: "https://blockconvey.com/images/businessSection.png",
+    image: "https://blockconvey.com/images/logo.png",
     url: "https://blockconvey.com/consulting",
   },
   "/services": {
