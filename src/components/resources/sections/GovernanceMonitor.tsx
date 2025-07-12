@@ -11,11 +11,6 @@ const deepDives = [
       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000",
     link: "https://www.finextra.com/blogposting/27235/governance-risk-and-compliance-how-ai-will-make-fintech-comply",
   },
-  {
-    title: "Using Blockchain to Ensure Transparent AI Operations",
-    image: "https://bc.army/wp-content/uploads/2023/05/image.png",
-    link: "https://proveai.com/blog/augmenting-ai-with-blockchain",
-  },
 ];
 
 const caseStudies = [

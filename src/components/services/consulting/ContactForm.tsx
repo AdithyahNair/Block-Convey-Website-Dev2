@@ -174,7 +174,6 @@ export const ContactForm: React.FC = () => {
           >
             <option value="">Select a service</option>
             <option value="ai">AI Consulting</option>
-            <option value="blockchain">Blockchain Consulting</option>
             <option value="security">Security & Compliance</option>
             <option value="implementation">Implementation Support</option>
           </select>

@@ -18,8 +18,8 @@ export const PricingHero: React.FC = () => {
             Pricing Plans
           </h1>
           <p className="text-xl text-gray-600">
-            Secure, scalable blockchain-powered AI governance solutions for
-            organizations of all sizes.
+            Secure, scalable AI governance solutions for organizations of all
+            sizes.
           </p>
         </motion.div>
       </div>

@@ -7,7 +7,7 @@ const values = [
     icon: Shield,
     title: "Excellence",
     description:
-      "Committed to delivering top-quality blockchain solutions for AI companies",
+      "Committed to delivering top-quality AI governance solutions for fintech companies",
   },
   {
     icon: Code,

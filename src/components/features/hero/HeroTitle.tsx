@@ -15,12 +15,10 @@ export const HeroTitle: React.FC = () => {
           <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Revolutionize <br />
             <span>Financial AI Governance with </span>
-            <span className="text-brand">Blockchain-Powered Oversight</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8">
             Empower financial models with immutable compliance, risk management,
-            and fraud detection using blockchain-enabled governance. Streamline
-            your financial processes with cutting-edge blockchain technology.
+            and fraud detection using AI governance.
           </p>
           <Link
             to="https://calendly.com/arunprasad-11/product-demo-call"

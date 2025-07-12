@@ -23,7 +23,7 @@ const DEFAULT_META = {
   image: "https://blockconvey.com/images/business-value.png",
   imageAlt: "Block Convey AI Governance Platform",
   type: "website",
-  keywords: "AI governance, blockchain, compliance, fintech, machine learning",
+  keywords: "AI governance, compliance, fintech, machine learning",
 };
 
 const metaConfig: MetaTagsConfig = {
@@ -35,7 +35,7 @@ const metaConfig: MetaTagsConfig = {
     imageAlt: "Block Convey AI Governance Platform",
     type: "website",
     keywords:
-      "AI governance, AI compliance, ISO 42001, EU AI Act, NIST, blockchain, fintech",
+      "AI governance, AI compliance, ISO 42001, EU AI Act, NIST, fintech",
   },
   "/features": {
     title: "Block Convey Features - AI Governance Solutions",
@@ -69,29 +69,29 @@ const metaConfig: MetaTagsConfig = {
   "/resources": {
     title: "Block Convey Resources - AI Governance Insights",
     description:
-      "Access comprehensive resources, tools, and insights about AI governance, blockchain technology, and regulatory compliance.",
+      "Access comprehensive resources, tools, and insights about AI governance, Synthetic Data Generation technology, and regulatory compliance.",
     image: "/images/how-aigov.png",
     imageAlt: "Block Convey Resources",
     type: "website",
-    keywords: "AI governance resources, blockchain guides, compliance tools",
+    keywords: "AI governance resources, compliance tools",
   },
   "/company": {
     title: "About Block Convey - Our Mission & Vision",
     description:
-      "Learn about Block Convey's mission to revolutionize AI governance through innovative blockchain technology and compliance solutions.",
+      "Learn about Block Convey's mission to revolutionize AI governance through innovative Synthetic Data Generation technology and compliance solutions.",
     image: "/images/business-value.png",
     imageAlt: "About Block Convey",
     type: "website",
-    keywords: "Block Convey team, AI governance company, blockchain AI",
+    keywords: "Block Convey team, AI governance company, Fintech AI",
   },
   "/blogs": {
     title: "Block Convey Blog - AI Governance Insights & Updates",
     description:
-      "Explore the latest insights, trends, and best practices in AI governance, blockchain technology, and regulatory compliance.",
+      "Explore the latest insights, trends, and best practices in AI governance, Synthetic Data Generation technology, and regulatory compliance.",
     image: "/images/business-value.png",
     imageAlt: "Block Convey Blog",
     type: "website",
-    keywords: "AI governance blog, compliance insights, blockchain articles",
+    keywords: "AI governance blog, compliance insights",
   },
   "/prism": {
     title: "PRISM - Predictive Risk and Intelligence Surveillance Monitor",

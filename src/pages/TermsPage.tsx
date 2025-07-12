@@ -118,9 +118,9 @@ export const TermsPage: React.FC = () => {
               </h2>
               <div className="text-gray-600 space-y-4">
                 <p>
-                  Block Convey provides tools for AI governance, blockchain
-                  integration, and analytics. Specific features and capabilities
-                  may vary based on your subscription plan.
+                  Block Convey provides tools for AI governance integration, and
+                  analytics. Specific features and capabilities may vary based
+                  on your subscription plan.
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>

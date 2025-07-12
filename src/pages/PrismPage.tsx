@@ -243,24 +243,6 @@ export const PrismPage: React.FC = () => {
                   </li>
                 </ul>
               </div>
-              <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-brand-light/10">
-                <h4 className="text-xl font-bold text-gray-900 mb-4">
-                  Blockchain-Enabled Storage
-                </h4>
-                <ul className="text-gray-800 space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-brand mt-0.5 flex-shrink-0" />
-                    <span>Secure and immutable data storage</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-brand mt-0.5 flex-shrink-0" />
-                    <span>
-                      Ensure auditability and compliance with evolving
-                      regulations
-                    </span>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </section>

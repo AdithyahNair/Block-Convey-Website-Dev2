@@ -1,5 +1,5 @@
 import React from "react";
-import { StorageService } from "../components/services/StorageService";
+// import { StorageService } from "../components/services/StorageService";
 import { ServicesCTA } from "../components/common/cta/ServicesCTA";
 import { MainLayout } from "../components/layout/MainLayout";
 
@@ -8,7 +8,7 @@ export const ServicesPage: React.FC = () => {
     <MainLayout>
       <div className="min-h-screen bg-white">
         <main>
-          <StorageService />
+          {/* <StorageService /> */}
           <ServicesCTA />
         </main>
       </div>

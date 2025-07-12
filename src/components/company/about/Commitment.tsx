@@ -15,7 +15,7 @@ const commitments = [
     icon: Lock,
     title: "Security",
     description:
-      "Leveraging blockchain technology, we enhance the security and immutability of AI-driven financial processes.",
+      "Leveraging SOC2 certified technology, we enhance the security and immutability of AI-driven financial processes.",
     gradient: "from-blue-500/20 to-blue-500/5",
     iconColor: "text-blue-600",
   },

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Brain, Database, Shield, MessageSquare } from "lucide-react";
+import { Brain, Shield, MessageSquare } from "lucide-react";
 import { ContactForm } from "./consulting/ContactForm";
 
 const consultingServices = [
@@ -12,16 +12,6 @@ const consultingServices = [
       "Bias detection and removal strategies",
       "Explainable AI (XAI) solutions",
       "Compliance integration",
-    ],
-  },
-  {
-    icon: Database,
-    title: "Blockchain Consulting",
-    features: [
-      "Decentralized storage integration",
-      "Smart contract implementation",
-      "Blockchain-based security",
-      "Audit trail setup",
     ],
   },
   {
@@ -70,7 +60,7 @@ export const ConsultingService: React.FC = () => {
               >
                 <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
                   Expert Consulting for{" "}
-                  <span className="text-brand">AI and Blockchain Success</span>
+                  <span className="text-brand">AI Success</span>
                 </h1>
                 <p className="text-xl text-gray-600 mb-8">
                   Partner with our experts to implement cutting-edge solutions,

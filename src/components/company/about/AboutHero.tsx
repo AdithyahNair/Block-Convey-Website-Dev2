@@ -25,10 +25,10 @@ export const AboutHero: React.FC = () => {
               </h1>
               <p className="text-xl text-gray-600 mb-8">
                 Our team is a dynamic group of innovators deeply passionate
-                about the intersection of explainable AI and blockchain
-                technology. United by a shared vision, we are committed to
-                creating more transparent, secure, and ethical AI systems,
-                particularly in the financial sector.
+                about the intersection of explainable AI and Agentic technology.
+                United by a shared vision, we are committed to creating more
+                transparent, secure, and ethical AI systems, particularly in the
+                financial sector.
               </p>
             </motion.div>
 

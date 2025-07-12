@@ -2,24 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 import nyu_conf from "../../../assets/nyu_conf.png";
-import wbs_conf from "../../../assets/wbs_conf.png";
 import vs_conf from "../../../assets/vs_conf.png";
-import cornell_conf from "../../../assets/cornell_conf.png";
 const conferences = [
-  {
-    title: "World Blockchain Summit",
-    description:
-      "Showcased blockchain advancements and engaged with global leaders to drive innovation in decentralized technologies.",
-    link: "https://www.linkedin.com/feed/update/urn:li:activity:7205506945233940480",
-    image: wbs_conf,
-  },
-  {
-    title: "Cornell Blockchain",
-    description:
-      "Sponsored and contributed in a panel on blockchain's institutional adoption, exploring asset tokenization, Bitcoin ETFs, and regulatory trends.",
-    link: "https://www.linkedin.com/feed/update/urn:li:activity:7184200294921035777",
-    image: cornell_conf,
-  },
   {
     title: "YoungStartup Ventures",
     description:
@@ -30,7 +14,7 @@ const conferences = [
   {
     title: "NYU Venture Showcase",
     description:
-      "Presented a Blockchain AI use case, received feedback from investors, and engaged with over 700 attendees, including students and NYU professors.",
+      "Presented a AI use case, received feedback from investors, and engaged with over 700 attendees, including students and NYU professors.",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7172938272736833536",
     image: nyu_conf,
   },
@@ -50,8 +34,8 @@ export const Conferences: React.FC = () => {
             Key Conferences and Recognitions
           </h2>
           <p className="text-xl text-gray-600">
-            Showcasing our innovations and thought leadership in the blockchain
-            and AI space
+            Showcasing our innovations and thought leadership in the AI-fintech
+            space
           </p>
         </motion.div>
 

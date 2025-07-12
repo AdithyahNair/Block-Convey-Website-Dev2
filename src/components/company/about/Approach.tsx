@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Brain, Database, FileCheck, Users } from "lucide-react";
+import { Brain, FileCheck, Users } from "lucide-react";
 
 const approaches = [
   {
@@ -10,13 +10,6 @@ const approaches = [
       "Develop models that provide clear insights into financial decision-making",
     gradient: "from-rose-500/20 via-rose-500/10 to-transparent",
     iconColor: "text-rose-600",
-  },
-  {
-    icon: Database,
-    title: "Blockchain Solutions",
-    description: "Create secure and transparent AI operations in finance",
-    gradient: "from-blue-500/20 via-blue-500/10 to-transparent",
-    iconColor: "text-blue-600",
   },
   {
     icon: FileCheck,
@@ -52,8 +45,8 @@ export const Approach: React.FC = () => {
             Our Approach
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Combining expertise in machine learning, blockchain, and financial
-            technologies with a strong ethical foundation
+            Combining expertise in machine learning, and Agentic AI technologies
+            with a strong ethical foundation
           </p>
         </motion.div>
 

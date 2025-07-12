@@ -82,7 +82,7 @@ export const StructuredData: React.FC = () => {
           "@type": "Blog",
           name: "Block Convey Blog",
           description:
-            "Insights on AI governance, blockchain technology, and regulatory compliance",
+            "Insights on AI governance, Synthetic Data Generation technology, and regulatory compliance",
           url: "https://blockconvey.com/blogs",
           publisher: {
             "@type": "Organization",

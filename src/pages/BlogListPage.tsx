@@ -88,8 +88,8 @@ export const BlogListPage: React.FC = () => {
                 </span>
               </h1>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
-                Exploring the latest developments in AI governance, blockchain
-                technology, and regulatory compliance.
+                Exploring the latest developments in AI governance, and
+                regulatory compliance.
               </p>
 
               <div className="max-w-2xl mx-auto">

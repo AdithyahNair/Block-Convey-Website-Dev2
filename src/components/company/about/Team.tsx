@@ -56,12 +56,6 @@ const teamMembers = {
       linkedin: "https://www.linkedin.com/in/gourabmukherjee/",
       image: gou_adv,
     },
-    // {
-    //   name: "Veera Budhi",
-    //   role: "Blockchain and AI",
-    //   linkedin: "https://www.linkedin.com/in/veerabudhi/",
-    //   image: veera_adv,
-    // },
     {
       name: "Ilais Anwar",
       role: "Marketing and Community Building",

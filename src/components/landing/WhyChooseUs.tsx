@@ -11,15 +11,6 @@ import {
 
 const benefits = [
   {
-    icon: Link2,
-    title: "Blockchain-Powered Oversight",
-    description:
-      "Build confidence with stakeholders through transparent, explainable AI governance.",
-    gradient: "from-blue-500/20 via-blue-500/10 to-transparent",
-    iconColor: "text-blue-600",
-    accentColor: "#3B82F6",
-  },
-  {
     icon: Activity,
     title: "Fairness and Bias",
     description:
@@ -32,7 +23,7 @@ const benefits = [
     icon: Shield,
     title: "Compliance Reporting",
     description:
-      "Automated audit trails and regulatory adherence with blockchain-verified documentation.",
+      "Automated audit trails and regulatory adherence with custom report generation.",
     gradient: "from-cyan-500/20 via-cyan-500/10 to-transparent",
     iconColor: "text-cyan-600",
     accentColor: "#06B6D4",

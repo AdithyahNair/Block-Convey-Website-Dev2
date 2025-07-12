@@ -9,7 +9,6 @@ export const pricingData: Plan[] = [
       "Ideal for startups and small teams to build a foundation for managing financial AI models.",
     features: [
       "Key Features:",
-      "Blockchain Logging: Immutable audit trails",
       "Credit Risk Assessment: Basic evaluation tools",
       "Fraud Detection: Foundational alerts",
       "Risk Monitoring: Standard tools",

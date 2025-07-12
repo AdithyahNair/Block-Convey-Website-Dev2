@@ -1,23 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Shield, Activity, Lock } from "lucide-react";
+import { Activity, Lock } from "lucide-react";
 
 const features = [
   {
-    icon: Shield,
-    title: "Blockchain Security",
-    description: "Enterprise-grade security with immutable blockchain records"
-  },
-  {
     icon: Activity,
     title: "Real-time Monitoring",
-    description: "Track AI performance and compliance in real-time"
+    description: "Track AI performance and compliance in real-time",
   },
   {
     icon: Lock,
     title: "Smart Contracts",
-    description: "Automated governance with customizable smart contracts"
-  }
+    description: "Automated governance with customizable smart contracts",
+  },
 ];
 
 export const PricingFeatures: React.FC = () => {
