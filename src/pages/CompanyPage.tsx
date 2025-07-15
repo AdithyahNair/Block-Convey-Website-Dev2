@@ -3,7 +3,7 @@ import { AboutSection } from "../components/company/AboutSection";
 import { ContactSection } from "../components/company/ContactSection";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const CompanyPage: React.FC = () => {
+const CompanyPage: React.FC = () => {
   return (
     <MainLayout>
       <div className="min-h-screen bg-white">
@@ -15,3 +15,5 @@ export const CompanyPage: React.FC = () => {
     </MainLayout>
   );
 };
+
+export default CompanyPage;

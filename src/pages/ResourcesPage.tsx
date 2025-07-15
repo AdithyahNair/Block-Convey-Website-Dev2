@@ -6,7 +6,7 @@ import { ToolsSection } from "../components/resources/sections/ToolsSection";
 import { WavyCTA } from "../components/common/cta/WavyCTA";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const ResourcesPage: React.FC = () => {
+const ResourcesPage: React.FC = () => {
   return (
     <MainLayout>
       <div className="min-h-screen bg-white overflow-hidden">
@@ -21,3 +21,5 @@ export const ResourcesPage: React.FC = () => {
     </MainLayout>
   );
 };
+
+export default ResourcesPage;

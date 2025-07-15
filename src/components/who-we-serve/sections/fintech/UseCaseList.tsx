@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { CreditCard, LineChart, Wallet } from "lucide-react";
@@ -6,17 +7,20 @@ const useCases = [
   {
     icon: CreditCard,
     title: "Automated Lending",
-    description: "Instant credit approvals using AI-driven credit scoring systems",
+    description:
+      "Instant credit approvals using AI-driven credit scoring systems",
   },
   {
     icon: LineChart,
     title: "Financial Planning",
-    description: "Robo-advisors providing personalized investment recommendations",
+    description:
+      "Robo-advisors providing personalized investment recommendations",
   },
   {
     icon: Wallet,
     title: "Seamless Transactions",
-    description: "AI-powered fraud detection and streamlined payment processing",
+    description:
+      "AI-powered fraud detection and streamlined payment processing",
   },
 ];
 

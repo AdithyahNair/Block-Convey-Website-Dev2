@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export const HeroTitle: React.FC = () => {
   return (
@@ -26,7 +27,7 @@ export const HeroTitle: React.FC = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
-              to="/solutions"
+              href="/solutions"
               className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-xl font-medium hover:bg-brand-dark transition-colors"
             >
               Explore Features

@@ -1,8 +1,9 @@
+"use client";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 
 export const StructuredData: React.FC = () => {
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     // Remove existing structured data
@@ -14,7 +15,7 @@ export const StructuredData: React.FC = () => {
     let structuredData;
 
     // Define structured data based on route
-    switch (location.pathname) {
+    switch (pathname) {
       case "/":
         structuredData = {
           "@context": "https://schema.org",
@@ -102,7 +103,7 @@ export const StructuredData: React.FC = () => {
             document
               .querySelector('meta[name="description"]')
               ?.getAttribute("content") || "",
-          url: `https://blockconvey.com${location.pathname}`,
+          url: `https://blockconvey.com${pathname}`,
           publisher: {
             "@type": "Organization",
             name: "Block Convey",
@@ -126,7 +127,7 @@ export const StructuredData: React.FC = () => {
         element.remove();
       }
     };
-  }, [location.pathname]);
+  }, [pathname]);
 
   return null;
 };

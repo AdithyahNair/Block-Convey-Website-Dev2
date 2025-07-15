@@ -1,83 +1,98 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
-import about1 from "../../../assets/about1.png";
-import about2 from "../../../assets/about2.png";
-import about3 from "../../../assets/about3.png";
-import about4 from "../../../assets/about4.png";
 
 export const AboutHero: React.FC = () => {
   return (
-    <div id="aboutus" className="relative w-full pt-40 pb-24 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+    <section className="py-24 bg-gradient-to-br from-brand-lightest via-white to-brand-light/20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-left space-y-8"
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <span className="text-gray-900">Shaping the Future of</span>
+              <br />
+              <span className="text-brand">AI Governance</span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-xl">
+              We're pioneering the next generation of AI governance solutions,
+              making artificial intelligence transparent, accountable, and
+              aligned with human values.
+            </p>
+            <div className="pt-4">
+              <a
+                href="#mission"
+                className="inline-flex items-center px-8 py-4 bg-brand text-white rounded-xl font-medium hover:bg-brand-dark transition-colors shadow-lg hover:shadow-xl"
+              >
+                Learn About Our Mission
+              </a>
+            </div>
+          </motion.div>
 
-      <div className="relative">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="max-w-xl"
-            >
-              <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                About Block Convey
-              </h1>
-              <p className="text-xl text-gray-600 mb-8">
-                Our team is a dynamic group of innovators deeply passionate
-                about the intersection of explainable AI and Agentic technology.
-                United by a shared vision, we are committed to creating more
-                transparent, secure, and ethical AI systems, particularly in the
-                financial sector.
-              </p>
-            </motion.div>
-
-            {/* Right Column - Images */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="relative grid grid-cols-2 gap-4"
-            >
-              {/* Top Row */}
-              <div className="space-y-4">
-                <div className="h-48 rounded-2xl overflow-hidden shadow-lg">
-                  <img
-                    src={about1}
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="h-64 rounded-2xl overflow-hidden shadow-lg">
-                  <img
-                    src={about2}
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              </div>
-
-              {/* Bottom Row */}
-              <div className="space-y-4 pt-8">
-                <div className="h-64 rounded-2xl overflow-hidden shadow-lg">
-                  <img
-                    src={about3}
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="h-48 rounded-2xl overflow-hidden shadow-lg">
-                  <img
-                    src={about4}
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              </div>
-
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-brand-light/20 rounded-full blur-3xl" />
-              <div className="absolute -top-6 -left-6 w-48 h-48 bg-brand/20 rounded-full blur-3xl" />
-            </motion.div>
-          </div>
+          {/* Right Column - Image Grid */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="grid grid-cols-2 gap-4">
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                transition={{ duration: 0.3 }}
+                className="rounded-2xl overflow-hidden shadow-xl"
+              >
+                <img
+                  src="/images/about1.png"
+                  alt="AI Governance Solution"
+                  className="w-full h-48 object-cover"
+                />
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: -2 }}
+                transition={{ duration: 0.3 }}
+                className="rounded-2xl overflow-hidden shadow-xl mt-8"
+              >
+                <img
+                  src="/images/about2.png"
+                  alt="Technology Innovation"
+                  className="w-full h-48 object-cover"
+                />
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: -2 }}
+                transition={{ duration: 0.3 }}
+                className="rounded-2xl overflow-hidden shadow-xl -mt-8"
+              >
+                <img
+                  src="/images/about3.png"
+                  alt="Team Collaboration"
+                  className="w-full h-48 object-cover"
+                />
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                transition={{ duration: 0.3 }}
+                className="rounded-2xl overflow-hidden shadow-xl"
+              >
+                <img
+                  src="/images/about4.png"
+                  alt="Future Vision"
+                  className="w-full h-48 object-cover"
+                />
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

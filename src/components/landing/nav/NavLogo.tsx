@@ -1,28 +1,11 @@
 import React from "react";
-import logo from "../../../assets/logo.png";
-import { scrollToFeature } from "../../../utils/scroll";
-import { useNavigate } from "react-router-dom";
+import Link from "next/link";
 
 export const NavLogo: React.FC = () => {
-  const navigate = useNavigate();
-
-  const handleClick = (path: string) => {
-    const [route, hash] = path.split("#");
-    // Navigate to the page first
-    navigate(route);
-    // If there's a hash, scroll to the section
-    if (hash) {
-      scrollToFeature(hash);
-    }
-  };
-
   return (
-    <div
-      onClick={() => handleClick("/#main")}
-      className="flex items-center cursor-pointer transition-opacity hover:opacity-90"
-    >
+    <Link href="/" className="flex items-center">
       <img
-        src={logo}
+        src="/images/logo.png"
         alt="Block Convey"
         className="h-16 w-32 object-contain"
         style={{
@@ -30,6 +13,6 @@ export const NavLogo: React.FC = () => {
           transformOrigin: "left center",
         }}
       />
-    </div>
+    </Link>
   );
 };

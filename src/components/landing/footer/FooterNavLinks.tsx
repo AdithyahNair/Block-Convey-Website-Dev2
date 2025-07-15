@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { scrollToFeature } from "../../../utils/scroll";
 
 const navLinks = {
@@ -53,13 +54,13 @@ const navLinks = {
 };
 
 export const FooterNavLinks: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleClick = (path: string) => {
     const [route, hash] = path.split("#");
 
     // Navigate to the page first
-    navigate(route);
+    router.push(route);
 
     // If there's a hash, scroll to the section
     if (hash) {

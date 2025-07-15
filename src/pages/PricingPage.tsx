@@ -6,7 +6,7 @@ import { PricingFAQ } from "../components/pricing/PricingFAQ";
 import { WavyCTA } from "../components/common/cta/WavyCTA";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const PricingPage: React.FC = () => {
+const PricingPage: React.FC = () => {
   return (
     <MainLayout>
       <div className="min-h-screen bg-white">
@@ -21,3 +21,5 @@ export const PricingPage: React.FC = () => {
     </MainLayout>
   );
 };
+
+export default PricingPage;

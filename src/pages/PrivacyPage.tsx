@@ -1,7 +1,7 @@
 import React from "react";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const PrivacyPage: React.FC = () => {
+const PrivacyPage: React.FC = () => {
   return (
     <MainLayout>
       <div id="hero" className="min-h-screen bg-white">
@@ -288,3 +288,5 @@ export const PrivacyPage: React.FC = () => {
     </MainLayout>
   );
 };
+
+export default PrivacyPage;

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { NavContainer } from "./nav/NavContainer";
 import { NavLogo } from "./nav/NavLogo";

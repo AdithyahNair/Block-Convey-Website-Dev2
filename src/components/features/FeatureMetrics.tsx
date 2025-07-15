@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { BarChart, LineChart, PieChart } from "lucide-react";
@@ -6,18 +7,18 @@ const metrics = [
   {
     icon: BarChart,
     title: "60%",
-    description: "Cost reduction in compliance management"
+    description: "Cost reduction in compliance management",
   },
   {
     icon: LineChart,
     title: "99.9%",
-    description: "Platform uptime guarantee"
+    description: "Platform uptime guarantee",
   },
   {
     icon: PieChart,
     title: "24/7",
-    description: "Real-time monitoring and alerts"
-  }
+    description: "Real-time monitoring and alerts",
+  },
 ];
 
 export const FeatureMetrics: React.FC = () => {

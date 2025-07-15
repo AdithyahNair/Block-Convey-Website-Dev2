@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState, useMemo } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -177,7 +178,6 @@ export const Hero: React.FC = () => {
             className="relative aspect-video w-full max-w-2xl mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-xl border border-brand-light"
           >
             <iframe
-              allow="fullscreen;autoplay"
               allowFullScreen
               height="100%"
               src="https://streamable.com/e/gdh3xj"

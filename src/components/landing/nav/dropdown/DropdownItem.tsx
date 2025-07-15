@@ -1,67 +1,67 @@
-import React, { useState } from 'react'
-import { ArrowRight, ChevronDown } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
-import { scrollToFeature } from '../../../../utils/scroll'
+import React, { useState } from "react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { scrollToFeature } from "../../../../utils/scroll";
 
 interface DropdownItemProps {
   item: {
-    title: string
-    description: string
-    path?: string
+    title: string;
+    description: string;
+    path?: string;
     submenu?: Array<{
-      title: string
-      description: string
-      path?: string
-    }>
-  }
-  onSelect?: (path?: string) => void
+      title: string;
+      description: string;
+      path?: string;
+    }>;
+  };
+  onSelect?: (path?: string) => void;
 }
 
 export const DropdownItem: React.FC<DropdownItemProps> = ({
   item,
   onSelect,
 }) => {
-  const navigate = useNavigate()
-  const [showSubmenu, setShowSubmenu] = useState(false)
+  const router = useRouter();
+  const [showSubmenu, setShowSubmenu] = useState(false);
 
   const handleClick = () => {
     if (item.submenu) {
-      setShowSubmenu(!showSubmenu)
-      return
+      setShowSubmenu(!showSubmenu);
+      return;
     }
 
     if (item.path) {
-      const [path, hash] = item.path.split('#')
+      const [path, hash] = item.path.split("#");
 
       // Navigate to the page first
-      navigate(path)
+      router.push(path);
 
       // If there's a hash, scroll to the section
       if (hash) {
-        scrollToFeature(hash)
+        scrollToFeature(hash);
       }
 
       // Close the dropdown
-      onSelect?.(path)
+      onSelect?.(path);
     }
-  }
+  };
 
   const handleSubmenuItemClick = (path?: string) => {
     if (path) {
-      const [route, hash] = path.split('#')
+      const [route, hash] = path.split("#");
 
       // Navigate to the page first
-      navigate(route)
+      router.push(route);
 
       // If there's a hash, scroll to the section
       if (hash) {
-        scrollToFeature(hash)
+        scrollToFeature(hash);
       }
 
       // Close the dropdown
-      onSelect?.(route)
+      onSelect?.(route);
     }
-  }
+  };
 
   return (
     <div className="w-full">
@@ -82,7 +82,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
           {item.submenu && (
             <ChevronDown
               className={`h-4 w-4 text-brand-light group-hover:text-brand-lightest transition-transform ${
-                showSubmenu ? 'rotate-180' : ''
+                showSubmenu ? "rotate-180" : ""
               }`}
             />
           )}
@@ -114,5 +114,5 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
         </div>
       )}
     </div>
-  )
-}
+  );
+};

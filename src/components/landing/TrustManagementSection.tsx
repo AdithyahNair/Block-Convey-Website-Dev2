@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import {
@@ -284,13 +285,6 @@ export const TrustManagementSection: React.FC = () => {
                     className={`group inline-flex items-center font-medium transition-colors ${card.linkColor}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.open(
-                        "https://calendly.com/arunprasad-11/product-demo-call",
-                        "_blank"
-                      );
-                    }}
                   >
                     {card.linkText}
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

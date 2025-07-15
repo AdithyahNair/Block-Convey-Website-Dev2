@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { Scale, Shield } from "lucide-react";
@@ -30,11 +31,11 @@ export const ComplianceInfo: React.FC = () => {
           Regulatory Oversight
         </h3>
       </div>
-      
+
       <p className="text-gray-600 mb-8">
-        Our platform ensures insurtech companies maintain robust AI governance while
-        meeting regulatory requirements. We help build consumer confidence through
-        fair risk assessments and transparent operations.
+        Our platform ensures insurtech companies maintain robust AI governance
+        while meeting regulatory requirements. We help build consumer confidence
+        through fair risk assessments and transparent operations.
       </p>
 
       <div className="grid sm:grid-cols-2 gap-6">

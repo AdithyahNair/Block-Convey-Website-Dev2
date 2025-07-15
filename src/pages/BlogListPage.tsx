@@ -1,14 +1,15 @@
+"use client";
 import React, { useState, useEffect, useMemo } from "react";
 import { collection, getDocs, query, where, orderBy } from "firebase/firestore";
 import { db } from "../firebase";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Navbar } from "../components/landing/Navbar";
 import { BlogPost } from "../types/blog";
 import { ArrowRight, Search, Calendar, User } from "lucide-react";
 import { motion } from "framer-motion";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const BlogListPage: React.FC = () => {
+const BlogListPage: React.FC = () => {
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -171,7 +172,7 @@ export const BlogListPage: React.FC = () => {
                     transition={{ delay: 0.1 * index }}
                   >
                     <Link
-                      to={`/blogs/${blog.slug}`}
+                      href={`/blogs/${blog.slug}`}
                       className="group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-brand-light/10"
                     >
                       <div className="flex flex-col lg:flex-row">
@@ -246,3 +247,5 @@ export const BlogListPage: React.FC = () => {
     </MainLayout>
   );
 };
+
+export default BlogListPage;

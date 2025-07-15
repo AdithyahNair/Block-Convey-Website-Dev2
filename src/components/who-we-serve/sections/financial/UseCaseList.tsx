@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle, Brain, Users, Zap } from "lucide-react";
@@ -6,7 +7,8 @@ const useCases = [
   {
     icon: AlertTriangle,
     title: "Fraud Detection",
-    description: "Real-time monitoring to detect and prevent fraudulent transactions",
+    description:
+      "Real-time monitoring to detect and prevent fraudulent transactions",
   },
   {
     icon: Brain,
@@ -21,7 +23,8 @@ const useCases = [
   {
     icon: Zap,
     title: "Operational Efficiency",
-    description: "Automating processes like loan approvals and customer support",
+    description:
+      "Automating processes like loan approvals and customer support",
   },
 ];
 

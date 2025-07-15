@@ -3,7 +3,7 @@ import React from "react";
 import { ServicesCTA } from "../components/common/cta/ServicesCTA";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const ServicesPage: React.FC = () => {
+const ServicesPage: React.FC = () => {
   return (
     <MainLayout>
       <div className="min-h-screen bg-white">
@@ -15,3 +15,5 @@ export const ServicesPage: React.FC = () => {
     </MainLayout>
   );
 };
+
+export default ServicesPage;

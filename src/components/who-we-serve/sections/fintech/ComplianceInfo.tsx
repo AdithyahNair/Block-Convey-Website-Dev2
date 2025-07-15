@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { Scale, Shield } from "lucide-react";
@@ -30,11 +31,11 @@ export const ComplianceInfo: React.FC = () => {
           Compliance & Trust
         </h3>
       </div>
-      
+
       <p className="text-gray-600 mb-8">
-        Our AI governance platform helps fintech startups build trust while ensuring
-        compliance with key regulations. We enable ethical AI usage and mitigate risks
-        of bias while maintaining innovation speed.
+        Our AI governance platform helps fintech startups build trust while
+        ensuring compliance with key regulations. We enable ethical AI usage and
+        mitigate risks of bias while maintaining innovation speed.
       </p>
 
       <div className="grid sm:grid-cols-2 gap-6">

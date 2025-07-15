@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { Scale, Shield } from "lucide-react";
@@ -30,11 +31,11 @@ export const ComplianceInfo: React.FC = () => {
           Regulatory Framework
         </h3>
       </div>
-      
+
       <p className="text-gray-600 mb-8">
-        Our platform ensures specialized service providers maintain unbiased, secure, 
-        and compliant AI systems. We support ethical AI practices while meeting 
-        stringent regulatory standards.
+        Our platform ensures specialized service providers maintain unbiased,
+        secure, and compliant AI systems. We support ethical AI practices while
+        meeting stringent regulatory standards.
       </p>
 
       <div className="grid sm:grid-cols-2 gap-6">

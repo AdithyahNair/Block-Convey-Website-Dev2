@@ -7,7 +7,7 @@ import { SpecializedServices } from "../components/who-we-serve/sections/Special
 import { WavyCTA } from "../components/common/cta/WavyCTA";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const WhoWeServePage: React.FC = () => {
+const WhoWeServePage: React.FC = () => {
   return (
     <MainLayout>
       <div className="min-h-screen bg-white">
@@ -23,3 +23,5 @@ export const WhoWeServePage: React.FC = () => {
     </MainLayout>
   );
 };
+
+export default WhoWeServePage;

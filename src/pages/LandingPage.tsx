@@ -7,7 +7,7 @@ import { WhyChooseBlockConveySection } from "../components/landing/WhyChooseBloc
 import { WavyCTA } from "../components/common/cta/WavyCTA";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const LandingPage: React.FC = () => {
+const LandingPage: React.FC = () => {
   return (
     <MainLayout>
       <div className="relative min-h-screen">
@@ -23,3 +23,5 @@ export const LandingPage: React.FC = () => {
     </MainLayout>
   );
 };
+
+export default LandingPage;

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle, Shield, BarChart2 } from "lucide-react";
@@ -6,12 +7,14 @@ const useCases = [
   {
     icon: AlertTriangle,
     title: "Fraud Detection",
-    description: "AI-powered systems to identify anomalies and prevent financial crimes in real-time",
+    description:
+      "AI-powered systems to identify anomalies and prevent financial crimes in real-time",
   },
   {
     icon: Shield,
     title: "Regulatory Compliance",
-    description: "Automated AML/KYC processes for enhanced efficiency and accuracy",
+    description:
+      "Automated AML/KYC processes for enhanced efficiency and accuracy",
   },
   {
     icon: BarChart2,

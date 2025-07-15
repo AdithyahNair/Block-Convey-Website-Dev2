@@ -1,7 +1,7 @@
 import React from "react";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const TermsPage: React.FC = () => {
+const TermsPage: React.FC = () => {
   return (
     <MainLayout>
       <div id="hero" className="min-h-screen bg-white">
@@ -267,3 +267,5 @@ export const TermsPage: React.FC = () => {
     </MainLayout>
   );
 };
+
+export default TermsPage;

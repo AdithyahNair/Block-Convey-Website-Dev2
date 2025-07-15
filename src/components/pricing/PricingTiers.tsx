@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { PricingCard } from "./PricingCard";
 import { pricingData } from "./data/pricingData";

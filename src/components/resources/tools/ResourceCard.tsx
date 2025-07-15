@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { LucideIcon, Download } from "lucide-react";
@@ -31,9 +32,9 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
         </div>
         <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
       </div>
-      
+
       <p className="text-gray-600 mb-6">{description}</p>
-      
+
       <a
         href={link}
         target="_blank"

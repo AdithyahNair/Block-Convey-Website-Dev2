@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import emailjs from "@emailjs/browser";
@@ -14,8 +15,8 @@ export const NewsletterForm: React.FC = () => {
 
     try {
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID_NS,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_NS!,
         {
           to_name: "Admin",
           from_name: "Newsletter System",
@@ -24,7 +25,7 @@ export const NewsletterForm: React.FC = () => {
           message: "Hey you got a new subscriber to your newsletter!",
           subscriber_email: email,
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
 
       setStatus("success");

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { Scale, Shield } from "lucide-react";
@@ -30,11 +31,11 @@ export const ComplianceInfo: React.FC = () => {
           Regulatory Compliance
         </h3>
       </div>
-      
+
       <p className="text-gray-600 mb-8">
-        Financial institutions face heightened scrutiny in AI operations. Our platform ensures
-        transparency, fairness, and accountability in AI-driven decisions to maintain
-        compliance with major regulatory bodies.
+        Financial institutions face heightened scrutiny in AI operations. Our
+        platform ensures transparency, fairness, and accountability in AI-driven
+        decisions to maintain compliance with major regulatory bodies.
       </p>
 
       <div className="grid sm:grid-cols-2 gap-6">

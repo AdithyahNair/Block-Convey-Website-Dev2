@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { NavDropdown } from "./NavDropdown";
 import { useClickOutside } from "../../../hooks/useClickOutside";
 import { NavLinksProps } from "../../../types/blog";
 
 export const NavLinks: React.FC<NavLinksProps> = ({ items }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const handleClose = useCallback(() => {
@@ -14,7 +14,7 @@ export const NavLinks: React.FC<NavLinksProps> = ({ items }) => {
 
   const handleItemClick = (path?: string) => {
     if (path) {
-      navigate(path);
+      router.push(path);
       handleClose();
     }
   };

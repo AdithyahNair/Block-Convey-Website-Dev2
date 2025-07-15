@@ -1,11 +1,12 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { Clock, ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const ComingSoonPage: React.FC = () => {
-  const navigate = useNavigate();
+const ComingSoonPage: React.FC = () => {
+  const router = useRouter();
 
   return (
     <MainLayout>
@@ -30,7 +31,7 @@ export const ComingSoonPage: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
                 <button
-                  onClick={() => navigate(-1)}
+                  onClick={() => router.back()}
                   className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-xl transition-colors"
                 >
                   <ArrowLeft className="h-5 w-5" />
@@ -52,3 +53,5 @@ export const ComingSoonPage: React.FC = () => {
     </MainLayout>
   );
 };
+
+export default ComingSoonPage;

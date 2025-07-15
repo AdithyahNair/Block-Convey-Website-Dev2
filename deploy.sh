@@ -1,30 +1,32 @@
 #!/bin/bash
 
-# Run the build script first
-echo "Running build script..."
-./build.sh
+# Next.js Deployment Script for Google App Engine
+# This script builds the Next.js app and deploys it to GAE
 
-# Verify the build
-if [ ! -d "dist/client" ]; then
-  echo "Error: dist/client not found. Build may have failed."
-  exit 1
+set -e  # Exit on any error
+
+echo "🚀 Starting Next.js deployment to Google App Engine..."
+
+# Step 1: Install dependencies with legacy peer deps for React 19 compatibility
+echo "📦 Installing dependencies (using --legacy-peer-deps for React 19 compatibility)..."
+npm ci --legacy-peer-deps
+
+# Step 2: Build the Next.js app
+echo "🔨 Building Next.js application..."
+npm run build
+
+# Step 3: Check if build was successful
+if [ ! -d "out" ]; then
+    echo "❌ Build failed! 'out' directory not found."
+    exit 1
 fi
 
-if [ ! -d "dist/server" ]; then
-  echo "Error: dist/server not found. Build may have failed."
-  exit 1
-fi
+echo "✅ Build completed successfully!"
 
-# Stage all changes
-git add .
+# Step 4: Deploy to Google App Engine
+echo "🌍 Deploying to Google App Engine..."
+gcloud app deploy app.yaml --quiet
 
-# Commit changes
-echo "Enter commit message:"
-read commit_message
-git commit -m "$commit_message"
-
-# Push to GitHub
-echo "Pushing to GitHub..."
-git push origin main
-
-echo "Deployment pushed to GitHub!" 
+# Step 5: Get the deployed URL
+echo "🎉 Deployment completed!"
+echo "🌐 Your app should be available at: https://blockconvey-main-website-nextjs.uc.r.appspot.com" 

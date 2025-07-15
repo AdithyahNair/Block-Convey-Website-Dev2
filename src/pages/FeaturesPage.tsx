@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { FeatureHero } from "../components/features/FeatureHero";
 import { FeatureShowcase } from "../components/features/FeatureShowcase";
@@ -8,7 +9,7 @@ import { FinancialModelSection } from "../components/landing/FinancialModelSecti
 import { AIGovernanceSection } from "../components/landing/AIGovernanceSection";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const FeaturesPage: React.FC = () => {
+const FeaturesPage: React.FC = () => {
   return (
     <MainLayout>
       <div id="featuresPage" className="min-h-screen bg-white">
@@ -23,7 +24,6 @@ export const FeaturesPage: React.FC = () => {
               className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-brand-light"
             >
               <iframe
-                allow="fullscreen;autoplay"
                 allowFullScreen
                 height="100%"
                 src="https://streamable.com/e/cklno4?autoplay=1&muted=1&nocontrols=1"

@@ -1,15 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: 'class',
+module.exports = {
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
         brand: {
-          lightest: '#FAF9F9',
-          light: '#ADD2C9',
-          DEFAULT: '#5EA3A3',
-          dark: '#488B8F',
+          lightest: "#FAF9F9",
+          light: "#ADD2C9",
+          DEFAULT: "#5EA3A3",
+          dark: "#488B8F",
         },
         navy: {
           800: "var(--navy-800)",
@@ -43,13 +43,13 @@ export default {
     },
   },
   plugins: [
-    function({ addUtilities }) {
+    function ({ addUtilities }) {
       const newUtilities = {
-        '.hover\\:pause-animation:hover': {
-          'animation-play-state': 'paused',
+        ".hover\\:pause-animation:hover": {
+          "animation-play-state": "paused",
         },
-      }
-      addUtilities(newUtilities)
+      };
+      addUtilities(newUtilities);
     },
   ],
 };

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import {
@@ -14,7 +16,7 @@ import {
 } from "lucide-react";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const PrismPage: React.FC = () => {
+const PrismPage: React.FC = () => {
   return (
     <MainLayout>
       <div className="min-h-screen bg-brand-lightest overflow-x-hidden w-full max-w-[100vw]">
@@ -386,3 +388,5 @@ export const PrismPage: React.FC = () => {
     </MainLayout>
   );
 };
+
+export default PrismPage;

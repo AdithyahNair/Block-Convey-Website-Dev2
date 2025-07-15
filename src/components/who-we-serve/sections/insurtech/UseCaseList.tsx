@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { FileCheck, BarChart2, Users } from "lucide-react";
@@ -6,17 +7,20 @@ const useCases = [
   {
     icon: FileCheck,
     title: "Claims Automation",
-    description: "AI-powered claims processing with automated document verification and fraud detection",
+    description:
+      "AI-powered claims processing with automated document verification and fraud detection",
   },
   {
     icon: BarChart2,
     title: "Risk Assessment",
-    description: "Data-driven underwriting for precise policy pricing and risk evaluation",
+    description:
+      "Data-driven underwriting for precise policy pricing and risk evaluation",
   },
   {
     icon: Users,
     title: "Customer Insights",
-    description: "Enhanced customer experiences through predictive analytics and personalization",
+    description:
+      "Enhanced customer experiences through predictive analytics and personalization",
   },
 ];
 

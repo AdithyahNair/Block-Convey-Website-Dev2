@@ -1,5 +1,7 @@
+"use client";
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "next/navigation";
+import Link from "next/link";
 import { collection, query, where, getDocs, limit } from "firebase/firestore";
 import { db } from "../firebase";
 import { Navbar } from "../components/landing/Navbar";
@@ -15,8 +17,9 @@ import {
 import { BlogPost, Section } from "../types/blog";
 import { MainLayout } from "../components/layout/MainLayout";
 
-export const BlogDetailPage: React.FC = () => {
-  const { slug } = useParams();
+const BlogDetailPage: React.FC = () => {
+  const params = useParams();
+  const slug = params?.slug as string;
   const [blog, setBlog] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -280,7 +283,7 @@ export const BlogDetailPage: React.FC = () => {
             <div className="text-center">
               <p className="text-red-500 mb-4">{error}</p>
               <Link
-                to="/blogs"
+                href="/blogs"
                 className="inline-flex items-center text-brand hover:text-brand-dark transition-colors"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
@@ -335,7 +338,7 @@ export const BlogDetailPage: React.FC = () => {
 
               <div className="flex items-center justify-between py-8">
                 <Link
-                  to="/blogs"
+                  href="/blogs"
                   className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-brand transition-all duration-300"
                 >
                   <ArrowLeft className="h-4 w-4 mr-2" />

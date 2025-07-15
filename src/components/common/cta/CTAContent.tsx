@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import {
   motion,
   useInView,
@@ -11,6 +12,19 @@ import { ArrowRight, ArrowUpRight, Zap, Shield, Check } from "lucide-react";
 export const CTAContent: React.FC = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.2 });
+
+  // State for consistent random values to prevent hydration mismatch
+  const [randomValues, setRandomValues] = useState([1, 1, 1, 1]);
+
+  // Generate random values on client side only
+  useEffect(() => {
+    setRandomValues([
+      Math.floor(Math.random() * 10) + 1,
+      Math.floor(Math.random() * 10) + 1,
+      Math.floor(Math.random() * 10) + 1,
+      Math.floor(Math.random() * 10) + 1,
+    ]);
+  }, []);
 
   // Mouse-following effect
   const mouseX = useMotionValue(0);
@@ -291,7 +305,7 @@ export const CTAContent: React.FC = () => {
                         </div>
                         <div className="flex items-center text-xs text-green-500">
                           <ArrowUpRight className="h-3 w-3" />
-                          {Math.floor(Math.random() * 10) + 1}%
+                          {randomValues[i]}%
                         </div>
                       </div>
                     </motion.div>
