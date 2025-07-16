@@ -1,9 +1,25 @@
 import React from "react";
-import Link from "next/link";
+import { scrollToFeature } from "../../../utils/scroll";
+import { useRouter } from "next/navigation";
 
 export const NavLogo: React.FC = () => {
+  const router = useRouter();
+
+  const handleClick = (path: string) => {
+    const [route, hash] = path.split("#");
+    // Navigate to the page first
+    router.push(route);
+    // If there's a hash, scroll to the section
+    if (hash) {
+      scrollToFeature(hash);
+    }
+  };
+
   return (
-    <Link href="/" className="flex items-center">
+    <div
+      onClick={() => handleClick("/#main")}
+      className="flex items-center cursor-pointer transition-opacity hover:opacity-90"
+    >
       <img
         src="/images/logo.png"
         alt="Block Convey"
@@ -13,6 +29,6 @@ export const NavLogo: React.FC = () => {
           transformOrigin: "left center",
         }}
       />
-    </Link>
+    </div>
   );
 };

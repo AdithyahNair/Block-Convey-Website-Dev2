@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
 
-  // Configure images
   images: {
     remotePatterns: [
       {
@@ -15,25 +14,16 @@ const nextConfig = {
     unoptimized: true,
   },
 
-  // Configure webpack to handle assets
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|svg)$/i,
       type: "asset/resource",
     });
-
     return config;
   },
 
-  // Configure output for static export
-  output: "export",
-  trailingSlash: true,
-
-  // Configure asset prefix for deployment
-  assetPrefix: "",
-
-  // Configure base path if needed
-  basePath: "",
+  // ✅ For SSR on App Engine
+  output: "standalone",
 };
 
 module.exports = nextConfig;

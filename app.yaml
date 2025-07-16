@@ -1,6 +1,7 @@
 service: blockconvey-main-website-nextjs
 runtime: nodejs20
 instance_class: F4_1G
+
 automatic_scaling:
   target_cpu_utilization: 0.85
   min_instances: 1
@@ -8,41 +9,7 @@ automatic_scaling:
 
 env: standard
 
-handlers:
-  # Static assets (JS, CSS, images)
-  - url: /_next/static/(.*)
-    static_files: out/_next/static/\1
-    upload: out/_next/static/.*
-    http_headers:
-      Cache-Control: "public, max-age=31536000, immutable"
-
-  # Images and other static files
-  - url: /images/(.*)
-    static_files: out/images/\1
-    upload: out/images/.*
-    http_headers:
-      Cache-Control: "public, max-age=31536000"
-
-  # Other static files (favicon, robots.txt, etc.)
-  - url: /(favicon\.ico|robots\.txt|sitemap\.xml|.*\.png|.*\.jpg|.*\.svg|.*\.ico)
-    static_files: out/\1
-    upload: out/.*\.(ico|txt|xml|png|jpg|svg)
-    http_headers:
-      Cache-Control: "public, max-age=86400"
-
-  # HTML files for static export
-  - url: /(.*)
-    static_files: out/\1/index.html
-    upload: out/.*/index\.html
-    http_headers:
-      Cache-Control: "public, max-age=3600"
-
-  # Fallback for root
-  - url: /
-    static_files: out/index.html
-    upload: out/index\.html
-    http_headers:
-      Cache-Control: "public, max-age=3600"
+entrypoint: npm run start
 
 env_variables:
   NODE_ENV: production
