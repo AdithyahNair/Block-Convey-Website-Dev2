@@ -1,0 +1,470 @@
+"use client";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../../lib/firebase";
+import { BlogPost, Section } from "../../../types/blog";
+import {
+  ArrowLeft,
+  Calendar,
+  Clock,
+  Share2,
+  User,
+  Tag,
+  ChevronRight,
+} from "lucide-react";
+import { MainLayout } from "../../../components/layout/MainLayout";
+
+interface BlogDetailClientProps {
+  slug: string;
+}
+
+export default function BlogDetailClient({ slug }: BlogDetailClientProps) {
+  const [blog, setBlog] = useState<BlogPost | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const [showShareTooltip, setShowShareTooltip] = useState(false);
+  const [sections, setSections] = useState<Section[]>([]);
+  const [activeSection, setActiveSection] = useState<string>("");
+
+  useEffect(() => {
+    const fetchBlogBySlug = async () => {
+      try {
+        if (!slug) {
+          setError("Blog post not found.");
+          setLoading(false);
+          return;
+        }
+
+        const blogsQuery = query(
+          collection(db, "blogs"),
+          where("slug", "==", slug),
+          where("published", "==", true)
+        );
+
+        const querySnapshot = await getDocs(blogsQuery);
+
+        if (querySnapshot.empty) {
+          setError("Blog post not found.");
+          setLoading(false);
+          return;
+        }
+
+        const blogDoc = querySnapshot.docs[0];
+        const blogData = {
+          id: blogDoc.id,
+          ...blogDoc.data(),
+        } as BlogPost;
+
+        setBlog(blogData);
+
+        // Process content sections
+        if (blogData.contentSection && blogData.contentSection.length > 0) {
+          try {
+            setSections(blogData.contentSection as Section[]);
+          } catch (err) {
+            console.error("Error processing contentSection:", err);
+            setError("Error processing blog content. Please try again later.");
+          }
+        } else if (blogData.content) {
+          try {
+            parseContent(blogData.content);
+          } catch (err) {
+            console.error("Error parsing blog content:", err);
+            setError("Error processing blog content. Please try again later.");
+          }
+        } else {
+          setError("Blog content is missing.");
+        }
+
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching blog:", err);
+        setError("Failed to load blog post. Please try again later.");
+        setLoading(false);
+      }
+    };
+
+    fetchBlogBySlug();
+  }, [slug]);
+
+  const parseContent = (content: string | undefined) => {
+    if (!content) {
+      console.error("Blog content is missing");
+      setSections([]);
+      return;
+    }
+
+    const parts = content.split(/(?=^\d+\.\s+|^\d+\.\d+\.\s+)/gm);
+    const parsedSections: Section[] = [];
+
+    if (parts[0] && !parts[0].match(/^\d+\./)) {
+      parsedSections.push({
+        type: "introduction",
+        content: parts[0].trim(),
+      });
+      parts.shift();
+    }
+
+    parts.forEach((part) => {
+      if (!part.trim()) return;
+
+      const match = part.match(/^(\d+(?:\.\d+)*)\.\s+([^\n]+)([\s\S]*)$/);
+
+      if (match) {
+        const [, numberPart, title, sectionContent] = match;
+        const headerText = `${numberPart}. ${title}`;
+
+        let level = 1;
+        if (numberPart.split(".").length > 1) {
+          level = 2;
+        }
+
+        const sectionId = numberPart;
+
+        parsedSections.push({
+          type: "heading",
+          level: level,
+          sectionId: sectionId,
+          content: headerText,
+        });
+
+        const paragraphs = sectionContent.trim().split(/\n\s*\n/);
+        paragraphs.forEach((paragraph) => {
+          if (paragraph.trim()) {
+            parsedSections.push({
+              type: "paragraph",
+              content: paragraph.trim().replace(/\s+/g, " "),
+            });
+          }
+        });
+      } else {
+        parsedSections.push({
+          type: "paragraph",
+          content: part.trim(),
+        });
+      }
+    });
+
+    setSections(parsedSections);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const headings = document.querySelectorAll("[data-section-id]");
+      let current = "";
+
+      headings.forEach((heading) => {
+        const sectionId = heading.getAttribute("data-section-id");
+        if (sectionId) {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top <= 100) {
+            current = sectionId;
+          }
+        }
+      });
+
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: blog?.title,
+          text: blog?.summary,
+          url: window.location.href,
+        });
+      } catch (err) {
+        console.error("Error sharing:", err);
+      }
+    } else {
+      await navigator.clipboard.writeText(window.location.href);
+      setShowShareTooltip(true);
+      setTimeout(() => setShowShareTooltip(false), 2000);
+    }
+  };
+
+  const formatDate = (date: Date) => {
+    return new Intl.DateTimeFormat("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }).format(date);
+  };
+
+  const estimateReadTime = (sections: Section[]): number => {
+    const wordsPerMinute = 200;
+    const totalWords = sections.reduce((count, section) => {
+      return count + section.content.split(/\s+/).length;
+    }, 0);
+    return Math.ceil(totalWords / wordsPerMinute);
+  };
+
+  const getSectionIdStr = (sectionId: string | number | undefined): string => {
+    if (sectionId === undefined) return "";
+    return typeof sectionId === "number" ? sectionId.toString() : sectionId;
+  };
+
+  const getSectionTitle = (content: string): string => {
+    const titleMatch = content.match(/^\d+(?:\.\d+)*\.\s+(.+)$/);
+    return titleMatch ? titleMatch[1] : content;
+  };
+
+  const scrollToSection = (sectionId: string | number | undefined) => {
+    if (!sectionId) return;
+
+    const sectionIdStr = getSectionIdStr(sectionId);
+    const element = document.querySelector(
+      `[data-section-id="${sectionIdStr}"]`
+    );
+
+    if (element) {
+      const yOffset = -80;
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
+  const getTableOfContents = () => {
+    return sections.filter(
+      (section) => section.type === "heading" && section.level === 1
+    );
+  };
+
+  if (loading) {
+    return (
+      <MainLayout>
+        <div className="min-h-screen bg-gradient-to-b from-brand-lightest to-white">
+          <div className="flex items-center justify-center min-h-[60vh]">
+            <div className="animate-pulse text-brand">Loading article...</div>
+          </div>
+        </div>
+      </MainLayout>
+    );
+  }
+
+  if (error || !blog) {
+    return (
+      <MainLayout>
+        <div className="min-h-screen bg-gradient-to-b from-brand-lightest to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <p className="text-red-500 mb-4">{error}</p>
+              <Link
+                href="/blogs"
+                className="inline-flex items-center text-brand hover:text-brand-dark transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to all articles
+              </Link>
+            </div>
+          </div>
+        </div>
+      </MainLayout>
+    );
+  }
+
+  const tableOfContents = getTableOfContents();
+
+  return (
+    <MainLayout>
+      <div className="min-h-screen bg-white">
+        <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+          <div className="max-w-4xl mx-auto">
+            {/* Featured Image */}
+            {blog.imageUrl && (
+              <div className="relative w-full h-[400px] mt-8 mb-8 rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src={blog.imageUrl}
+                  alt={blog.title}
+                  className="w-full h-full object-cover"
+                  onError={(
+                    e: React.SyntheticEvent<HTMLImageElement, Event>
+                  ) => {
+                    const target = e.target as HTMLImageElement;
+                    target.onerror = null;
+                    target.src = "/images/default-blog-image.png";
+                  }}
+                />
+              </div>
+            )}
+
+            <div className="flex items-center justify-between py-8">
+              <Link
+                href="/blogs"
+                className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-brand transition-all duration-300"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to all articles
+              </Link>
+
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <Tag className="h-5 w-5 text-brand" />
+                  <span className="font-medium text-gray-700">Tags:</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {blog.tags && blog.tags.length > 0 ? (
+                    blog.tags.map((tag: string, index: number) => (
+                      <span
+                        key={index}
+                        className="bg-brand-light/20 text-brand px-3 py-1 rounded-full text-sm font-medium hover:bg-brand-light/30 transition-colors cursor-pointer"
+                      >
+                        {tag}
+                      </span>
+                    ))
+                  ) : (
+                    <span className="text-gray-500 text-sm">No tags</span>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {blog.title}
+            </h1>
+
+            <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-8">
+              <div className="flex items-center gap-2">
+                <User className="h-4 w-4" />
+                <span>{blog.author}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                <span>{formatDate(blog.createdAt.toDate())}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4" />
+                <span>{estimateReadTime(sections)} min read</span>
+              </div>
+              <button
+                onClick={handleShare}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 text-brand hover:bg-brand/20 transition-colors"
+              >
+                <Share2 className="h-4 w-4" />
+                Share Article
+              </button>
+              {showShareTooltip && (
+                <div className="absolute mt-2 px-4 py-2 bg-gray-900 text-white text-sm rounded-lg">
+                  Link copied to clipboard!
+                </div>
+              )}
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-8">
+              {blog.categories.map((category: string, index: number) => (
+                <span
+                  key={index}
+                  className="bg-brand-light/20 text-brand px-3 py-1 rounded-full text-sm font-medium"
+                >
+                  {category}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-12">
+            {/* Table of Contents Sidebar */}
+            <div className="lg:w-1/4 lg:max-w-xs">
+              <div className="sticky top-24">
+                <h2 className="text-xl font-semibold mb-6 text-gray-900">
+                  Table of Contents
+                </h2>
+                <nav className="flex flex-col space-y-1">
+                  {tableOfContents.map((section, index) => {
+                    const isActive =
+                      activeSection === getSectionIdStr(section.sectionId);
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => scrollToSection(section.sectionId)}
+                        className={`flex items-center py-3 px-4 rounded-lg transition-all ${
+                          isActive
+                            ? "text-brand font-medium bg-brand-light/10 border-l-4 border-brand"
+                            : "text-gray-600 hover:bg-gray-100"
+                        }`}
+                      >
+                        <div className="mr-2 flex items-center">
+                          <div
+                            className={`w-2 h-2 rounded-full mr-2 ${
+                              isActive ? "bg-brand" : "bg-gray-400"
+                            }`}
+                          ></div>
+                          {getSectionTitle(section.content)}
+                        </div>
+                        <ChevronRight
+                          className={`h-4 w-4 ml-auto transition-transform ${
+                            isActive ? "rotate-90 text-brand" : ""
+                          }`}
+                        />
+                      </button>
+                    );
+                  })}
+                </nav>
+              </div>
+            </div>
+
+            {/* Main Content */}
+            <div className="lg:w-3/4">
+              <div className="prose prose-lg max-w-none">
+                {sections.map((section, index) => {
+                  if (section.type === "heading" && section.level === 1) {
+                    return (
+                      <h2
+                        key={index}
+                        data-section-id={getSectionIdStr(section.sectionId)}
+                        className="text-3xl font-bold text-gray-900 mt-12 mb-6 scroll-mt-24"
+                      >
+                        {section.content}
+                      </h2>
+                    );
+                  } else if (
+                    section.type === "heading" &&
+                    section.level === 2
+                  ) {
+                    return (
+                      <h3
+                        key={index}
+                        data-section-id={getSectionIdStr(section.sectionId)}
+                        className="text-2xl font-semibold text-gray-800 mt-8 mb-4 scroll-mt-24"
+                      >
+                        {section.content}
+                      </h3>
+                    );
+                  } else if (
+                    section.type === "introduction" ||
+                    section.type === "paragraph"
+                  ) {
+                    return (
+                      <p
+                        key={index}
+                        className="text-gray-600 leading-relaxed mb-6"
+                        dangerouslySetInnerHTML={{ __html: section.content }}
+                      />
+                    );
+                  } else if (section.type === "list-item") {
+                    return (
+                      <li
+                        key={index}
+                        className="text-gray-600 leading-relaxed mb-2"
+                        dangerouslySetInnerHTML={{ __html: section.content }}
+                      />
+                    );
+                  } else {
+                    return null;
+                  }
+                })}
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </MainLayout>
+  );
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "../src/index.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Block Convey - The Fastest Path to AI Compliance",

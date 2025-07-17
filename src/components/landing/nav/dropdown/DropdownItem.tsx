@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { scrollToFeature } from "../../../../utils/scroll";
+import { scrollToFeature } from "@/utils/scroll";
 
 interface DropdownItemProps {
   item: {
