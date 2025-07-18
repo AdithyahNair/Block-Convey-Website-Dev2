@@ -29,12 +29,11 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/cameronkawato/",
   },
   {
-    name: "Connor McCoy",
-    role: "Investor Relations Manager",
-    image: "/images/connor.png",
-    description:
-      "Business development strategist driving market expansion and strategic partnerships in AI governance.",
-    linkedin: "https://www.linkedin.com/in/cp-mccoy/",
+    name: "Billy Forney",
+    role: "Head of Growth",
+    image: "/images/billy.png",
+    description: "Portfolio Management, Risk Management, and AI Governance",
+    linkedin: "https://www.linkedin.com/in/billyforney3/",
   },
 ];
 
@@ -58,7 +57,7 @@ const advisors = [
   {
     name: "Son Le",
     role: "Fractional CFO, Advisor",
-    image: "/images/son_le.png",
+    image: "/images/son2.png",
     description:
       "Compliance expert ensuring our solutions meet evolving regulatory requirements and industry standards.",
     linkedin: "https://www.facebook.com/share/1BQm6sjkmS/?mibextid=wwXIfr",
