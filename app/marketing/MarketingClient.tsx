@@ -181,14 +181,38 @@ export const MarketingClient: React.FC = () => {
               Make the smart choice – pick Block Convey TODAY
             </motion.button>
 
-            {/* Testimonial */}
-            <div className="pt-8">
-              <blockquote className="text-2xl text-gray-900 font-medium italic mb-4">
-                "Block Convey is the best AI governance tool in the space."
-              </blockquote>
-              <div className="text-sm text-gray-600">
-                <div className="font-semibold">Davor Žilić</div>
-                <div>AML Consultant, D28 Finance</div>
+            {/* Testimonials */}
+            <div className="pt-8 space-y-4">
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                <blockquote className="text-xl text-gray-900 font-medium italic mb-4">
+                  "Block Convey is the best AI governance tool in the space."
+                </blockquote>
+                <div className="text-sm text-gray-600">
+                  <div className="font-semibold">Davor Žilić</div>
+                  <div>AML Consultant, D28 Finance</div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                <blockquote className="text-lg text-gray-900 font-medium italic mb-4">
+                  "Weeks of compliance work reduced to minutes? That's not just
+                  innovation it's operational gold. Great share!"
+                </blockquote>
+                <div className="text-sm text-gray-600">
+                  <div className="font-semibold">Sachin S.</div>
+                  <div>Co-Founder</div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                <blockquote className="text-lg text-gray-900 font-medium italic mb-4">
+                  "The fact that you don't need a data science team to
+                  understand the results is huge."
+                </blockquote>
+                <div className="text-sm text-gray-600">
+                  <div className="font-semibold">Atul Kumar</div>
+                  <div>AI Enthusiast</div>
+                </div>
               </div>
             </div>
           </motion.div>
