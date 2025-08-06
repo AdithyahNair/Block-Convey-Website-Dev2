@@ -45,6 +45,9 @@ export async function generateMetadata({
       description: blog.summary,
       keywords: blog.tags,
       authors: [{ name: blog.author }],
+      alternates: {
+        canonical: `https://blockconvey.com/blogs/${blog.slug}`,
+      },
       openGraph: {
         title: blog.title,
         description: blog.summary,

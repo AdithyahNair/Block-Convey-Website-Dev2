@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "AI ethics",
     "AI transparency",
   ],
+  alternates: {
+    canonical: "https://blockconvey.com",
+  },
   openGraph: {
     title: "Block Convey - The Fastest Path to AI Compliance",
     description:

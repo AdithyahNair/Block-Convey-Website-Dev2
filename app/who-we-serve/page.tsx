@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "AI compliance for banks",
     "fintech compliance solutions",
   ],
+  alternates: {
+    canonical: "https://blockconvey.com/who-we-serve",
+  },
   openGraph: {
     title: "Who We Serve - Block Convey",
     description:

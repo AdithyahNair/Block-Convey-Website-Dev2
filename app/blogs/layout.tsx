@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "AI transparency blog",
     "AI risk management insights",
   ],
+  alternates: {
+    canonical: "https://blockconvey.com/blogs",
+  },
   openGraph: {
     title: "AI Governance Blog - Block Convey",
     description:

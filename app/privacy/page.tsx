@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "GDPR compliance",
     "data privacy rights",
   ],
+  alternates: {
+    canonical: "https://blockconvey.com/privacy",
+  },
   openGraph: {
     title: "Privacy Policy - Block Convey",
     description:

@@ -200,7 +200,7 @@ export const MarketingClient: React.FC = () => {
                 </blockquote>
                 <div className="text-sm text-gray-600">
                   <div className="font-semibold">Sachin S.</div>
-                  <div>AI Developer</div>
+                  <div>AI Developer for a Stealth Startup</div>
                 </div>
               </div>
 

@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "AI risk management resources",
     "AI compliance toolkit",
   ],
+  alternates: {
+    canonical: "https://blockconvey.com/resources",
+  },
   openGraph: {
     title: "Resources - Block Convey",
     description:

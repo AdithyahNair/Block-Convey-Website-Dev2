@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "AI transparency platform",
     "predictive risk intelligence",
   ],
+  alternates: {
+    canonical: "https://blockconvey.com/prism",
+  },
   openGraph: {
     title: "PRISM - AI Governance Monitor | Block Convey",
     description:

@@ -21,9 +21,6 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL("https://blockconvey.com"),
-  alternates: {
-    canonical: "https://blockconvey.com",
-  },
   openGraph: {
     title: "Block Convey - The Fastest Path to AI Compliance",
     description:

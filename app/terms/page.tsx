@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "service agreement",
     "user agreement",
   ],
+  alternates: {
+    canonical: "https://blockconvey.com/terms",
+  },
   openGraph: {
     title: "Terms of Service - Block Convey",
     description:
