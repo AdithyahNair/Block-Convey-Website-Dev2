@@ -398,9 +398,9 @@ export default function AIRiskAssessmentClient() {
                 <p className="text-lg text-gray-800 mb-6">
                   Whether you're building credit scoring systems or fraud
                   detection tools, PRISM ensures your models stay compliant,
-                  reliable, and safe—without ever needing access to raw customer
-                  data. It's how forward-thinking companies take control of AI
-                  risk before it becomes a liability.
+                  reliable, and safe: without ever needing access to raw
+                  customer data. It's how forward-thinking companies take
+                  control of AI risk before it becomes a liability.
                 </p>
               </motion.div>
 
@@ -439,7 +439,7 @@ export default function AIRiskAssessmentClient() {
                       </h5>
                       <p className="text-gray-800 text-sm">
                         It automatically evaluates models for bias, fairness,
-                        explainability, and performance—producing audit-ready
+                        explainability, and performance: producing audit-ready
                         reports without manual effort.
                       </p>
                     </div>
@@ -546,9 +546,9 @@ export default function AIRiskAssessmentClient() {
                   The Cost of Unchecked AI Behavior
                 </h3>
                 <p className="text-gray-800">
-                  Reputational damage, regulatory fines, loss of customer
-                  trust—these are just some of the outcomes organizations face
-                  when AI systems behave unpredictably.
+                  Reputational damage, regulatory fines, loss of customer trust:
+                  these are just some of the outcomes organizations face when AI
+                  systems behave unpredictably.
                 </p>
               </motion.div>
 
@@ -776,9 +776,9 @@ export default function AIRiskAssessmentClient() {
                   Improved Trust and Transparency
                 </h3>
                 <p className="text-gray-800">
-                  By showing how your models work—and proving they're fair—you
+                  By showing how your models work: and proving they're fair: you
                   gain the trust of customers, partners, and regulators.
-                  Transparency is not just ethical—it's strategic.
+                  Transparency is not just ethical: it's strategic.
                 </p>
               </motion.div>
 
@@ -816,7 +816,7 @@ export default function AIRiskAssessmentClient() {
                   Better Business Outcomes with Ethical AI
                 </h3>
                 <p className="text-gray-800">
-                  Responsible AI doesn't just prevent problems—it also leads to
+                  Responsible AI doesn't just prevent problems: it also leads to
                   better decision-making, stronger user engagement, and
                   long-term competitive advantage.
                 </p>
@@ -920,7 +920,7 @@ export default function AIRiskAssessmentClient() {
                 </h3>
                 <p className="text-gray-800 text-sm mb-4">
                   Fintech underwriters rely on PRISM to validate model
-                  consistency, fairness, and performance—reducing risk of
+                  consistency, fairness, and performance: reducing risk of
                   non-compliant lending decisions.
                 </p>
               </motion.div>
@@ -1023,7 +1023,7 @@ export default function AIRiskAssessmentClient() {
                 </h4>
                 <p className="text-gray-800 mb-6">
                   This is your opportunity to test PRISM with your existing AI
-                  workflows—at no cost. Validate your models, identify blind
+                  workflows: at no cost. Validate your models, identify blind
                   spots, and generate audit-ready reports in minutes.
                 </p>
                 <p className="text-gray-800 mb-6">
@@ -1071,10 +1071,10 @@ export default function AIRiskAssessmentClient() {
                 <p className="text-gray-800 mb-6">
                   Block Convey combines the latest in AI innovation with deep
                   industry knowledge in compliance, ethics, and security. It's
-                  more than software—it's a governance partner.
+                  more than software: it's a governance partner.
                 </p>
                 <p className="text-gray-800">
-                  PRISM is not an afterthought—it's built with risk assessment
+                  PRISM is not an afterthought: it's built with risk assessment
                   at the core. That makes it uniquely suited for organizations
                   where trust, transparency, and compliance are top priorities.
                 </p>
@@ -1219,12 +1219,12 @@ export default function AIRiskAssessmentClient() {
                 Conclusion
               </h2>
               <p className="text-lg text-gray-800 mb-8">
-                AI is transforming every sector—but without oversight, it can
+                AI is transforming every sector: but without oversight, it can
                 create as many risks as it solves. Block Convey's AI Risk
                 Assessment solution, powered by PRISM, empowers businesses to
                 evaluate, manage, and mitigate these risks effectively. With a
                 clear focus on transparency, ethics, and regulation, PRISM helps
-                organizations build AI that's not only powerful—but also
+                organizations build AI that's not only powerful: but also
                 trustworthy and accountable.
               </p>
               <p className="text-xl text-brand font-semibold">
