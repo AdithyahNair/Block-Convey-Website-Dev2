@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   CheckCircle2,
-  ArrowRight,
   Quote,
   Sparkles,
   Star,
@@ -41,7 +40,7 @@ export default function PrismClient() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-left"
+                className="text-left pt-8"
               >
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
@@ -90,18 +89,6 @@ export default function PrismClient() {
                   PRISM Free and take the first step towards building
                   trustworthy, high-performing AI systems.
                 </p>
-
-                <div className="flex items-center space-x-4">
-                  <a
-                    href="https://prism.blockconvey.com"
-                    className="inline-flex items-center justify-center gap-2 bg-brand text-white px-6 py-3 rounded-xl font-medium hover:bg-brand-dark transition-colors shadow-sm hover:shadow-md"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Get Started with PRISM Free Today
-                    <ArrowRight className="h-5 w-5" />
-                  </a>
-                </div>
               </motion.div>
 
               {/* Right Column - Testimonial */}
