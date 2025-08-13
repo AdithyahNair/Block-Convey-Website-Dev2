@@ -40,15 +40,15 @@ export default function AIComplianceClient() {
         </div>
 
         {/* Hero Section */}
-        <section className="relative pt-32 pb-24 overflow-hidden">
+        <section className="relative pt-20 sm:pt-24 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 overflow-hidden">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
               {/* Left Column - Content */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-left pt-8"
+                className="text-left pt-4 sm:pt-6 lg:pt-8"
               >
                 <div className="relative mb-8">
                   <motion.div
@@ -57,34 +57,34 @@ export default function AIComplianceClient() {
                     transition={{ duration: 0.7 }}
                     className="relative z-10"
                   >
-                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight">
                       <div className="text-gray-900">AI Compliance:</div>
-                      <div className="text-brand whitespace-nowrap">
+                      <div className="text-brand break-words">
                         Ensuring Trust, Transparency & Legal Alignment
                       </div>
                     </h1>
                   </motion.div>
                 </div>
 
-                <h2 className="text-xl md:text-2xl font-semibold text-gray-700 mb-8">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-700 mb-6 sm:mb-8">
                   with Block Convey's PRISM
                 </h2>
 
-                <div className="space-y-6 max-w-2xl">
-                  <p className="text-lg text-gray-800 leading-relaxed">
+                <div className="space-y-4 sm:space-y-6 max-w-2xl">
+                  <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
                     Artificial Intelligence is no longer experimental: it's
                     embedded in how we diagnose diseases, approve loans, assess
                     risks, and engage with digital content. But with great power
                     comes greater scrutiny.
                   </p>
 
-                  <p className="text-lg text-gray-800 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
                     As AI's influence grows, so do questions from regulators,
                     investors, and end-users: Is your AI fair? Is it
                     explainable? Is it safe and legal?
                   </p>
 
-                  <p className="text-lg text-gray-800 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
                     Welcome to the era of AI compliance: where governance, risk
                     assessment, and regulatory alignment aren't optional:
                     they're essential. Block Convey is leading this revolution
