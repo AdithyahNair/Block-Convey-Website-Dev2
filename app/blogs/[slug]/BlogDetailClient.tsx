@@ -17,17 +17,45 @@ import { MainLayout } from "../../../components/layout/MainLayout";
 
 interface BlogDetailClientProps {
   slug: string;
+  initialBlog?: BlogPost;
 }
 
-export default function BlogDetailClient({ slug }: BlogDetailClientProps) {
-  const [blog, setBlog] = useState<BlogPost | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+export default function BlogDetailClient({
+  slug,
+  initialBlog,
+}: BlogDetailClientProps) {
+  const [blog, setBlog] = useState<BlogPost | null>(initialBlog || null);
+  const [loading, setLoading] = useState<boolean>(!initialBlog);
   const [error, setError] = useState<string | null>(null);
   const [showShareTooltip, setShowShareTooltip] = useState(false);
   const [sections, setSections] = useState<Section[]>([]);
   const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
+    // If we already have initialBlog, skip fetching
+    if (initialBlog) {
+      setBlog(initialBlog);
+      setLoading(false);
+
+      // Process content sections for initialBlog
+      if (initialBlog.contentSection && initialBlog.contentSection.length > 0) {
+        try {
+          setSections(initialBlog.contentSection as Section[]);
+        } catch (err) {
+          console.error("Error processing contentSection:", err);
+          setError("Error processing blog content. Please try again later.");
+        }
+      } else if (initialBlog.content) {
+        try {
+          parseContent(initialBlog.content);
+        } catch (err) {
+          console.error("Error parsing blog content:", err);
+          setError("Error processing blog content. Please try again later.");
+        }
+      }
+      return;
+    }
+
     const fetchBlogBySlug = async () => {
       try {
         if (!slug) {
@@ -189,12 +217,14 @@ export default function BlogDetailClient({ slug }: BlogDetailClientProps) {
     }
   };
 
-  const formatDate = (date: Date) => {
+  const formatDate = (date: Date | { toDate: () => Date }) => {
+    // Handle both Firebase Timestamp and JavaScript Date objects
+    const dateObj = "toDate" in date ? date.toDate() : date;
     return new Intl.DateTimeFormat("en-US", {
       year: "numeric",
       month: "long",
       day: "numeric",
-    }).format(date);
+    }).format(dateObj);
   };
 
   const estimateReadTime = (sections: Section[]): number => {
@@ -337,7 +367,7 @@ export default function BlogDetailClient({ slug }: BlogDetailClientProps) {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
-                <span>{formatDate(blog.createdAt.toDate())}</span>
+                <span>{formatDate(blog.createdAt)}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4" />

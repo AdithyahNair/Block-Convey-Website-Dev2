@@ -114,12 +114,58 @@ export async function generateStaticParams() {
   }
 }
 
-// SERVER COMPONENT - wraps the client component
+// SERVER COMPONENT - fetches data server-side and passes to client
 export default async function BlogDetailPageRoute({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const resolvedParams = await params;
-  return <BlogDetailClient slug={resolvedParams.slug} />;
+
+  try {
+    // Fetch blog data from Firebase on the server
+    const blogsQuery = query(
+      collection(db, "blogs"),
+      where("slug", "==", resolvedParams.slug),
+      where("published", "==", true)
+    );
+
+    const querySnapshot = await getDocs(blogsQuery);
+
+    if (querySnapshot.empty) {
+      return (
+        <div className="min-h-screen bg-gradient-to-b from-brand-lightest to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <p className="text-red-500 mb-4">Blog post not found.</p>
+              <a
+                href="/blogs"
+                className="inline-flex items-center text-brand hover:text-brand-dark transition-colors"
+              >
+                ← Back to all articles
+              </a>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    const blogDoc = querySnapshot.docs[0];
+    const rawData = blogDoc.data();
+
+    // Convert Firebase Timestamps to JavaScript Date objects for client component
+    const blogData = {
+      id: blogDoc.id,
+      ...rawData,
+      createdAt: rawData.createdAt ? rawData.createdAt.toDate() : null,
+      updatedAt: rawData.updatedAt ? rawData.updatedAt.toDate() : null,
+    } as BlogPost;
+
+    return (
+      <BlogDetailClient slug={resolvedParams.slug} initialBlog={blogData} />
+    );
+  } catch (error) {
+    console.error("Error fetching blog on server:", error);
+    return <BlogDetailClient slug={resolvedParams.slug} />;
+  }
 }
