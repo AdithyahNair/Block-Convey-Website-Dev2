@@ -40,7 +40,7 @@ export default function AIComplianceClient() {
         </div>
 
         {/* Hero Section */}
-        <section className="relative pt-20 sm:pt-24 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 overflow-hidden">
+        <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 overflow-hidden">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
               {/* Left Column - Content */}
@@ -48,7 +48,7 @@ export default function AIComplianceClient() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-left pt-4 sm:pt-6 lg:pt-8"
+                className="text-left pt-4 sm:pt-6 lg:pt-8 relative z-10"
               >
                 <div className="relative mb-8">
                   <motion.div
