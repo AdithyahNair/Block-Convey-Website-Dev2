@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import CompanyClient from "./CompanyClient";
 
 export const metadata: Metadata = {
-  title: "Company - Block Convey",
+  title: "About Us - Block Convey | AI Governance & Compliance Experts",
   description:
     "Learn about Block Convey's mission to make AI transparent, accountable, and compliant. Meet our team and discover our approach to AI governance.",
   keywords: [
@@ -13,12 +13,14 @@ export const metadata: Metadata = {
     "AI transparency",
     "AI ethics team",
     "AI governance experts",
+    "about Block Convey",
+    "AI compliance company",
   ],
   alternates: {
     canonical: "https://blockconvey.com/company",
   },
   openGraph: {
-    title: "Company - Block Convey",
+    title: "About Us - Block Convey | AI Governance & Compliance Experts",
     description:
       "Learn about Block Convey's mission to make AI transparent, accountable, and compliant. Meet our team and discover our approach to AI governance.",
     url: "https://blockconvey.com/company",
@@ -36,12 +38,35 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Company - Block Convey",
+    title: "About Us - Block Convey | AI Governance & Compliance Experts",
     description:
       "Learn about Block Convey's mission to make AI transparent, accountable, and compliant.",
     images: ["https://blockconvey.com/images/about1.png"],
     creator: "@blockconvey",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "DtFD50sy6Sqj4025S597DGBckEzvygnl7XPlDNSeDN0",
+  },
+  authors: [{ name: "Block Convey" }],
+  creator: "Block Convey",
+  publisher: "Block Convey",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://blockconvey.com"),
 };
 
 export default function CompanyPage() {
