@@ -1,23 +1,24 @@
-import React from 'react'
-import { AnimatePresence } from 'framer-motion'
-import { DropdownTrigger } from './dropdown/DropdownTrigger'
-import { DropdownContent } from './dropdown/DropdownContent'
+import React from "react";
+import { AnimatePresence } from "framer-motion";
+import { DropdownTrigger } from "./dropdown/DropdownTrigger";
+import { DropdownContent } from "./dropdown/DropdownContent";
 
 interface NavDropdownProps {
-  label: string
+  label: string;
   items: Array<{
-    title: string
-    description: string
-    path?: string
+    title: string;
+    description: string;
+    path?: string;
+    isMainProduct?: boolean;
     submenu?: Array<{
-      title: string
-      description: string
-      path?: string
-    }>
-  }>
-  isOpen: boolean
-  onToggle: () => void
-  onItemClick?: (path?: string) => void
+      title: string;
+      description: string;
+      path?: string;
+    }>;
+  }>;
+  isOpen: boolean;
+  onToggle: () => void;
+  onItemClick?: (path?: string) => void;
 }
 
 export const NavDropdown: React.FC<NavDropdownProps> = ({
@@ -31,8 +32,14 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({
     <div className="static">
       <DropdownTrigger label={label} isOpen={isOpen} onClick={onToggle} />
       <AnimatePresence>
-        {isOpen && <DropdownContent items={items} onItemClick={onItemClick} />}
+        {isOpen && (
+          <DropdownContent
+            items={items}
+            onItemClick={onItemClick}
+            dropdownLabel={label}
+          />
+        )}
       </AnimatePresence>
     </div>
-  )
-}
+  );
+};

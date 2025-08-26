@@ -16,18 +16,25 @@ const navItems = [
         description:
           "Predictive Risk and Intelligence Surveillance Monitor - AI governance platform for transparent, fair, and compliant AI systems",
         path: "/prism",
+        isMainProduct: true,
       },
       {
-        title: "Investor Readiness",
-        description:
-          "Accelerate your funding with confidence through AI governance reports for investors",
-        path: "/investor-readiness",
-      },
-      {
-        title: "Vendor Readiness",
-        description:
-          "Win more deals faster with vendor readiness reports for procurement teams",
-        path: "/vendor-readiness",
+        title: "Features",
+        description: "Additional AI governance solutions",
+        submenu: [
+          {
+            title: "Investor Readiness",
+            description:
+              "Accelerate your funding with confidence through AI governance reports for investors",
+            path: "/investor-readiness",
+          },
+          {
+            title: "Vendor Readiness",
+            description:
+              "Win more deals faster with vendor readiness reports for procurement teams",
+            path: "/vendor-readiness",
+          },
+        ],
       },
     ],
   },

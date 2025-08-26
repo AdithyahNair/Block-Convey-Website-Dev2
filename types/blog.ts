@@ -23,6 +23,8 @@ export interface SubItem {
   title: string;
   description: string;
   path?: string;
+  isMainProduct?: boolean;
+  submenu?: SubItem[];
 }
 
 export interface NavItem {
