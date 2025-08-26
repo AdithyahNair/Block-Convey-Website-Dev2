@@ -43,18 +43,18 @@ export default function InvestorReadinessClient() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center bg-brand text-white px-6 py-3 rounded-xl font-semibold hover:bg-brand-dark transition-colors shadow-lg hover:shadow-xl"
                   >
-                    👉 Get Your Investor Readiness Report
+                    Get Your Investor Readiness Report
                   </a>
                 </div>
               </div>
 
               {/* Right Column - Dashboard Image */}
               <div className="relative lg:ml-16">
-                <div className="bg-white rounded-2xl shadow-2xl border border-brand-light overflow-hidden lg:mr-[-12rem]">
+                <div className="bg-white rounded-2xl shadow-2xl border border-brand-light overflow-hidden h-full">
                   <img
                     src="/images/investor-readiness-dashboard.png"
                     alt="Block Convey Investor Readiness Dashboard"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
@@ -69,44 +69,109 @@ export default function InvestorReadinessClient() {
               Why Investor Readiness Matters
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center p-8 bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-2xl border border-emerald-200">
-                <div className="text-4xl mb-4">💸</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Funding Faster
-                </h3>
-                <p className="text-gray-600">
-                  Cut due diligence time by up to 60% with pre-built compliance
-                  and risk insights.
-                </p>
+              <div className="text-left p-8 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg
+                      className="w-4 h-4 text-green-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      Funding Faster
+                    </h3>
+                    <p className="text-gray-600">
+                      Cut due diligence time by up to 60% with pre-built
+                      compliance and risk insights.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="text-center p-8 bg-gradient-to-br from-cyan-50 to-cyan-100/50 rounded-2xl border border-cyan-200">
-                <div className="text-4xl mb-4">📊</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Data-Backed Confidence
-                </h3>
-                <p className="text-gray-600">
-                  Demonstrate performance, fairness, and governance metrics that
-                  investors demand.
-                </p>
+              <div className="text-left p-8 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg
+                      className="w-4 h-4 text-green-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      Data-Backed Confidence
+                    </h3>
+                    <p className="text-gray-600">
+                      Demonstrate performance, fairness, and governance metrics
+                      that investors demand.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="text-center p-8 bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-2xl border border-teal-200">
-                <div className="text-4xl mb-4">📈</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Valuation Booster
-                </h3>
-                <p className="text-gray-600">
-                  Highlight improvements between pre- and post-investment model
-                  versions.
-                </p>
+              <div className="text-left p-8 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg
+                      className="w-4 h-4 text-green-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      Valuation Booster
+                    </h3>
+                    <p className="text-gray-600">
+                      Highlight improvements between pre- and post-investment
+                      model versions.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="text-center p-8 bg-gradient-to-br from-brand-lightest to-brand-light/30 rounded-2xl border border-brand-light">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Strategic Investment
-                </h3>
-                <p className="text-gray-600">
-                  Where the investment will go and why that improvement is
-                  needed for better sales.
-                </p>
+              <div className="text-left p-8 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg
+                      className="w-4 h-4 text-green-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      Strategic Investment
+                    </h3>
+                    <p className="text-gray-600">
+                      Where the investment will go and why that improvement is
+                      needed for better sales.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

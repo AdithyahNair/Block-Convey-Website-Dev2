@@ -43,18 +43,18 @@ export default function VendorReadinessClient() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center bg-brand text-white px-6 py-3 rounded-xl font-semibold hover:bg-brand-dark transition-colors shadow-lg hover:shadow-xl"
                   >
-                    👉 Get Your Vendor Readiness Report
+                    Get Your Vendor Readiness Report
                   </a>
                 </div>
               </div>
 
               {/* Right Column - Dashboard Image */}
               <div className="relative lg:ml-16">
-                <div className="bg-white rounded-2xl shadow-2xl border border-brand-light overflow-hidden lg:mr-[-12rem]">
+                <div className="bg-white rounded-2xl shadow-2xl border border-brand-light overflow-hidden h-full">
                   <img
                     src="/images/investor-readiness-dashboard.png"
                     alt="Block Convey Vendor Readiness Dashboard"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
@@ -69,42 +69,108 @@ export default function VendorReadinessClient() {
               Why Vendor Readiness Matters
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center p-8 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl border border-blue-200">
-                <div className="text-4xl mb-4">⚡</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Shorten Sales Cycles
-                </h3>
-                <p className="text-gray-600">
-                  Procurement teams waste months on due diligence — come
-                  prepared.
-                </p>
+              <div className="text-left p-8 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg
+                      className="w-4 h-4 text-green-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      Shorten Sales Cycles
+                    </h3>
+                    <p className="text-gray-600">
+                      Procurement teams waste months on due diligence — come
+                      prepared.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="text-center p-8 bg-gradient-to-br from-green-50 to-green-100/50 rounded-2xl border border-green-200">
-                <div className="text-4xl mb-4">✅</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Pre-Approved Confidence
-                </h3>
-                <p className="text-gray-600">
-                  Show you meet compliance and risk standards before they ask.
-                </p>
+              <div className="text-left p-8 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg
+                      className="w-4 h-4 text-green-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      Pre-Approved Confidence
+                    </h3>
+                    <p className="text-gray-600">
+                      Show you meet compliance and risk standards before they
+                      ask.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="text-center p-8 bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-2xl border border-purple-200">
-                <div className="text-4xl mb-4">🔑</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Differentiate Instantly
-                </h3>
-                <p className="text-gray-600">
-                  Stand out against competitors who can't prove governance
-                  maturity.
-                </p>
+              <div className="text-left p-8 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg
+                      className="w-4 h-4 text-green-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      Differentiate Instantly
+                    </h3>
+                    <p className="text-gray-600">
+                      Stand out against competitors who can't prove governance
+                      maturity.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="text-center p-8 bg-gradient-to-br from-brand-lightest to-brand-light/30 rounded-2xl border border-brand-light">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Strategic Advantage
-                </h3>
-                <p className="text-gray-600">
-                  Tell why a newer model is necessary and prove its value.
-                </p>
+              <div className="text-left p-8 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg
+                      className="w-4 h-4 text-green-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      Strategic Advantage
+                    </h3>
+                    <p className="text-gray-600">
+                      Tell why a newer model is necessary and prove its value.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -138,8 +204,8 @@ export default function VendorReadinessClient() {
                   Performance Metrics
                 </h3>
                 <p className="text-gray-600">
-                                     Contextualized for enterprise buyers (e.g., 'Model Accuracy
-                   88%: optimal for KYC onboarding at scale').
+                  Contextualized for enterprise buyers (e.g., 'Model Accuracy
+                  88%: optimal for KYC onboarding at scale').
                 </p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-xl border border-brand-light hover:shadow-2xl transition-shadow">
