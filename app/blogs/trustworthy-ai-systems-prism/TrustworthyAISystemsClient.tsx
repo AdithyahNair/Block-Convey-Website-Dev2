@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { MainLayout } from "../../../components/layout/MainLayout";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export default function TrustworthyAISystemsClient() {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -82,9 +83,20 @@ export default function TrustworthyAISystemsClient() {
   return (
     <MainLayout>
       <div className="min-h-screen bg-white">
-        {/* Hero Section */}
+                {/* Hero Section */}
         <section className="pt-40 pb-16 px-4 bg-brand-lightest">
           <div className="max-w-4xl mx-auto">
+            {/* Back to all articles button */}
+            <div className="mb-8">
+              <Link
+                href="/blogs"
+                className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-brand transition-all duration-300"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to all articles
+              </Link>
+            </div>
+
             {/* Featured Image */}
             <div className="relative w-full h-[400px] mb-8 rounded-2xl overflow-hidden shadow-xl">
               <img
@@ -93,7 +105,7 @@ export default function TrustworthyAISystemsClient() {
                 className="w-full h-full object-cover"
               />
             </div>
-
+            
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               How PRISM Helps You Build Trustworthy AI Systems
             </h1>
