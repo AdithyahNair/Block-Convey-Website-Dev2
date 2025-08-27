@@ -38,7 +38,7 @@ export default function InvestorReadinessClient() {
                     and where you would invest the money.
                   </p>
                   <a
-                    href="https://demo.blockconvey.com"
+                    href="https://calendly.com/arunprasad-11/product-demo-call"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center bg-brand text-white px-6 py-3 rounded-xl font-semibold hover:bg-brand-dark transition-colors shadow-lg hover:shadow-xl"
