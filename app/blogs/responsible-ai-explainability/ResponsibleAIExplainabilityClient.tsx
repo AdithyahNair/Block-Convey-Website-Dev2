@@ -85,7 +85,7 @@ export default function ResponsibleAIExplainabilityClient() {
             <div className="flex items-center text-gray-600 mb-8">
               <span>By Block Convey</span>
               <span className="mx-2">•</span>
-              <span>August 2025</span>
+              <span>August 1st, 2025</span>
             </div>
           </div>
         </section>

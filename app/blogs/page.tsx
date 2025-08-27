@@ -18,8 +18,8 @@ import { MainLayout } from "../../components/layout/MainLayout";
 // Helper function to create mock timestamp
 const createMockTimestamp = (date: string) =>
   ({
-    toDate: () => new Date(date),
-    getTime: () => new Date(date).getTime(),
+    toDate: () => new Date(date + "T12:00:00"), // Add time to avoid timezone issues
+    getTime: () => new Date(date + "T12:00:00").getTime(),
   } as unknown as Timestamp);
 
 export default function BlogsPage() {
@@ -124,6 +124,19 @@ export default function BlogsPage() {
           const dateB = b.createdAt.toDate();
           return dateB.getTime() - dateA.getTime();
         });
+
+        // Debug: Log all blog dates to see what's happening
+        console.log(
+          "All blogs with dates:",
+          allBlogs.map((blog) => ({
+            title: blog.title,
+            date: blog.createdAt.toDate().toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            }),
+          }))
+        );
 
         setBlogs(allBlogs);
         setLoading(false);
@@ -304,7 +317,11 @@ export default function BlogsPage() {
                               <span>
                                 {new Date(
                                   blog.createdAt.toDate()
-                                ).toLocaleDateString()}
+                                ).toLocaleDateString("en-US", {
+                                  year: "numeric",
+                                  month: "long",
+                                  day: "numeric",
+                                })}
                               </span>
                             </div>
                           </div>
