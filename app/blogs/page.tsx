@@ -1,6 +1,13 @@
 "use client";
 import React, { useState, useEffect, useMemo } from "react";
-import { collection, getDocs, query, where, orderBy } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  orderBy,
+  Timestamp,
+} from "firebase/firestore";
 import { db } from "../../lib/firebase";
 import Link from "next/link";
 import { BlogPost } from "../../types/blog";
@@ -8,13 +15,89 @@ import { ArrowRight, Search, Calendar, User } from "lucide-react";
 import { motion } from "framer-motion";
 import { MainLayout } from "../../components/layout/MainLayout";
 
+// Helper function to create mock timestamp
+const createMockTimestamp = (date: string) =>
+  ({
+    toDate: () => new Date(date),
+    getTime: () => new Date(date).getTime(),
+  } as unknown as Timestamp);
+
 export default function BlogsPage() {
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [searchFocused, setSearchFocused] = useState(false);
+
+  // Static blog posts data
+  const staticBlogs: BlogPost[] = [
+    {
+      id: "ai-governance-why-it-matters",
+      title: "What Is AI Governance and Why It Matters",
+      summary:
+        "AI governance ensures compliance, transparency, and responsible innovation. Learn why it matters in 2025 and how Block Convey's PRISM helps businesses build trust and reduce AI risks.",
+      slug: "ai-governance-why-it-matters",
+      author: "Block Convey",
+      createdAt: createMockTimestamp("2025-08-04"),
+      updatedAt: createMockTimestamp("2025-08-04"),
+      imageUrl: "/images/ai-governance-matters.png",
+      tags: ["AI Governance", "Compliance", "Risk Management"],
+      categories: ["AI Governance"],
+      published: true,
+      content: "",
+      contentSection: [],
+    },
+    {
+      id: "ai-compliance-frameworks-guide",
+      title:
+        "A Complete Guide to AI Compliance Frameworks (ISO 42001, NIST, GDPR, etc.)",
+      summary:
+        "Learn about key AI compliance frameworks like ISO 42001, NIST, and GDPR. Discover how Block Convey's PRISM helps businesses meet global AI compliance standards with confidence.",
+      slug: "ai-compliance-frameworks-guide",
+      author: "Block Convey",
+      createdAt: createMockTimestamp("2025-08-03"),
+      updatedAt: createMockTimestamp("2025-08-03"),
+      imageUrl: "/images/compliance-guide.png",
+      tags: ["AI Compliance", "ISO 42001", "NIST", "GDPR"],
+      categories: ["AI Compliance"],
+      published: true,
+      content: "",
+      contentSection: [],
+    },
+    {
+      id: "trustworthy-ai-systems-prism",
+      title: "How PRISM Helps You Build Trustworthy AI Systems",
+      summary:
+        "Learn how PRISM helps organizations build ethical, transparent, and compliant AI systems. Discover how PRISM ensures fairness, accountability, and trust in AI.",
+      slug: "trustworthy-ai-systems-prism",
+      author: "Block Convey",
+      createdAt: createMockTimestamp("2025-08-02"),
+      updatedAt: createMockTimestamp("2025-08-02"),
+      imageUrl: "/images/trustworthy-systems.png",
+      tags: ["PRISM", "Trustworthy AI", "Ethical AI"],
+      categories: ["PRISM"],
+      published: true,
+      content: "",
+      contentSection: [],
+    },
+    {
+      id: "responsible-ai-explainability",
+      title: "The Role of Explainability in Responsible AI",
+      summary:
+        "Learn why explainability is essential for responsible AI. Discover how PRISM enhances transparency, fairness, and accountability in AI systems.",
+      slug: "responsible-ai-explainability",
+      author: "Block Convey",
+      createdAt: createMockTimestamp("2025-08-01"),
+      updatedAt: createMockTimestamp("2025-08-01"),
+      imageUrl: "/images/role-explainability.png",
+      tags: ["Explainability", "Responsible AI", "Transparency"],
+      categories: ["Responsible AI"],
+      published: true,
+      content: "",
+      contentSection: [],
+    },
+  ];
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -26,20 +109,28 @@ export default function BlogsPage() {
         );
 
         const querySnapshot = await getDocs(blogsQuery);
-        const blogList: BlogPost[] = [];
+        const firebaseBlogs: BlogPost[] = [];
 
         querySnapshot.forEach((doc) => {
-          blogList.push({
+          firebaseBlogs.push({
             id: doc.id,
             ...doc.data(),
           } as BlogPost);
         });
 
-        setBlogs(blogList);
+        // Combine Firebase blogs with static blogs and sort by date
+        const allBlogs = [...staticBlogs, ...firebaseBlogs].sort((a, b) => {
+          const dateA = a.createdAt.toDate();
+          const dateB = b.createdAt.toDate();
+          return dateB.getTime() - dateA.getTime();
+        });
+
+        setBlogs(allBlogs);
         setLoading(false);
       } catch (err) {
         console.error("Error fetching blogs:", err);
-        setError("Failed to load blogs. Please try again later.");
+        // Even if Firebase fails, show static blogs
+        setBlogs(staticBlogs);
         setLoading(false);
       }
     };

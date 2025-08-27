@@ -42,10 +42,10 @@ export const metadata: Metadata = {
     siteName: "Block Convey",
     images: [
       {
-        url: "/images/responsible-ai-explainability.png",
+        url: "/images/role-explainability.png",
         width: 1200,
         height: 630,
-        alt: "Responsible AI Explainability",
+        alt: "The Role of Explainability in Responsible AI",
       },
     ],
     locale: "en_US",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
       "The Role of Explainability in Responsible AI | PRISM by Block Convey",
     description:
       "Learn why explainability is essential for responsible AI. Discover how PRISM enhances transparency, fairness, and accountability in AI systems.",
-    images: ["/images/responsible-ai-explainability.png"],
+    images: ["/images/role-explainability.png"],
   },
   robots: {
     index: true,

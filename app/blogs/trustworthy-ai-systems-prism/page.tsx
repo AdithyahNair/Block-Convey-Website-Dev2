@@ -41,10 +41,10 @@ export const metadata: Metadata = {
     siteName: "Block Convey",
     images: [
       {
-        url: "/images/trustworthy-ai-systems.png",
+        url: "/images/trustworthy-systems.png",
         width: 1200,
         height: 630,
-        alt: "Trustworthy AI Systems with PRISM",
+        alt: "How PRISM Helps You Build Trustworthy AI Systems",
       },
     ],
     locale: "en_US",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "Build Trustworthy AI Systems with PRISM | Block Convey",
     description:
       "Learn how PRISM helps organizations build ethical, transparent, and compliant AI systems. Discover how PRISM ensures fairness, accountability, and trust in AI.",
-    images: ["/images/trustworthy-ai-systems.png"],
+    images: ["/images/trustworthy-systems.png"],
   },
   robots: {
     index: true,

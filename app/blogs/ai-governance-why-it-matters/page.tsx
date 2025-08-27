@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     siteName: "Block Convey",
     images: [
       {
-        url: "https://blockconvey.com/images/logo.png",
+        url: "https://blockconvey.com/images/ai-governance-matters.png",
         width: 1200,
         height: 630,
-        alt: "AI Governance - Block Convey PRISM",
+        alt: "What Is AI Governance and Why It Matters",
       },
     ],
     locale: "en_US",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "What Is AI Governance and Why It Matters | Block Convey PRISM",
     description:
       "AI governance ensures compliance, transparency, and responsible innovation. Learn why it matters in 2025 and how Block Convey's PRISM helps businesses build trust and reduce AI risks.",
-    images: ["https://blockconvey.com/images/logo.png"],
+    images: ["https://blockconvey.com/images/ai-governance-matters.png"],
     creator: "@blockconvey",
   },
   robots: {

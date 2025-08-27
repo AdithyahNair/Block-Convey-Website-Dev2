@@ -41,10 +41,10 @@ export const metadata: Metadata = {
     siteName: "Block Convey",
     images: [
       {
-        url: "/images/ai-compliance-frameworks.png",
+        url: "/images/compliance-guide.png",
         width: 1200,
         height: 630,
-        alt: "AI Compliance Frameworks Guide",
+        alt: "A Complete Guide to AI Compliance Frameworks",
       },
     ],
     locale: "en_US",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "A Complete Guide to AI Compliance Frameworks | Block Convey PRISM",
     description:
       "Learn about key AI compliance frameworks like ISO 42001, NIST, and GDPR. Discover how Block Convey's PRISM helps businesses meet global AI compliance standards with confidence.",
-    images: ["/images/ai-compliance-frameworks.png"],
+    images: ["/images/compliance-guide.png"],
   },
   robots: {
     index: true,

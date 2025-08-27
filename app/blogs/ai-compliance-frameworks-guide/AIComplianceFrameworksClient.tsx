@@ -66,6 +66,15 @@ export default function AIComplianceFrameworksClient() {
         {/* Hero Section */}
         <section className="pt-40 pb-16 px-4 bg-brand-lightest">
           <div className="max-w-4xl mx-auto">
+            {/* Featured Image */}
+            <div className="relative w-full h-[400px] mb-8 rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="/images/compliance-guide.png"
+                alt="A Complete Guide to AI Compliance Frameworks"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               A Complete Guide to AI Compliance Frameworks (ISO 42001, NIST,
               GDPR, etc.)
@@ -73,7 +82,7 @@ export default function AIComplianceFrameworksClient() {
             <div className="flex items-center text-gray-600 mb-8">
               <span>By Block Convey</span>
               <span className="mx-2">•</span>
-              <span>August 2025</span>
+              <span>August 3, 2025</span>
             </div>
           </div>
         </section>
