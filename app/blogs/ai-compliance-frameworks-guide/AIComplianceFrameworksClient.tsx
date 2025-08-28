@@ -64,7 +64,7 @@ export default function AIComplianceFrameworksClient() {
   return (
     <MainLayout>
       <div className="min-h-screen bg-white">
-                {/* Hero Section */}
+        {/* Hero Section */}
         <section className="pt-40 pb-16 px-4 bg-brand-lightest">
           <div className="max-w-4xl mx-auto">
             {/* Back to all articles button */}
@@ -86,7 +86,7 @@ export default function AIComplianceFrameworksClient() {
                 className="w-full h-full object-cover"
               />
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               A Complete Guide to AI Compliance Frameworks (ISO 42001, NIST,
               GDPR, etc.)
@@ -94,7 +94,7 @@ export default function AIComplianceFrameworksClient() {
             <div className="flex items-center text-gray-600 mb-8">
               <span>By Block Convey</span>
               <span className="mx-2">•</span>
-              <span>August 3, 2025</span>
+              <span>August 27, 2025</span>
             </div>
           </div>
         </section>

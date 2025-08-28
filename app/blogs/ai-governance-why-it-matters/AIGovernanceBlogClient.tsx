@@ -58,7 +58,7 @@ export default function AIGovernanceBlogClient() {
   return (
     <MainLayout>
       <div className="min-h-screen bg-white">
-                {/* Hero Section */}
+        {/* Hero Section */}
         <section className="pt-40 pb-16 px-4 bg-brand-lightest">
           <div className="max-w-4xl mx-auto">
             {/* Back to all articles button */}
@@ -80,14 +80,14 @@ export default function AIGovernanceBlogClient() {
                 className="w-full h-full object-cover"
               />
             </div>
- 
+
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               What Is AI Governance and Why It Matters
             </h1>
             <div className="flex items-center text-gray-600 mb-8">
               <span>By Block Convey</span>
               <span className="mx-2">•</span>
-              <span>August 4, 2025</span>
+              <span>August 28, 2025</span>
             </div>
           </div>
         </section>
