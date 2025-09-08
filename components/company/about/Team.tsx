@@ -39,14 +39,6 @@ const teamMembers = [
 
 const advisors = [
   {
-    name: "Weiyee In",
-    role: "Banking and AI Governance",
-    image: "/images/wei_adv.png",
-    description:
-      "Leading expert in AI ethics and governance, providing strategic guidance on responsible AI development.",
-    linkedin: "https://www.linkedin.com/in/weiyee/",
-  },
-  {
     name: "Gourab Mukherjee",
     role: "Insurtech",
     image: "/images/gou_adv.png",
