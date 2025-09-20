@@ -62,6 +62,14 @@ const advisors = [
       "Strategic advisor providing guidance on business development and market expansion strategies.",
     linkedin: "https://www.linkedin.com/in/bharadwajsri/",
   },
+  {
+    name: "Anand Cavale",
+    role: "Fintech and Banking Advisor",
+    image: "/images/anand_advisor.png",
+    description:
+      "Fintech and banking expert providing strategic guidance on financial services innovation and regulatory compliance.",
+    linkedin: "https://www.linkedin.com/in/anandcavale/",
+  },
 ];
 
 export const Team: React.FC = () => {
@@ -150,7 +158,7 @@ export const Team: React.FC = () => {
           >
             Advisory Board
           </motion.h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {advisors.map((advisor, index) => (
               <motion.div
                 key={index}
@@ -164,7 +172,7 @@ export const Team: React.FC = () => {
                   <img
                     src={advisor.image}
                     alt={advisor.name}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:from-black/30 transition-colors duration-300"></div>
                 </div>
