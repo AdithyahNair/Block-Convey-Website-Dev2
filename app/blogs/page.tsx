@@ -163,6 +163,28 @@ export default function BlogsPage() {
       content: "",
       contentSection: [],
     },
+    {
+      id: "startsups-iso-42001",
+      title: "How Startups Can Achieve ISO 42001 Compliance Quickly with PRISM",
+      summary:
+        "Discover how startups can streamline ISO 42001 compliance using PRISM. Learn why AI governance matters and how PRISM accelerates readiness with automation and audit-ready reporting.",
+      slug: "startsups-iso-42001",
+      author: "Block Convey",
+      createdAt: createMockTimestamp("2025-09-16"),
+      updatedAt: createMockTimestamp("2025-09-16"),
+      imageUrl: "/images/startups-iso-42001.png",
+      tags: [
+        "ISO 42001",
+        "Startup Compliance",
+        "AI Governance",
+        "PRISM",
+        "AI Management System",
+      ],
+      categories: ["ISO 42001"],
+      published: true,
+      content: "",
+      contentSection: [],
+    },
   ];
 
   useEffect(() => {
