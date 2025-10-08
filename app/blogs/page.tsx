@@ -33,6 +33,73 @@ export default function BlogsPage() {
   // Static blog posts data
   const staticBlogs: BlogPost[] = [
     {
+      id: "preventing-bias-recruitment-ai",
+      title:
+        "Preventing Bias in Recruitment AI | PRISM for Fair & Transparent Hiring",
+      summary:
+        "Learn how PRISM helps organizations prevent bias in recruitment AI. Ensure fairness, compliance, and transparency in hiring with automated auditing and governance tools.",
+      slug: "preventing-bias-recruitment-ai",
+      author: "Block Convey",
+      createdAt: createMockTimestamp("2025-10-11"),
+      updatedAt: createMockTimestamp("2025-10-11"),
+      imageUrl: "/images/preventing-bias-recruitment-ai.png",
+      tags: [
+        "Recruitment AI",
+        "Bias Prevention",
+        "Fair Hiring",
+        "PRISM",
+        "HR Tech",
+      ],
+      categories: ["Recruitment AI"],
+      published: true,
+      content: "",
+      contentSection: [],
+    },
+    {
+      id: "ai-insurance-transparent-auditable-models",
+      title: "AI in Insurance: Building Transparent and Auditable AI Models",
+      summary:
+        "Discover how PRISM helps insurers build transparent, auditable AI systems. Manage compliance, detect bias, and strengthen trust in AI-powered insurance decisions.",
+      slug: "ai-insurance-transparent-auditable-models",
+      author: "Block Convey",
+      createdAt: createMockTimestamp("2025-10-10"),
+      updatedAt: createMockTimestamp("2025-10-10"),
+      imageUrl: "/images/ai-insurance-transparent-auditable.png",
+      tags: [
+        "Insurance AI",
+        "Transparency",
+        "Auditable AI",
+        "PRISM",
+        "Compliance",
+      ],
+      categories: ["Insurance AI"],
+      published: true,
+      content: "",
+      contentSection: [],
+    },
+    {
+      id: "ai-risk-management-frameworks",
+      title: "AI Risk Management Frameworks: Tools, Standards, and Strategy",
+      summary:
+        "Learn about AI risk management frameworks, key tools, global standards like ISO 42001 & NIST, and how PRISM helps organizations manage AI risks responsibly.",
+      slug: "ai-risk-management-frameworks",
+      author: "Block Convey",
+      createdAt: createMockTimestamp("2025-09-15"),
+      updatedAt: createMockTimestamp("2025-09-15"),
+      imageUrl: "/images/ai-risk-assessment-frameworks.png",
+      tags: [
+        "AI Risk Management",
+        "NIST AI RMF",
+        "ISO 42001",
+        "EU AI Act",
+        "PRISM",
+      ],
+      categories: ["AI Risk Management"],
+      published: true,
+      content: "",
+      contentSection: [],
+    },
+    {
       id: "ai-model-auditing-prism",
       title: "AI Model Auditing Made Easy with PRISM",
       summary:
