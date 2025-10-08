@@ -33,6 +33,28 @@ export default function BlogsPage() {
   // Static blog posts data
   const staticBlogs: BlogPost[] = [
     {
+      id: "ai-model-auditing-prism",
+      title: "AI Model Auditing Made Easy with PRISM",
+      summary:
+        "Learn how PRISM simplifies AI model auditing with automation, compliance alignment, bias detection, and audit-ready reports. Make AI governance faster and easier.",
+      slug: "ai-model-auditing-prism",
+      author: "Block Convey",
+      createdAt: createMockTimestamp("2025-10-08"),
+      updatedAt: createMockTimestamp("2025-10-08"),
+      imageUrl: "/images/ai-model-auditing.png",
+      tags: [
+        "AI Auditing",
+        "PRISM",
+        "Compliance",
+        "Bias Detection",
+        "Automation",
+      ],
+      categories: ["AI Auditing"],
+      published: true,
+      content: "",
+      contentSection: [],
+    },
+    {
       id: "ai-governance-why-it-matters",
       title: "What Is AI Governance and Why It Matters",
       summary:
@@ -43,6 +65,28 @@ export default function BlogsPage() {
       updatedAt: createMockTimestamp("2025-08-28"),
       imageUrl: "/images/ai-governance-matters.png",
       tags: ["AI Governance", "Compliance", "Risk Management"],
+      categories: ["AI Governance"],
+      published: true,
+      content: "",
+      contentSection: [],
+    },
+    {
+      id: "ai-governance-challenges-prism",
+      title: "Top AI Governance Challenges and How PRISM Solves Them",
+      summary:
+        "Discover the biggest AI governance challenges businesses face today—bias, compliance, transparency, accountability—and learn how PRISM helps solve them with automation and real-time monitoring.",
+      slug: "ai-governance-challenges-prism",
+      author: "Block Convey",
+      createdAt: createMockTimestamp("2025-10-08"),
+      updatedAt: createMockTimestamp("2025-10-08"),
+      imageUrl: "/images/ai-governance-challenges.png",
+      tags: [
+        "AI Governance",
+        "AI Challenges",
+        "Compliance",
+        "PRISM",
+        "Transparency",
+      ],
       categories: ["AI Governance"],
       published: true,
       content: "",
