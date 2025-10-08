@@ -18,7 +18,7 @@ import { MainLayout } from "../../components/layout/MainLayout";
 // Helper function to create mock timestamp
 const createMockTimestamp = (date: string) =>
   ({
-    toDate: () => new Date(date + "T12:00:00"), // Add time to avoid timezone issues
+    toDate: () => new Date(date + "T12:00:00"),
     getTime: () => new Date(date + "T12:00:00").getTime(),
   } as unknown as Timestamp);
 
@@ -30,7 +30,7 @@ export default function BlogsPage() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [searchFocused, setSearchFocused] = useState(false);
 
-  // Static blog posts data
+  // Static blog posts data with reduced tags
   const staticBlogs: BlogPost[] = [
     {
       id: "preventing-bias-recruitment-ai",
@@ -43,13 +43,7 @@ export default function BlogsPage() {
       createdAt: createMockTimestamp("2025-10-03"),
       updatedAt: createMockTimestamp("2025-10-03"),
       imageUrl: "/images/preventing-bias-recruitment-ai.png",
-      tags: [
-        "Recruitment AI",
-        "Bias Prevention",
-        "Fair Hiring",
-        "PRISM",
-        "HR Tech",
-      ],
+      tags: ["Recruitment AI", "Bias Prevention", "PRISM"],
       categories: ["Recruitment AI"],
       published: true,
       content: "",
@@ -65,13 +59,7 @@ export default function BlogsPage() {
       createdAt: createMockTimestamp("2025-10-02"),
       updatedAt: createMockTimestamp("2025-10-02"),
       imageUrl: "/images/ai-insurance-transparent-auditable.png",
-      tags: [
-        "Insurance AI",
-        "Transparency",
-        "Auditable AI",
-        "PRISM",
-        "Compliance",
-      ],
+      tags: ["Insurance AI", "Transparency", "Compliance"],
       categories: ["Insurance AI"],
       published: true,
       content: "",
@@ -87,13 +75,7 @@ export default function BlogsPage() {
       createdAt: createMockTimestamp("2025-09-28"),
       updatedAt: createMockTimestamp("2025-09-28"),
       imageUrl: "/images/ai-risk-assessment-frameworks.png",
-      tags: [
-        "AI Risk Management",
-        "NIST AI RMF",
-        "ISO 42001",
-        "EU AI Act",
-        "PRISM",
-      ],
+      tags: ["Risk Management", "ISO 42001", "NIST"],
       categories: ["AI Risk Management"],
       published: true,
       content: "",
@@ -109,13 +91,7 @@ export default function BlogsPage() {
       createdAt: createMockTimestamp("2025-10-01"),
       updatedAt: createMockTimestamp("2025-10-01"),
       imageUrl: "/images/ai-model-auditing.png",
-      tags: [
-        "AI Auditing",
-        "PRISM",
-        "Compliance",
-        "Bias Detection",
-        "Automation",
-      ],
+      tags: ["AI Auditing", "PRISM", "Automation"],
       categories: ["AI Auditing"],
       published: true,
       content: "",
@@ -131,7 +107,7 @@ export default function BlogsPage() {
       createdAt: createMockTimestamp("2025-08-28"),
       updatedAt: createMockTimestamp("2025-08-28"),
       imageUrl: "/images/ai-governance-matters.png",
-      tags: ["AI Governance", "Compliance", "Risk Management"],
+      tags: ["AI Governance", "Compliance", "PRISM"],
       categories: ["AI Governance"],
       published: true,
       content: "",
@@ -147,13 +123,7 @@ export default function BlogsPage() {
       createdAt: createMockTimestamp("2025-09-30"),
       updatedAt: createMockTimestamp("2025-09-30"),
       imageUrl: "/images/ai-governance-challenges.png",
-      tags: [
-        "AI Governance",
-        "AI Challenges",
-        "Compliance",
-        "PRISM",
-        "Transparency",
-      ],
+      tags: ["AI Governance", "Transparency", "PRISM"],
       categories: ["AI Governance"],
       published: true,
       content: "",
@@ -170,7 +140,7 @@ export default function BlogsPage() {
       createdAt: createMockTimestamp("2025-08-27"),
       updatedAt: createMockTimestamp("2025-08-27"),
       imageUrl: "/images/compliance-guide.png",
-      tags: ["AI Compliance", "ISO 42001", "NIST", "GDPR"],
+      tags: ["Compliance", "ISO 42001", "GDPR"],
       categories: ["AI Compliance"],
       published: true,
       content: "",
@@ -186,7 +156,7 @@ export default function BlogsPage() {
       createdAt: createMockTimestamp("2025-08-26"),
       updatedAt: createMockTimestamp("2025-08-26"),
       imageUrl: "/images/trustworthy-systems.png",
-      tags: ["PRISM", "Trustworthy AI", "Ethical AI"],
+      tags: ["PRISM", "Ethical AI", "Transparency"],
       categories: ["PRISM"],
       published: true,
       content: "",
@@ -202,30 +172,8 @@ export default function BlogsPage() {
       createdAt: createMockTimestamp("2025-08-25"),
       updatedAt: createMockTimestamp("2025-08-25"),
       imageUrl: "/images/role-explainability.png",
-      tags: ["Explainability", "Responsible AI", "Transparency"],
+      tags: ["Explainability", "Responsible AI", "PRISM"],
       categories: ["Responsible AI"],
-      published: true,
-      content: "",
-      contentSection: [],
-    },
-    {
-      id: "ai-risk-management-frameworks",
-      title: "AI Risk Management Frameworks: Tools, Standards, and Strategy",
-      summary:
-        "Learn about AI risk management frameworks, key tools, global standards like ISO 42001 & NIST, and how PRISM helps organizations manage AI risks responsibly.",
-      slug: "ai-risk-management-frameworks",
-      author: "Block Convey",
-      createdAt: createMockTimestamp("2025-09-15"),
-      updatedAt: createMockTimestamp("2025-09-15"),
-      imageUrl: "/images/ai-risk-assessment-frameworks.png",
-      tags: [
-        "AI Risk Management",
-        "NIST AI RMF",
-        "ISO 42001",
-        "EU AI Act",
-        "PRISM",
-      ],
-      categories: ["AI Risk Management"],
       published: true,
       content: "",
       contentSection: [],
@@ -240,13 +188,7 @@ export default function BlogsPage() {
       createdAt: createMockTimestamp("2025-09-15"),
       updatedAt: createMockTimestamp("2025-09-15"),
       imageUrl: "/images/how-to-automate.png",
-      tags: [
-        "AI Compliance Automation",
-        "PRISM",
-        "Automated Documentation",
-        "ISO 42001",
-        "Compliance Workflows",
-      ],
+      tags: ["Compliance", "PRISM", "Automation"],
       categories: ["AI Compliance"],
       published: true,
       content: "",
@@ -262,13 +204,7 @@ export default function BlogsPage() {
       createdAt: createMockTimestamp("2025-09-15"),
       updatedAt: createMockTimestamp("2025-09-15"),
       imageUrl: "/images/prism-vs-traditional.png",
-      tags: [
-        "PRISM vs Traditional",
-        "AI Risk Assessment",
-        "Traditional AI Tools",
-        "PRISM Comparison",
-        "AI Governance",
-      ],
+      tags: ["PRISM", "Risk Assessment", "AI Governance"],
       categories: ["AI Risk Assessment"],
       published: true,
       content: "",
@@ -284,13 +220,7 @@ export default function BlogsPage() {
       createdAt: createMockTimestamp("2025-09-29"),
       updatedAt: createMockTimestamp("2025-09-29"),
       imageUrl: "/images/startups-iso-42001.png",
-      tags: [
-        "ISO 42001",
-        "Startup Compliance",
-        "AI Governance",
-        "PRISM",
-        "AI Management System",
-      ],
+      tags: ["ISO 42001", "Startups", "PRISM"],
       categories: ["ISO 42001"],
       published: true,
       content: "",
@@ -317,31 +247,16 @@ export default function BlogsPage() {
           } as BlogPost);
         });
 
-        // Combine Firebase blogs with static blogs and sort by date
         const allBlogs = [...staticBlogs, ...firebaseBlogs].sort((a, b) => {
           const dateA = a.createdAt.toDate();
           const dateB = b.createdAt.toDate();
           return dateB.getTime() - dateA.getTime();
         });
 
-        // Debug: Log all blog dates to see what's happening
-        console.log(
-          "All blogs with dates:",
-          allBlogs.map((blog) => ({
-            title: blog.title,
-            date: blog.createdAt.toDate().toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            }),
-          }))
-        );
-
         setBlogs(allBlogs);
         setLoading(false);
       } catch (err) {
         console.error("Error fetching blogs:", err);
-        // Even if Firebase fails, show static blogs
         setBlogs(staticBlogs);
         setLoading(false);
       }
@@ -355,7 +270,7 @@ export default function BlogsPage() {
     blogs.forEach((blog) => {
       blog.tags.forEach((tag) => tags.add(tag));
     });
-    return Array.from(tags);
+    return Array.from(tags).sort();
   }, [blogs]);
 
   const filteredBlogs = useMemo(() => {
@@ -445,31 +360,33 @@ export default function BlogsPage() {
                   </div>
                 </div>
 
-                {/* Tags Filter */}
-                <div className="flex flex-wrap justify-center gap-2 mb-4">
-                  <button
-                    onClick={() => setSelectedTag(null)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                      selectedTag === null
-                        ? "bg-brand text-white shadow-md"
-                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    }`}
-                  >
-                    All Posts
-                  </button>
-                  {allTags.map((tag) => (
+                {/* Tags Filter - Reduced to 2 lines */}
+                <div className="max-w-5xl mx-auto">
+                  <div className="flex flex-wrap justify-center gap-2 mb-4">
                     <button
-                      key={tag}
-                      onClick={() => setSelectedTag(tag)}
+                      onClick={() => setSelectedTag(null)}
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                        selectedTag === tag
+                        selectedTag === null
                           ? "bg-brand text-white shadow-md"
                           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                       }`}
                     >
-                      {tag}
+                      All Posts
                     </button>
-                  ))}
+                    {allTags.slice(0, 14).map((tag) => (
+                      <button
+                        key={tag}
+                        onClick={() => setSelectedTag(tag)}
+                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                          selectedTag === tag
+                            ? "bg-brand text-white shadow-md"
+                            : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                        }`}
+                      >
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             </div>
