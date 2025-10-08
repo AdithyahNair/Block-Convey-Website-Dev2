@@ -66,6 +66,28 @@ export default function BlogsPage() {
       contentSection: [],
     },
     {
+      id: "ai-risk-management-fintech",
+      title: "Managing AI Risk in Fintech: Compliance, Bias, and Beyond",
+      summary:
+        "Discover how fintechs can manage AI risk with PRISM. From compliance with ISO 42001 and GDPR to bias detection and audit-ready reports, learn how to build safe, trustworthy AI.",
+      slug: "ai-risk-management-fintech",
+      author: "Block Convey",
+      createdAt: createMockTimestamp("2025-10-04"),
+      updatedAt: createMockTimestamp("2025-10-04"),
+      imageUrl: "/images/ai-risk-management-fintech.png",
+      tags: [
+        "Fintech",
+        "AI Risk Management",
+        "Compliance",
+        "PRISM",
+        "Bias Detection",
+      ],
+      categories: ["Fintech AI"],
+      published: true,
+      content: "",
+      contentSection: [],
+    },
+    {
       id: "ai-risk-management-frameworks",
       title: "AI Risk Management Frameworks: Tools, Standards, and Strategy",
       summary:
