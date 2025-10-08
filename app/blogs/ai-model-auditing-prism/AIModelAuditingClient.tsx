@@ -99,7 +99,7 @@ export default function AIModelAuditingClient() {
             <div className="flex items-center text-gray-600 mb-8">
               <span>By Block Convey</span>
               <span className="mx-2">•</span>
-              <span>October 8, 2025</span>
+              <span>October 1, 2025</span>
             </div>
           </div>
         </section>
